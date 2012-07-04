@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<link rel="stylesheet" type="text/css" href="ericpelz.css" />
+		<link rel="stylesheet" type="text/css" href="font.css" />
+        	<script type="text/javascript" src="js/jquery-1.6.2.min.js"> </script>
+        	<script type="text/javascript" src="js/showhide.js"> </script>
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<title>Eric S. Pelz</title>
+		<script type="text/javascript">
+			$(document).ready(function(){
+ 
+        			$(".h").hide();
+        			$(".s1").show();
+        			$(".show_hide").show();
+ 
+    				$('.show_hide').click(function(){
+    					$(".h").slideToggle();
+    					$(".s1").slideToggle();
+					if ($('.show_hide').html()=="Show all coursework") {
+						$('.show_hide').html("Show selected coursework");
+					}
+					else {
+						$('.show_hide').html("Show all coursework");
+					}
+					return false;
+    				});
+ 
+			});
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-11821661-1']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+
+	</head>
+	<body>
+		<div class="main">
+			<div class="title">
+				<h1><a href="">Eric S. Pelz</a></h1>
+				<p class="school"><em>Class of 2015</em>, California Institute of Technology</p>
+			</div>
+			
+			<div class="content">
+				<div class="floatright"> 
+					<img src="ericpelz.jpg" width="150px"/> 
+					<p><strong>Contact:</strong><br />contact<img src="at.jpg" style="border: none" alt="[at]"/>ericpelz.com</p>
+				</div> 
+			<div><h2>Hello!</h2>
+				<p>I'm a sophomore at the <a href="http://www.caltech.edu/">California Institute of Technology</a> (Caltech), double majoring in <a href="http://cms.caltech.edu/">Computer Science</a> and <a href="http://http://hss.caltech.edu/ss">Business, Economics, and Management</a>. I have various interests within computer science and economics, especially in machine learning.</p>
+			</div>
+
+			<div><h2>Experience</h2>
+				<p>I am currently a Data Science Intern at <a href="http://www.adaptly.com/">Adaptly</a>, working under the mentorship of <a href="http://web.mit.edu/~betan/www/">Michael Betancourt</a>, Ph.D.</p>
+				<p>At Caltech, I am the lead developer of <a href="http://donut.caltech.edu">Donut</a>, our undergraduate web portal, and a <a href="http://ruddock.caltech.edu">Ruddock</a> <a href="http://imss.caltech.edu/housereps">House Representative</a> of Information Management Systems and Services (IMSS) at Caltech.</p>
+                		<p>Between June 2010 and July 2011, I was a member of the <a href="http://badmetals.magnet.fsu.edu/">Bad Metals Research Group</a> under the direction of Professor Vladimir Dobrosavljevic at the <a href="http://magnet.fsu.edu">National High Magnetic Field Laboratory</a> in Tallahassee, Florida.<br /></p>
+                		<div class="toggle">
+					<p>I created <a href="http://badmetals.magnet.fsu.edu/simulations.html">online models</a> to simulate real-time dynamics of various conditions of Nearly Frozen Coulomb Liquids, the coulomb-limited phase separation, and the nuclear "pasta" phase of a neutron star. These simulations utilized Monte-Carlo simulation code to visualize the electron dynamics near charge ordering transitions and were written in the Java programming language each with approximately 2,000 lines of code.</p>
+					<p>In Summer 2011, I <a href="researchGroup.jpg">mentored</a> two gifted high school seniors in creating online simulations of <em>resistive switching in memristors</em> in extensive collaboration with Professors Marcelo Rozenberg and Gergely Zimanyi. Additionally, using Fortran and the <a href="http://hpc.fsu.edu/">FSU High Performance Computing</a> cluster, I simulated coulomb liquids of various conditions to explore and calculate conductivity and critical temperatures.</p>
+					<p>I was <a href="http://www.magnet.fsu.edu/mediacenter/news/pressreleases/2010/2010Sept-8.html">featured</a> in the Tallahassee Democrat, the NHMFL, and FSU Physics in September 2010. </p>
+				</div>
+			</div>
+
+			<div><h2>Coursework</h2>
+				<p><a href="#" class="show_hide">Show all coursework</a><div class="slidingDiv">
+					<p class="h"><strong>Spring 2012 (current)</strong></p>
+						<div class="h">- <em>Bi 001:</em> Principles of Biology</div>
+						<div class="s">- <em>CS/CNS/EE 156a:</em> Learning Systems</div>
+						<div class="s">- <em>CS 011:</em> Computer Language Shop (C++)</div>
+						<div class="h">- <em>Hum/H/HPS 010:</em> Introduction to the History of Science</div>
+						<div class="h">- <em>Ma 001c:</em> Calculus of One and Several Variables and Linear Algebra (analytic)</div>
+						<div class="h">- <em>Ph 001c:</em> Classical Mechanics and Electromagnetism (practical)</div>
+					<p class="h"><strong>Winter 2012</strong></p>
+						<div class="h">- <em>Ch 001b:</em> General Chemistry</div>
+						<div class="s">- <em>CS 002:</em> Introduction to Programming Methods</div>
+						<div class="s">- <em>CS 021:</em> Decidability and Tractability</div>
+						<div class="h">- <em>Ma 001b:</em> Calculus of One and Several Variables and Linear Algebra (analytic)</div>
+						<div class="h">- <em>PE 054b:</em> Racquetball</div>
+						<div class="h">- <em>Ph 001b:</em> Classical Mechanics and Electromagnetism (practical)</div>
+
+					<p class="h"><strong>Fall 2011</strong></p>
+						<div class="h">- <em>ACM 010:</em> Introduction to Applied and Computational Mathematics</div>
+						<div class="h">- <em>Ch 001a:</em> General Chemistry</div>
+						<div class="h">- <em>Ch 003a:</em> Fundamental Techniques of Experimental Chemistry</div>
+						<div class="s">- <em>CS 009:</em> Introduction to Computer Science Research</div>
+						<div class="h">- <em>En 002:</em> Introduction to College Writing</div>
+						<div class="h">- <em>FS 002:</em> Freshman Seminar: The Origins of Ideas</div>
+						<div class="h">- <em>Ma 001a:</em> Calculus of One and Several Variables and Linear Algebra</div>
+						<div class="h">- <em>Ph 001a:</em> Classical Mechanics and Electromagnetism</div>
+						<!-- condense sequence to one line for selected coursework -->
+						<div class="s1">- <em>Ma 001abc:</em> Calculus of One and Several Variables and Linear Algebra (analytic)</div>
+						<div class="s1">- <em>Ph 001abc:</em> Classical Mechanics and Electromagnetism (practical)</div>
+
+					<p class="h"><strong>Institute for Mathematics and Computer Science (2009-2010)</strong></p>
+						<div class="h">- Algorithms course taught in Haskell using <a href="http://www.iro.umontreal.ca/~lapalme/Algorithms-functional.html">Algorithms: A Functional Programming Approach</a></div>
+						<div class="h">- Introductory computer science course taught in Scheme</div>
+
+				</div></p>
+			</div>
+
+			<div><h2>What else?</h2>
+				<p>I am a Board Member of Caltech's <a href="http://sif.caltech.edu/">Student Investment Fund</a> and a Vice President of the Caltech <a href="http://hillel.caltech.edu/">Hillel Jewish Student Center</a>.</p><p>I also like to cook, enjoy sunny California, and study the Chinese language.</p>
+			</div>
+
+			<div class="footer"><p>Last updated: Mar 2012</p></div> 
+		</div>
+	</body>
+</html>

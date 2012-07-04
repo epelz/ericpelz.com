@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('opensans.woff') format('woff');
+}
+@font-face {
+  font-family: 'Gentium Basic';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Gentium Basic Bold'), local('GentiumBasic-Bold'), url('gentiumbasic_bold.woff') format('woff');
+}
