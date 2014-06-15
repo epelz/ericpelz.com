@@ -1,54 +1,71 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
+  <head>
     <link rel="stylesheet" type="text/css" href="ericpelz.css" />
-		<link rel="stylesheet" type="text/css" href="font.css" />
+    <link rel="stylesheet" type="text/css" href="font.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
-		<title>Eric S. Pelz</title>
-		<script type="text/javascript">
-			$(document).ready(function(){
- 
-        			$(".h").hide();
-        			$(".s1").show();
-        			$(".show_hide").show();
- 
-    				$('.show_hide').click(function(){
-    					$(".h").slideToggle();
-    					$(".s1").slideToggle();
-					if ($('.show_hide').html()=="Show all coursework") {
-						$('.show_hide').html("Show selected coursework");
-					}
-					else {
-						$('.show_hide').html("Show all coursework");
-					}
-					return false;
-    				});
- 
-			});
+    <title>Eric S. Pelz</title>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".h").hide();
+        $(".s1").show();
+        $(".show_hide").show();
 
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-11821661-1']);
-			_gaq.push(['_trackPageview']);
-			(function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script>
+        // toggle coursework
+        $('.show_hide').click(function(){
+          $(".h").slideToggle();
+          $(".s1").slideToggle();
+          if ($('.show_hide').html()=="Show all coursework") {
+            $('.show_hide').html("Show selected coursework");
+          }
+          else {
+            $('.show_hide').html("Show all coursework");
+          }
+          return false;
+        });
 
-	</head>
-	<body>
-		<div class="main">
-			<div class="title">
-				<h1><a href="">Eric S. Pelz</a></h1>
-				<p class="school"><em>Class of 2015</em>, California Institute of Technology</p>
-			</div>
-			
-			<div class="content">
-				<div class="floatright"> 
-					<img src="images/ericpelz.jpg" width="150px"/>
+        // toggle showing more info
+        $(".more").hide();
+        $(".more").before("<a href='#' class='show_more fa fa-chevron-circle-down'> Show more</a>");
+        $(".show_more").click(function(){
+          var elem = $(this).next();
+          if ($(this).next().is(":visible")) {
+            $(this).html(" Show more");
+            $(this).toggleClass("fa-chevron-circle-up fa-chevron-circle-down");
+          } else {
+            $(this).html(" Hide more");
+            $(this).toggleClass("fa-chevron-circle-down fa-chevron-circle-up");
+          }
+          elem.slideToggle();
+
+          return false;
+        });
+      });
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-11821661-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="title">
+        <h1><a href="">Eric S. Pelz</a></h1>
+        <p class="school"><em>Class of 2015</em>, California Institute of Technology</p>
+      </div>
+
+      <div class="content">
+        <div class="floatright"> 
+          <img src="images/ericpelz.jpg" width="150px"/>
           <p>
             <a href="https://facebook.com/esp/" class="fa fa-facebook-square" style="padding-right: 5px"></a>
             <a href="https://linkedin.com/in/epelz/" class="fa fa-linkedin-square" style="padding-right: 5px"></a>
@@ -56,22 +73,31 @@
             <a href="https://github.com/epelz/" class="fa fa-github-alt" style="padding-right: 5px"></a><br/>
             contact<img src="images/at.jpg" style="border: none" alt="[at]"/>ericpelz.com
           </p>
-        </div> 
+        </div>
         <div><h2>Hello!</h2>
-          <p>I'm a junior at the <a href="http://www.caltech.edu/">California Institute of Technology</a> (Caltech), double majoring in <a href="http://cms.caltech.edu/">Computer Science</a> and <a href="http://bem.caltech.edu/">Business Economics and Management</a>.</p>
-			  </div>
+          <p>I'm a senior at the <a href="http://www.caltech.edu/">California Institute of Technology</a> (Caltech), double majoring in <a href="http://cms.caltech.edu/">Computer Science</a> and <a href="http://bem.caltech.edu/">Business Economics and Management</a>.</p>
+        </div>
 
         <div><h2>Experience</h2>
-          <p>I'll be at <a href="http://www.asana.com/">Asana</a> next summer in San Francisco, CA.</p>
-          <p>Last summer, I was a Software Engineer Intern at <a href="http://www.facebook.com/">Facebook</a> in Menlo Park, CA, where I developed backend services for a cool new project using HBase, Thrift, Java, and PHP.</p>
-          <p>Before that, in the summer of 2012, I was a Data Science Intern at <a href="http://www.adaptly.com/">Adaptly</a> in New York City, working on problems in ad optimization and sentiment analysis for social media. Even further back, between 2010 and 2011, I <a href="http://badmetals.magnet.fsu.edu/simulations.html">created</a> online graphical Monte-Carlo simulations for the Bad Metals Research Group at the <a href="http://magnet.fsu.edu">National High Magnetic Field Laboratory</a> in Tallahassee, Florida (<a href="http://www.magnet.fsu.edu/mediacenter/news/pressreleases/2010/2010Sept-8.html">article</a>).</p>
-          <p>At Caltech, I am the lead developer of <a href="http://donut.caltech.edu">Donut</a>, our undergraduate web portal, and a <a href="http://ruddock.caltech.edu">Ruddock</a> <a href="http://imss.caltech.edu/housereps">House Representative</a> of Information Management Systems and Services (IMSS) at Caltech. In these positions, I lead teams to maintain and create applications for students. I was also a Teaching Assistant for CS 121 (Introduction to Relational Databases) in Fall 2013, and CS 2 (Introduction to Programming Methods) in Winter 2013.</p>
+          <p>I'm at <a href="http://www.asana.com/">Asana</a> this summer in San Francisco, CA.</p>
+          <p>Last summer, I was a Software Engineer Intern at <a href="http://www.facebook.com/">Facebook</a> in Menlo Park, CA, where I developed backend services for a then-unreleased product, <a href="http://newsroom.fb.com/news/2014/04/introducing-a-new-optional-feature-called-nearby-friends/">Nearby Friends</a>, using Java, HBase, Thrift, and PHP.</p>
+          <p>Before that, in the summer of 2012, I was a Data Science Intern at <a href="http://www.adaptly.com/">Adaptly</a> in New York City, working on problems in ad optimization and sentiment analysis for social media. Even further back, in 2010 and 2011, I <a href="http://badmetals.magnet.fsu.edu/simulations.html">created</a> online graphical Monte-Carlo simulations for the Bad Metals Research Group at the <a href="http://magnet.fsu.edu">National High Magnetic Field Laboratory</a> in Tallahassee, Florida (<a href="http://www.magnet.fsu.edu/mediacenter/news/pressreleases/2010/2010Sept-8.html">article</a>).</p>
+          <p>At Caltech, I am the lead developer of <a href="http://donut.caltech.edu">Donut</a>, our undergraduate web portal, and a <a href="http://ruddock.caltech.edu">Ruddock</a> <a href="http://imss.caltech.edu/housereps">House Representative</a> of Information Management Systems and Services (IMSS) at Caltech. In these positions, I lead teams to maintain and create applications for students. I was also a Teaching Assistant for CS 115 (Functional Programming) in Spring 2014, CS 121 (Introduction to Relational Databases) in Fall 2013, and CS 2 (Introduction to Programming Methods) in Winter 2013.</p>
         </div>
       </div>
 
-			<div><h2>Coursework</h2>
+      <div><h2>Coursework</h2>
         <p><a href="#" class="show_hide">Show all coursework</a><div class="slidingDiv">
-          <p class="h"><strong>Fall 2013</strong></p>
+          <p class="h"><strong>Spring 2014</strong></p>
+          <div class="h">- <em>BEM 104:</em> Investments</div>
+          <div class="h">- <em>BEM 107:</em> Applied Corporate Finance and Investment Banking</div>
+          <div class="s">- <em>CS 038:</em> Introduction to Algorithms</div>
+          <div class="s">- <em>CS/CNS 174:</em> Computer Graphics Projects
+            <!--  <div class="more">Hi there</div> -->
+          </div>
+          <div class="s">- <em>E 102:</em> Entrepreneurial Development</div>
+          <div class="h">- <em>PE 024:</em> Yoga, Beginning</div>
+          <p class="h"><strong>Winter 2014</strong></p>
             <div class="h">- <em>BEM 102:</em> Introduction to Accounting</div>
             <div class="h">- <em>CS 011:</em> Computer Language Shop (Erlang)</div>
             <div class="s">- <em>CS 124:</em> Operating Systems</div>
@@ -90,7 +116,7 @@
             <div class="h">- <em>CS 024:</em> Introduction to Computing Systems</div>
             <div class="s">- <em>CS 101c:</em> Functional Programming with Haskell</div>
             <div class="h">- <em>CS 123:</em> Projects in Database Systems</div>
-			<div class="s1">- <em>CS 121/122/123:</em> Project Sequence in Database Systems</div>
+            <div class="s1">- <em>CS 121/122/123:</em> Project Sequence in Database Systems</div>
             <div class="h">- <em>Ec/Psy 109:</em> Frontiers in Behavioral Economics</div>
             <div class="h">- <em>PS 012:</em> Introduction to Political Science</div>
           <p class="h"><strong>Winter 2013</strong></p>
@@ -107,43 +133,43 @@
             <div class="h">- <em>Ma/CS 006a:</em> Introduction to Discrete Mathematics</div>
             <div class="h">- <em>Ph 002a:</em> Waves, Quantum Mechanics, and Statistical Physics</div>
           <p class="h"><strong>Spring 2012</strong></p>
-						<div class="h">- <em>Bi 001:</em> Principles of Biology</div>
-						<div class="s">- <em>CS/CNS/EE 156a:</em> Learning Systems</div>
-						<div class="h">- <em>CS 011:</em> Computer Language Shop (C++)</div>
-						<div class="h">- <em>Hum/H/HPS 010:</em> Introduction to the History of Science</div>
-						<div class="h">- <em>Ma 001c:</em> Calculus of One and Several Variables and Linear Algebra (analytic)</div>
-						<div class="h">- <em>Ph 001c:</em> Classical Mechanics and Electromagnetism (practical)</div>
-					<p class="h"><strong>Winter 2012</strong></p>
-						<div class="h">- <em>Ch 001b:</em> General Chemistry</div>
-						<div class="h">- <em>CS 002:</em> Introduction to Programming Methods</div>
-						<div class="h">- <em>CS 021:</em> Decidability and Tractability</div>
-						<div class="h">- <em>Ma 001b:</em> Calculus of One and Several Variables and Linear Algebra (analytic)</div>
-						<div class="h">- <em>PE 054b:</em> Racquetball</div>
-						<div class="h">- <em>Ph 001b:</em> Classical Mechanics and Electromagnetism (practical)</div>
-					<p class="h"><strong>Fall 2011</strong></p>
-						<div class="h">- <em>ACM 010:</em> Introduction to Applied and Computational Mathematics</div>
-						<div class="h">- <em>Ch 001a:</em> General Chemistry</div>
-						<div class="h">- <em>Ch 003a:</em> Fundamental Techniques of Experimental Chemistry</div>
-						<div class="h">- <em>CS 009:</em> Introduction to Computer Science Research</div>
-						<div class="h">- <em>En 002:</em> Introduction to College Writing</div>
-						<div class="h">- <em>FS 002:</em> Freshman Seminar: The Origins of Ideas</div>
-						<div class="h">- <em>Ma 001a:</em> Calculus of One and Several Variables and Linear Algebra</div>
-						<div class="h">- <em>Ph 001a:</em> Classical Mechanics and Electromagnetism</div>
-						<!-- condense sequence to one line for selected coursework
-						<div class="s1">- <em>Ma 001abc:</em> Calculus of One and Several Variables and Linear Algebra (analytic)</div>
+            <div class="h">- <em>Bi 001:</em> Principles of Biology</div>
+            <div class="s">- <em>CS/CNS/EE 156a:</em> Learning Systems</div>
+            <div class="h">- <em>CS 011:</em> Computer Language Shop (C++)</div>
+            <div class="h">- <em>Hum/H/HPS 010:</em> Introduction to the History of Science</div>
+            <div class="h">- <em>Ma 001c:</em> Calculus of One and Several Variables and Linear Algebra (analytic)</div>
+            <div class="h">- <em>Ph 001c:</em> Classical Mechanics and Electromagnetism (practical)</div>
+          <p class="h"><strong>Winter 2012</strong></p>
+            <div class="h">- <em>Ch 001b:</em> General Chemistry</div>
+            <div class="h">- <em>CS 002:</em> Introduction to Programming Methods</div>
+            <div class="h">- <em>CS 021:</em> Decidability and Tractability</div>
+            <div class="h">- <em>Ma 001b:</em> Calculus of One and Several Variables and Linear Algebra (analytic)</div>
+            <div class="h">- <em>PE 054b:</em> Racquetball</div>
+            <div class="h">- <em>Ph 001b:</em> Classical Mechanics and Electromagnetism (practical)</div>
+          <p class="h"><strong>Fall 2011</strong></p>
+            <div class="h">- <em>ACM 010:</em> Introduction to Applied and Computational Mathematics</div>
+            <div class="h">- <em>Ch 001a:</em> General Chemistry</div>
+            <div class="h">- <em>Ch 003a:</em> Fundamental Techniques of Experimental Chemistry</div>
+            <div class="h">- <em>CS 009:</em> Introduction to Computer Science Research</div>
+            <div class="h">- <em>En 002:</em> Introduction to College Writing</div>
+            <div class="h">- <em>FS 002:</em> Freshman Seminar: The Origins of Ideas</div>
+            <div class="h">- <em>Ma 001a:</em> Calculus of One and Several Variables and Linear Algebra</div>
+            <div class="h">- <em>Ph 001a:</em> Classical Mechanics and Electromagnetism</div>
+            <!-- condense sequence to one line for selected coursework
+            <div class="s1">- <em>Ma 001abc:</em> Calculus of One and Several Variables and Linear Algebra (analytic)</div>
             <div class="s1">- <em>Ph 001abc:</em> Classical Mechanics and Electromagnetism (practical)</div>
             <div class="s1">- <em>CS 011:</em> Computer Language Shop (C++, Erlang, Python)</div> -->
           <p class="h"><strong>Institute for Mathematics and Computer Science (2009-2010)</strong></p>
-						<div class="h">- Algorithms course taught in Haskell using <a href="http://www.iro.umontreal.ca/~lapalme/Algorithms-functional.html">Algorithms: A Functional Programming Approach</a></div>
-						<div class="h">- Introductory computer science course taught in Scheme</div>
-				</div></p>
-			</div>
+            <div class="h">- Algorithms course taught in Haskell using <a href="http://www.iro.umontreal.ca/~lapalme/Algorithms-functional.html">Algorithms: A Functional Programming Approach</a></div>
+            <div class="h">- Introductory computer science course taught in Scheme</div>
+        </div></p>
+      </div>
 
-			<div><h2>What else?</h2>
-        <p>I am Co-President of the Caltech <a href="http://hillel.caltech.edu/">Hillel Jewish Student Center</a>, a Facebook Ambassador for Caltech, and Vice President / Head Upperclassmen Counselor / Head Waiter for <a href="http://ruddock.caltech.edu/">Ruddock House</a>.</p><p>I also like to cook, enjoy sunny California, and learn about different cultures.</p>
-			</div>
+      <div><h2>What else?</h2>
+        <p>I am Co-President of the Caltech <a href="http://hillel.caltech.edu/">Hillel Jewish Student Center</a>, a Facebook Ambassador for Caltech, and Vice President and Head Upperclassmen Counselor for <a href="http://ruddock.caltech.edu/">Ruddock House</a>.</p><p>I also like to cook, enjoy sunny California, and learn about different cultures.</p>
+      </div>
 
-			<div class="footer"><p>Last updated: Feb 2014</p></div>
-		</div>
-	</body>
+      <div class="footer"><p>Last updated: Jun 2014</p></div>
+    </div>
+  </body>
 </html>
