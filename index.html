@@ -18,11 +18,14 @@
         $('.show_hide').click(function(){
           $(".h").slideToggle();
           $(".s1").slideToggle();
-          if ($('.show_hide').html()=="Show all coursework") {
-            $('.show_hide').html("Show selected coursework");
+          if ($('.show_hide').html()=="Show all") {
+            $('.show_hide').html("Show summary");
+            //$('.coursework_title').html("Coursework");
+            //// TODO: Use glyphicon instead of text for toggle?
           }
           else {
-            $('.show_hide').html("Show all coursework");
+            $('.show_hide').html("Show all");
+            //$('.coursework_title').html("Summary of Coursework");
           }
           return false;
         });
@@ -75,7 +78,7 @@
           </p>
         </div>
         <div><h2>Hello!</h2>
-          <p>I'm a senior at the <a href="http://www.caltech.edu/">California Institute of Technology</a> (Caltech), double majoring in <a href="http://cms.caltech.edu/">Computer Science</a> and <a href="http://bem.caltech.edu/">Business Economics and Management</a>.</p>
+          <p>I'm a senior at the <a href="http://www.caltech.edu/">California Institute of Technology</a> (Caltech), double majoring in <a href="http://cms.caltech.edu/">Computer Science</a> and <a href="http://www.hss.caltech.edu/content/business-economics-and-management">Business Economics and Management</a>.</p>
         </div>
 
         <div><h2>Experience</h2>
@@ -86,8 +89,8 @@
         </div>
       </div>
 
-      <div><h2>Coursework</h2>
-        <p><a href="#" class="show_hide">Show all coursework</a><div class="slidingDiv">
+      <div><h2 class="coursework_title">Coursework</h2>
+        <p><a href="#" class="show_hide">Show all</a><div class="slidingDiv">
           <p class="h"><strong>Spring 2014</strong></p>
           <div class="h">- <em>BEM 104:</em> Investments</div>
           <div class="h">- <em>BEM 107:</em> Applied Corporate Finance and Investment Banking</div>
@@ -166,7 +169,8 @@
       </div>
 
       <div><h2>What else?</h2>
-        <p>I am Co-President of the Caltech <a href="http://hillel.caltech.edu/">Hillel Jewish Student Center</a>, a Facebook Ambassador for Caltech, and Vice President and Head Upperclassmen Counselor for <a href="http://ruddock.caltech.edu/">Ruddock House</a>.</p><p>I also like to cook, enjoy sunny California, and learn about different cultures.</p>
+        <p>I'm the current Vice President and Head Upperclassmen Counselor for <a href="http://ruddock.caltech.edu/">Ruddock House</a>, and have also been active in the Caltech <a href="http://hillel.caltech.edu/">Hillel Jewish Student Center</a>.</p>
+        <p>I also like to explore sunny California, pretend to be a foodie, and learn about different cultures.</p>
       </div>
 
       <div class="footer"><p>Last updated: Jun 2014</p></div>
