@@ -13,7 +13,6 @@
       function colorIcons(color) {
         var social_icons = document.getElementsByClassName("social");
         [].forEach.call(social_icons, function(icon) {
-            console.log(icon);
             icon.style.color = color || null;
         });
       }
@@ -49,13 +48,15 @@
         </div>
 
         <div><h2>Hello!</h2>
-          <p>I'm a senior at the <a href="http://www.caltech.edu/">California Institute of Technology</a> (Caltech), double majoring in <a href="http://cms.caltech.edu/">Computer Science</a> and <a href="http://www.hss.caltech.edu/content/business-economics-and-management">Business Economics and Management</a>.</p>
-          <p>After graduation, I'll be at <a href="http://www.asana.com">Asana</a> in San Francisco, CA. Previously, I've interned at Facebook, Adaptly, and the National High Magnetic Field Laboratory.</p>
+          <p>I'm a senior at <a href="http://www.caltech.edu/">Caltech</a> studying Computer Science and Business Economics and Management.</p>
+          <p>I'm moving to San Francisco next year to join <a href="http://www.asana.com">Asana</a> as a software engineer. I've previously interned at Asana, Facebook, and Adaptly.</p>
         </div>
 
+        <div>
           <p><span class="connect" onmouseover="colorIcons('blue')" onmouseout="colorIcons()">Connect with me</span> or email me at
           contact<img src="images/at.jpg" style="border: none" alt="[at]"/>ericpelz.com.
           </p>
+        </div>
       </div>
     </div>
   </body>
