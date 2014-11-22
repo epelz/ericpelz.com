@@ -3,7 +3,6 @@
   <head>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" />
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="ericpelz.css" />
     <link rel="stylesheet" type="text/css" href="font.css" />
@@ -11,45 +10,6 @@
 
     <title>Eric Pelz</title>
     <script type="text/javascript">
-      $(document).ready(function(){
-        $(".h").hide();
-        $(".s1").show();
-        $(".show_hide").show();
-
-        // toggle coursework
-        $('.show_hide').click(function(){
-          $(".h").slideToggle();
-          $(".s1").slideToggle();
-          if ($('.show_hide').html()=="Show all") {
-            $('.show_hide').html("Show summary");
-            //$('.coursework_title').html("Coursework");
-            //// TODO: Use glyphicon instead of text for toggle?
-          }
-          else {
-            $('.show_hide').html("Show all");
-            //$('.coursework_title').html("Summary of Coursework");
-          }
-          return false;
-        });
-
-        // toggle showing more info
-        $(".more").hide();
-        $(".more").before("<a href='#' class='show_more fa fa-chevron-circle-down'> Show more</a>");
-        $(".show_more").click(function(){
-          var elem = $(this).next();
-          if ($(this).next().is(":visible")) {
-            $(this).html(" Show more");
-            $(this).toggleClass("fa-chevron-circle-up fa-chevron-circle-down");
-          } else {
-            $(this).html(" Hide more");
-            $(this).toggleClass("fa-chevron-circle-down fa-chevron-circle-up");
-          }
-          elem.slideToggle();
-
-          return false;
-        });
-      });
-
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-11821661-1']);
       _gaq.push(['_trackPageview']);
