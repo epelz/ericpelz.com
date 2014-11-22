@@ -49,6 +49,10 @@ body
   text-shadow: 4px 4px 6px #CDCDCD;
 }
 
+.connect {
+  color:#696969;
+}
+
 p {
 	margin:0;
 	padding:5px;

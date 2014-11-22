@@ -10,6 +10,14 @@
 
     <title>Eric Pelz</title>
     <script type="text/javascript">
+      function colorIcons(color) {
+        var social_icons = document.getElementsByClassName("social");
+        [].forEach.call(social_icons, function(icon) {
+            console.log(icon);
+            icon.style.color = color || null;
+        });
+      }
+
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-11821661-1']);
       _gaq.push(['_trackPageview']);
@@ -27,11 +35,11 @@
         <span class="left">
           <h1><a href="">Eric Pelz</a></h1>
         </span>
-        <span class="right icons">
-            <a href="https://facebook.com/esp/" class="fa fa-facebook-square" style="padding-right: 5px"></a>
-            <a href="https://github.com/epelz/" class="fa fa-github-alt" style="padding-right: 5px"></a>
-            <a href="https://linkedin.com/in/epelz/" class="fa fa-linkedin-square" style="padding-right: 5px"></a>
-            <a href="https://plus.google.com/+EricPelz/" class="fa fa-google-plus-square" style="padding-right: 5px"></a>
+        <span class="right icons" id="test">
+            <a href="https://facebook.com/esp/" class="social fa fa-facebook-square" style="padding-right: 5px"></a>
+            <a href="https://github.com/epelz/" class="social fa fa-github-alt" style="padding-right: 5px"></a>
+            <a href="https://linkedin.com/in/epelz/" class="social fa fa-linkedin-square" style="padding-right: 5px"></a>
+            <a href="https://plus.google.com/+EricPelz/" class="social fa fa-google-plus-square" style="padding-right: 5px"></a>
         </span>
       </div>
 
@@ -45,11 +53,9 @@
           <p>After graduation, I'll be at <a href="http://www.asana.com">Asana</a> in San Francisco, CA. Previously, I've interned at Facebook, Adaptly, and the National High Magnetic Field Laboratory.</p>
         </div>
 
-        <div><h2>Want to connect?</h2>
-          <p>Connect with me on one of the sites on the top, or email me at
+          <p><span class="connect" onmouseover="colorIcons('blue')" onmouseout="colorIcons()">Connect with me</span> or email me at
           contact<img src="images/at.jpg" style="border: none" alt="[at]"/>ericpelz.com.
           </p>
-        </div>
       </div>
     </div>
   </body>
