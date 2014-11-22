@@ -48,8 +48,17 @@ body
 	margin-right:30px;
 }
 
+.left {
+  display:inline-block;
+}
+
+.right {
+  float: right;
+}
+
 .icons {
-  font-size: 30px;
+  font-size: 36px;
+  text-shadow: 4px 4px 6px #CDCDCD;
 }
 
 p {
@@ -65,7 +74,6 @@ h1 {
 	margin:0px;	
 	padding:0px;
 	margin-left:5px;
-	margin-bottom:-10px;
 }
 
 a {
