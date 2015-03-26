@@ -49,6 +49,9 @@ body
   text-shadow: 4px 4px 6px #CDCDCD;
 }
 
+.icons a {
+  padding-right: 5px;
+}
 .connect {
   color:#696969;
 }
