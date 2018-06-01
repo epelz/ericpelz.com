@@ -46,7 +46,7 @@ body
 
 .icons {
   font-size: 36px;
-  text-shadow: 4px 4px 6px #CDCDCD;
+  text-shadow: 2px 2px 3px #CDCDCD;
 }
 
 .icons a {
@@ -63,7 +63,7 @@ p {
 
 h1 {
 	font-family: "Gentium Basic",serif;
-	text-shadow: 4px 4px 6px #CDCDCD;
+	text-shadow: 2px 2px 3px #CDCDCD;
 	font-size:36pt;
 	font-weight:bold;
 	margin:0px;	
