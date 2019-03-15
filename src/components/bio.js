@@ -16,7 +16,6 @@ function Bio() {
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author, social } = data.site.siteMetadata
         return (
           <div
             style={{
@@ -26,7 +25,6 @@ function Bio() {
           >
             <Image
               fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
               style={{
                 marginRight: rhythm(1 / 2),
                 marginBottom: 0,
@@ -38,12 +36,8 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
+              I'm a software engineer at <a href="https://www.asana.com/">Asana</a>. I manage a few engineers and am the program & tech lead on a product team.
+              I spend a lot of time thinking about running effective teams, fostering growth, product+engineering collaboration, and engineering design patterns.
             </p>
           </div>
         )
@@ -54,18 +48,10 @@ function Bio() {
 
 const bioQuery = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/ericpelz.jpg/" }) {
       childImageSharp {
         fixed(width: 50, height: 50) {
           ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        author
-        social {
-          twitter
         }
       }
     }
