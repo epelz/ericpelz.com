@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Eric Pelz`,
+    description: `Eric Pelz is a software engineer`,
     author: `Eric Pelz`,
     siteUrl: `https://www.ericpelz.com/`,
   },
@@ -38,6 +39,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-remark-reading-time`
         ],
       },
     },
