@@ -20,7 +20,6 @@ function Bio() {
           <div
             style={{
               display: `flex`,
-              marginBottom: rhythm(2.5),
             }}
           >
             <Image
@@ -36,8 +35,12 @@ function Bio() {
               }}
             />
             <p>
-              I'm a software engineer at <a href="https://www.asana.com/">Asana</a>. I manage a few engineers and am the program & tech lead on a product team.
-              I spend a lot of time thinking about running effective teams, fostering growth, product+engineering collaboration, and engineering design patterns.
+              I'm a software engineer at{" "}
+              <a href="https://www.asana.com/">Asana</a>. I manage a few
+              engineers and am the program & tech lead on a product team. I
+              spend a lot of time thinking about running effective teams,
+              fostering growth, product+engineering collaboration, and
+              engineering design patterns.
             </p>
           </div>
         )

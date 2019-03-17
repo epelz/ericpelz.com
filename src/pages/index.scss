@@ -1,0 +1,14 @@
+.BlogIndex-iconRow {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.BlogIndex-socialIcon {
+  box-shadow: none;
+  text-shadow: 2px 2px 3px #CDCDCD;
+  color: #696969;
+
+  &:hover {
+    color: blue;
+  }
+}

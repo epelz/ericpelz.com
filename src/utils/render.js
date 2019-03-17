@@ -1,9 +1,11 @@
-import React from "react";
+import React from "react"
 
 export function renderDateAndReadingTime(post) {
-  return <fragment>
-    {post.frontmatter.date}
-    &nbsp;&#9679;&nbsp;
-    {post.fields.readingTime.text}
-  </fragment>;
+  return (
+    <React.Fragment>
+      {post.frontmatter.date}
+      &nbsp;&#9679;&nbsp;
+      {post.fields.readingTime.text}
+    </React.Fragment>
+  )
 }
