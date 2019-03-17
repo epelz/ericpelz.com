@@ -66,13 +66,72 @@ organizing them into sets of modules.
 We’ve encountered two main classes of these which occur in almost all of our
 components:
 
-1.  Data model helpers to derive a result from one or more objects
-    ([for example](https://gist.github.com/epelz/c00e020fbaca0d5d99dc): to
-    determine whether a user is currently on vacation)
+1.  Data model helpers to derive a result from one or more objects[^1]
 1.  Mutation helpers to perform client- and server-side mutations in response to
-    user actions
-    ([for example](https://gist.github.com/epelz/817c3a346f43b6d7e357): to heart
-    a task).
+    user actions[^2]
+
+<!-- prettier-ignore-start -->
+[^1]:
+
+  Example of a data model helper: determine whether a user is currently on
+  vacation.
+
+  ```typescript
+      export function isOnVacation(attr: {
+        // We pass in the current time, because otherwise this function would rely
+        // on the Date global. Instead, the calling component will use a chronometer
+        // service which is declaratively passed-in to it.
+        nowTime: number;
+        // We take advantage of TypeScript's structural typing, so this method can
+        // take any compatible User model. This is preferable to relying on a specific
+        // User interface: each calling component has a subset of the User object graph
+        // that it depends on, so this makes isOnVacation usable in many components.
+        user: {
+          vacationStartTime(): number;
+          vacationEndTime(): number;
+        };
+      }): boolean {
+        var startTime = attr.user.vacationStartTime();
+        var endTime = attr.user.vacationEndTime();
+
+        var wasOnVacation = startTime !== 0 && startTime <= attr.nowTime;
+        var stillOnVacation = endTime === 0 || endTime >= attr.nowTime;
+
+        return wasOnVacation && stillOnVacation;
+      }
+  ```
+[^2]: Example of a mutation helper: to "heart" a task
+
+  ```typescript
+      export function heartTask(attr: {
+        datastore: DatastoreService;
+        // Thin interfaces for the User/Task model which utilize TypeScript's
+        // structural typing, but the type aliases are omitted for brevity.
+        user: UserBase;
+        task: TaskBase;
+      }) {
+        attr.datastore.runInBatch(() => {
+          // 1. Optimistically create the object representing the heart.
+          var heartRequest = new HeartCreateRequest({
+            target: attr.task.dbObjectId(),
+            user: attr.user.dbObjectId()
+          });
+          var heartId = attr.datastore.createDbObject(heartRequest);
+
+          // 2. Send server request to update the database.
+          attr.services.datastore.requestServerChange(
+            “post”, “/task_heart”, {
+              // server will create an identical object with the same ID.
+              global_id: heartId,
+              task: task.dbObjectId(),
+              user: attr.user.dbObjectId()
+            }
+          );
+        });
+      });
+  ```
+
+<!-- prettier-ignore-end-->
 
 ### Use pure components, avoiding impure pitfalls
 

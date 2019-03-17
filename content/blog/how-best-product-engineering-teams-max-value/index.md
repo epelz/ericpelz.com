@@ -28,14 +28,15 @@ between our old and new frameworks that could impact the product, and how to
 build abstractions to harness the power of the feature.
 
 My favorite kinds of teams involve much more product collaboration. When
-building powerful new features, there are many types\* of risk at play — product
-and engineering are two of the most common — and you need to think of them all
-when planning a product engineering project. Product risk can be very dangerous:
-if you build the wrong feature, you might need to re-build the right feature
-afterwards. At best, this means wasting some time. At worst, this means building
-and maintaining two separate systems instead of one. This means the scope of
-problem solving changes completely, as an engineer needs to be a partner in the
-product process and think through both engineering and product tradeoffs.
+building powerful new features, there are many types[^1] of risk at play —
+product and engineering are two of the most common — and you need to think of
+them all when planning a product engineering project. Product risk can be very
+dangerous: if you build the wrong feature, you might need to re-build the right
+feature afterwards. At best, this means wasting some time. At worst, this means
+building and maintaining two separate systems instead of one. This means the
+scope of problem solving changes completely, as an engineer needs to be a
+partner in the product process and think through both engineering and product
+tradeoffs.
 
 In other words, be involved in all stages of the product process. Do this from
 the start, even before identifying the problem statement and initial hypotheses.
@@ -46,21 +47,23 @@ legacy technologies live, intuit which solutions are simpler, and so on. A
 successful collaboration results in a better product delivered with higher
 velocity.
 
-Some of the most common types of risk I’ve seen (see
-[here](https://www.sciencedirect.com/science/article/pii/S1877705814002203) for
-more):
+[^1]:
 
-- _Engineering risk_ — are there a lot of unknowns in the technical plan? Does
-  this use new technologies that aren’t often used? Does this touch a lot of old
-  code or systems that the team doesn’t know or that may need
-  updating/refactoring? Will this cause stability fallout?
-- _Product risk_ — are we confident in the product plan? Will we need to iterate
-  on the feature for it to be useful? Could it completely flop and need to be
-  re-done, after showing to users?
-- _Team risk_ — how engaged are team members? If a milestone slips, will that
-  make the team feel demotivated? If added uncertainty or roadblocks come up,
-  will team members move as quickly? How confident are team members in the
-  team’s leadership?
+  Some of the most common types of risk I’ve seen (see
+  [here](https://www.sciencedirect.com/science/article/pii/S1877705814002203)
+  for more):
+
+  - _Engineering risk_ — are there a lot of unknowns in the technical plan? Does
+    this use new technologies that aren’t often used? Does this touch a lot of
+    old code or systems that the team doesn’t know or that may need
+    updating/refactoring? Will this cause stability fallout?
+  - _Product risk_ — are we confident in the product plan? Will we need to
+    iterate on the feature for it to be useful? Could it completely flop and
+    need to be re-done, after showing to users?
+  - _Team risk_ — how engaged are team members? If a milestone slips, will that
+    make the team feel demotivated? If added uncertainty or roadblocks come up,
+    will team members move as quickly? How confident are team members in the
+    team’s leadership?
 
 ### How to approach these problems
 
