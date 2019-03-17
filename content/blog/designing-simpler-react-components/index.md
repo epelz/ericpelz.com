@@ -3,6 +3,7 @@ title: Designing Simpler React Components
 date: "2016-03-22"
 description: Patterns learned from porting the Asana application to React
 ---
+
 ## Patterns learned from porting the Asana application to React
 
 When using React to build large-scale applications, a number of frameworks have
@@ -11,23 +12,23 @@ application-level concerns. We’re not going to talk about that — instead, we
 focus on another essential piece: how do you design React components for use in
 a large application and have it scale?
 
-*****
+---
 
 A goal to strive for when using any framework or language is
 [simplicity](https://www.youtube.com/watch?v=rI8tNMsozo0). Over time, it is the
 simpler application that is more maintainable, readable, testable, and
 performant. React is no exception, and we found that one of the best ways to
-manifestsimplicity is by striving for [functional
-purity](https://wiki.haskell.org/Functional_programming#Purity) in components,
-and by developing patterns that achieve this purity by default. Purity leads to
-more isolated and inherently simpler components, thereby bringing about a less
-braided and simpler system.
+manifest simplicity is by striving for
+[functional purity](https://wiki.haskell.org/Functional_programming#Purity) in
+components, and by developing patterns that achieve this purity by default.
+Purity leads to more isolated and inherently simpler components, thereby
+bringing about a less braided and simpler system.
 
 This is something we’ve thought a lot about at Asana — before we started using
 React, we had been building our in-house functionally reactive framework, Luna,
 since 2008. In iterating on this framework and building our web application,
-we’ve learned what worked and what caused long-term problems ([read
-more](https://blog.asana.com/2015/05/the-evolution-of-asanas-luna-framework/)).
+we’ve learned what worked and what caused long-term problems
+([read more](https://blog.asana.com/2015/05/the-evolution-of-asanas-luna-framework/)).
 Through that, we’ve developed a series of overarching design principles that can
 be applied everywhere, but particularly in React.
 
@@ -65,12 +66,13 @@ organizing them into sets of modules.
 We’ve encountered two main classes of these which occur in almost all of our
 components:
 
-1.  Data model helpers to derive a result from one or more objects ([for
-example](https://gist.github.com/epelz/c00e020fbaca0d5d99dc): to determine
-whether a user is currently on vacation)
+1.  Data model helpers to derive a result from one or more objects
+    ([for example](https://gist.github.com/epelz/c00e020fbaca0d5d99dc): to
+    determine whether a user is currently on vacation)
 1.  Mutation helpers to perform client- and server-side mutations in response to
-user actions ([for example](https://gist.github.com/epelz/817c3a346f43b6d7e357):
-to heart a task).
+    user actions
+    ([for example](https://gist.github.com/epelz/817c3a346f43b6d7e357): to heart
+    a task).
 
 ### Use pure components, avoiding impure pitfalls
 
@@ -103,7 +105,7 @@ namespace.
 
 #### Render Callbacks
 
-A now-antipattern that used to be quite prevalent for us is a *render callback:*
+A now-antipattern that used to be quite prevalent for us is a _render callback:_
 a function passed as a prop to a component, which allows that component to
 render something. A common use-case of a render callback was to allow a child to
 render something using data it did not receive in props. For example, if we
@@ -113,7 +115,7 @@ components, we would pass the component a callback to render the child.
 Unfortunately, render callbacks are inherently impure because they can use
 whatever variables its function has closed on. So, because of our assumption of
 pure components, if any of the outside environment changes then our component
-would *not* re-render.
+would _not_ re-render.
 
 Let’s see this in a code snippet.
 
@@ -125,13 +127,13 @@ interface ParentProps {
 class ParentComponent extends PureComponent<ParentProps, {}> {
   render() {
     return React.createElement(ChildComponent, {
-      renderSomething: this._renderSomethingForIdx
+      renderSomething: this._renderSomethingForIdx,
     });
   }
   private _renderSomethingForIdx(idx: number) {
     return React.createElement(SomeOtherComponent, {
       object: this.props.someObject,
-      idx: idx
+      idx: idx,
     });
   }
 }
@@ -149,15 +151,16 @@ class ChildComponent extends PureComponent<ChildProps, {}> {
 
 In this snippet, ParentComponent passes a render callback to ChildComponent, and
 that render callback uses someObject from props. Since ChildComponent uses this
-function for its rendering behavior, then it will *not* re-render if someObject
+function for its rendering behavior, then it will _not_ re-render if someObject
 changes.
 
 Luckily, you can avoid using a render callback in one of three ways, depending
 on your constraints, and each allows us to keep our pure component assumption.
 
 ##### Alternative 1
-Pass all information needed for rendering to the child
-component, and have that child render the component directly.
+
+Pass all information needed for rendering to the child component, and have that
+child render the component directly.
 
 ```typescript
 interface ParentProps {
@@ -165,8 +168,8 @@ interface ParentProps {
 }
 class ParentComponent extends PureComponent<ParentProps, {}> {
   render() {
-    return React.createElement(ChildComponent, {     
-      someObject: this.props.someObject
+    return React.createElement(ChildComponent, {
+      someObject: this.props.someObject,
     });
   }
 }
@@ -180,7 +183,7 @@ class ChildComponent extends PureComponent<ChildProps, {}> {
     // ... some other behavior ...
     return React.createElement(SomeOtherComponent, {
       object: this.props.someObject,
-      idx: idx
+      idx: idx,
     });
   }
 }
@@ -192,8 +195,8 @@ excess re-rendering, and do not break any contextual abstraction boundary in the
 component.
 
 ##### Alternative 2
-Render the component in its entirety and pass that to the child
-component
+
+Render the component in its entirety and pass that to the child component
 
 ```typescript
 interface ParentProps {
@@ -201,14 +204,14 @@ interface ParentProps {
 }
 class ParentComponent extends PureComponent<ParentProps, {}> {
   render() {
-    return React.createElement(ChildComponent, {     
-      somethingElement: this._renderSomethingElement()
+    return React.createElement(ChildComponent, {
+      somethingElement: this._renderSomethingElement(),
     });
   }
   private _renderSomethingElement() {
     return React.createElement(SomeOtherComponent, {
       object: this.props.someObject,
-      idx: 123 // Suppose this had access to the idx
+      idx: 123, // Suppose this had access to the idx
     });
   }
 }
@@ -228,8 +231,9 @@ In cases that ParentComponent has all of the information needed to render
 SomeOtherComponent, we can just pass it down as a prop to the ChildComponent.
 
 ##### Alternative 3
-Render the component partially, pass the ReactElement to the
-child component, and use React’s cloneElement to inject the remaining props.
+
+Render the component partially, pass the ReactElement to the child component,
+and use React’s cloneElement to inject the remaining props.
 
 ```typescript
 interface ParentProps {
@@ -237,14 +241,14 @@ interface ParentProps {
 }
 class ParentComponent extends PureComponent<ParentProps, {}> {
   render() {
-    return React.createElement(ChildComponent, {     
-      somethingElement: this._renderSomethingElement()
+    return React.createElement(ChildComponent, {
+      somethingElement: this._renderSomethingElement(),
     });
   }
   private _renderSomethingElement() {
     return React.createElement(SomeOtherComponent, {
       object: this.props.someObject,
-      idx: null // injected by ChildComponent
+      idx: null, // injected by ChildComponent
     });
   }
 }
@@ -258,7 +262,7 @@ class ChildComponent extends PureComponent<ChildProps, {}> {
 
     // Clone the passed-in element, and add in the remaining prop.
     return React.cloneElement(this.props.somethingElement, {
-      idx: 123
+      idx: 123,
     });
   }
 }
@@ -274,14 +278,14 @@ section, we’ll dig into a real world example to make it more concrete.
 
 Composition is an immensely useful pattern in React for achieving separation of
 concerns. Many great philosophies around this have developed, such as dividing
-components between [presentational and container
-components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.yzeg1rmzv).
+components between
+[presentational and container components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.yzeg1rmzv).
 However, for some high-level components, such as a general component for
 drag-and-drop, composition necessitated either use of a *render callback *or
 added complexity. In such cases, we found the aforementioned **injector
 pattern** helpful.
 
-*****
+---
 
 **Example from Asana:** Simplifying the Task List row
 
@@ -322,7 +326,7 @@ class TaskList extends PureComponent<Props, {}> {
 However, we found this difficult to accomplish without introducing a *render
 callback *or complicating the DOM hierarchy, because the DraggableRowContainer
 needed to add to DOM nodes (in this case, adding class names). A solution could
-have been to use a *render callback*, but that broke our purity assumption.
+have been to use a _render callback_, but that broke our purity assumption.
 
 Instead, we were able to use the injector pattern. DraggableRowContainer would
 clone its child (a TaskRow), and “inject” props to the child to enable
@@ -333,7 +337,7 @@ interface (in this case, expecting a class name to add styling on drag hover).
 Therefore, our task row has fewer responsibilities, we have a re-usable
 DraggableRowContainer component, and our DOM hierarchy is unchanged.
 
-*****
+---
 
 The injection pattern has proved useful in our application, particularly when
 used to create general abstraction components (drag-and-drop, loading data, and
@@ -352,7 +356,7 @@ parts of our application in React while maintaining simplicity and performance.
 In all, though, the best principle is to continue to take time to reflect along
 the way and uncover new opportunities to simplify.
 
-*****
+---
 
-*Thanks to Kevin Der, Josh Smith, and Phips Peter for their great work in
-contributing to these patterns.*
+_Thanks to Kevin Der, Josh Smith, and Phips Peter for their great work in
+contributing to these patterns._

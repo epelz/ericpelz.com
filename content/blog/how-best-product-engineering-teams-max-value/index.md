@@ -28,7 +28,7 @@ between our old and new frameworks that could impact the product, and how to
 build abstractions to harness the power of the feature.
 
 My favorite kinds of teams involve much more product collaboration. When
-building powerful new features, there are many types* of risk at play — product
+building powerful new features, there are many types\* of risk at play — product
 and engineering are two of the most common — and you need to think of them all
 when planning a product engineering project. Product risk can be very dangerous:
 if you build the wrong feature, you might need to re-build the right feature
@@ -46,19 +46,21 @@ legacy technologies live, intuit which solutions are simpler, and so on. A
 successful collaboration results in a better product delivered with higher
 velocity.
 
-Some of the most common types of risk I’ve seen (see [here](https://www.sciencedirect.com/science/article/pii/S1877705814002203) for more):
+Some of the most common types of risk I’ve seen (see
+[here](https://www.sciencedirect.com/science/article/pii/S1877705814002203) for
+more):
 
-- *Engineering risk* — are there a lot of unknowns in the technical plan? Does this
-use new technologies that aren’t often used? Does this touch a lot of old code
-or systems that the team doesn’t know or that may need updating/refactoring?
-Will this cause stability fallout?
-- *Product risk* — are we confident in the product plan? Will we need to iterate on
-the feature for it to be useful? Could it completely flop and need to be
-re-done, after showing to users?
-- *Team risk* — how engaged are team members? If a milestone slips, will that make
-the team feel demotivated? If added uncertainty or roadblocks come up, will team
-members move as quickly? How confident are team members in the team’s
-leadership?
+- _Engineering risk_ — are there a lot of unknowns in the technical plan? Does
+  this use new technologies that aren’t often used? Does this touch a lot of old
+  code or systems that the team doesn’t know or that may need
+  updating/refactoring? Will this cause stability fallout?
+- _Product risk_ — are we confident in the product plan? Will we need to iterate
+  on the feature for it to be useful? Could it completely flop and need to be
+  re-done, after showing to users?
+- _Team risk_ — how engaged are team members? If a milestone slips, will that
+  make the team feel demotivated? If added uncertainty or roadblocks come up,
+  will team members move as quickly? How confident are team members in the
+  team’s leadership?
 
 ### How to approach these problems
 
@@ -94,32 +96,34 @@ possible, we “discount” the value based on when it will occur.
 
 Where:
 
-- *Ui* represents the net value from release i. This combines a few factors:
-*Ui=Vi-Di-Ci*
-  - *Note: assume these are all the same unit — usually dollars, which is a fairly
-generic unit that we can translate to.*
-  - How much value (*Vi*) do users get from a release? For example, they can do a
-new workflow that they previously couldn’t.
-  - How much disutility (*Di*) do users get from a release? For example, if you
-delivered a half-baked release which degrades user trust.
-  - How much cost (*Ci*) did your team incur from release? For example, 5 engineers
-spent 2 weeks on features.
+- _Ui_ represents the net value from release i. This combines a few factors:
+  _Ui=Vi-Di-Ci_
 
-- *ri* represents the probability a release can happen to yield the value *Ui*.
-This models the risk of a release.
-  - *Note: assumes that a release is all or nothing. In practice, a release would be
-delayed or its adoption would be lower than expected. This could be modeled with
-many more “potential releases” at different probabilities.*
-  - For example, this might be: product risk (build the wrong thing), engineering
-risk, and so on.
-  - For example, you can de-risk a project by having an early release beta program
-to receive feedback.
+  - _Note: assume these are all the same unit — usually dollars, which is a
+    fairly generic unit that we can translate to._
+  - How much value (_Vi_) do users get from a release? For example, they can do
+    a new workflow that they previously couldn’t.
+  - How much disutility (_Di_) do users get from a release? For example, if you
+    delivered a half-baked release which degrades user trust.
+  - How much cost (_Ci_) did your team incur from release? For example, 5
+    engineers spent 2 weeks on features.
 
-- *1/(1+d)^Δti* represents the “[discount
-factor](https://en.wikipedia.org/wiki/Discounting#Discount_factor)”
-  - *d* is the discount rate — the value that can be earned per unit of time on a
-different investment of similar risk.
-  - *Δti* is how long has occurred between release i and i-1.
+- _ri_ represents the probability a release can happen to yield the value _Ui_.
+  This models the risk of a release.
+
+  - _Note: assumes that a release is all or nothing. In practice, a release
+    would be delayed or its adoption would be lower than expected. This could be
+    modeled with many more “potential releases” at different probabilities._
+  - For example, this might be: product risk (build the wrong thing),
+    engineering risk, and so on.
+  - For example, you can de-risk a project by having an early release beta
+    program to receive feedback.
+
+- _1/(1+d)^Δti_ represents the
+  “[discount factor](https://en.wikipedia.org/wiki/Discounting#Discount_factor)”
+  - _d_ is the discount rate — the value that can be earned per unit of time on
+    a different investment of similar risk.
+  - _Δti_ is how long has occurred between release i and i-1.
 
 With this, we can model expected user value from a series of releases. While
 I’ve never calculated this explicitly, and this model is highly simplified, it
@@ -132,55 +136,53 @@ about maximizing value. These also are reflected in the simplistic model above.
 
 #### On thinking through a release plan
 
-* You should aggressive split a feature into small releases. If it adds no risk or
-cost, then splitting a feature into multiple releases is a great way to increase
-user value. Earlier and more frequent delivery means parts of the feature can
-get in the hands of users sooner. In our model, this is reflected by the
-discount factor yielding lower net value.
-* There are many considerations to a release plan — feature readiness, market
-conditions, product and engineering risk — and coming up with a plan should be a
-collaboration of all interested parties. After the initial planning for a
-project, consider whether incremental or early releases would be useful.
+- You should aggressive split a feature into small releases. If it adds no risk
+  or cost, then splitting a feature into multiple releases is a great way to
+  increase user value. Earlier and more frequent delivery means parts of the
+  feature can get in the hands of users sooner. In our model, this is reflected
+  by the discount factor yielding lower net value.
+- There are many considerations to a release plan — feature readiness, market
+  conditions, product and engineering risk — and coming up with a plan should be
+  a collaboration of all interested parties. After the initial planning for a
+  project, consider whether incremental or early releases would be useful.
 
 #### On thinking about engineering design
 
-* Adding engineering debt or complexity is dangerous. It can complicate all future
-development or add risk to all future releases. As such, optimizing for the
-short-term through engineering complexity can have dramatic consequences to
-long-term user value. This often manifests by building “partial” features that
-ultimately introduce debt, rather than building the smallest complete unit of
-user value.
-* Balance is important — while you should always think of future engineering
-design, you shouldn’t over-engineer such that you deliver something to users
-much much later. If there is product uncertainty with the future (for example,
-it’s not clear how a feature will be extended or generalized), then you risk
-[building the wrong
-abstraction](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
-which can slow future development.
-* All engineering complexity will result in additional cost or risk, so it is
-almost always better to [circumvent
-complexity](/circumventing-engineering-complexity)
-when possible. Being a partner in the product process will give you context to
-think through non-engineering solutions to complexity, thereby increasing
-expected value.
+- Adding engineering debt or complexity is dangerous. It can complicate all
+  future development or add risk to all future releases. As such, optimizing for
+  the short-term through engineering complexity can have dramatic consequences
+  to long-term user value. This often manifests by building “partial” features
+  that ultimately introduce debt, rather than building the smallest complete
+  unit of user value.
+- Balance is important — while you should always think of future engineering
+  design, you shouldn’t over-engineer such that you deliver something to users
+  much much later. If there is product uncertainty with the future (for example,
+  it’s not clear how a feature will be extended or generalized), then you risk
+  [building the wrong abstraction](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
+  which can slow future development.
+- All engineering complexity will result in additional cost or risk, so it is
+  almost always better to
+  [circumvent complexity](/circumventing-engineering-complexity) when possible.
+  Being a partner in the product process will give you context to think through
+  non-engineering solutions to complexity, thereby increasing expected value.
 
 #### On mitigating risk
 
-* It’s incredibly helpful to sequence work such that you mitigate risk for large
-releases. Suppose you are planning a big release in 6 months and the product
-risk is currently high. You might have the opportunity to halve product risk
-with a small earlier release to validate hypotheses. This will ultimately double
-the final release’s expected user value. You can also apply this technique when
-using a new technology with large technical risk. If you de-risk a project early
-with a small release to validate an engineering plan, you will improve the
-project’s expected value.
-* Different types of risk compound one another, so it’s dangerous to combine
-multiple types of risk in a single release. Consider all types of risk, and
-strive to focus a release to a single type of risk (e.g. couple riskier
-engineering with less risky product work).
-* It’s helpful to think about this from the perspective of “minimizing the worst
-outcome”. In other words, think about what kind of risk is biggest, and what
-contingencies you have in place. For example, is your engineering design
-resilient to portions of your product changing as a result of beta testing? If
-not, consider doing that for areas with high product risk, or deferring
-engineering design until you have higher confidence on the product direction.
+- It’s incredibly helpful to sequence work such that you mitigate risk for large
+  releases. Suppose you are planning a big release in 6 months and the product
+  risk is currently high. You might have the opportunity to halve product risk
+  with a small earlier release to validate hypotheses. This will ultimately
+  double the final release’s expected user value. You can also apply this
+  technique when using a new technology with large technical risk. If you
+  de-risk a project early with a small release to validate an engineering plan,
+  you will improve the project’s expected value.
+- Different types of risk compound one another, so it’s dangerous to combine
+  multiple types of risk in a single release. Consider all types of risk, and
+  strive to focus a release to a single type of risk (e.g. couple riskier
+  engineering with less risky product work).
+- It’s helpful to think about this from the perspective of “minimizing the worst
+  outcome”. In other words, think about what kind of risk is biggest, and what
+  contingencies you have in place. For example, is your engineering design
+  resilient to portions of your product changing as a result of beta testing? If
+  not, consider doing that for areas with high product risk, or deferring
+  engineering design until you have higher confidence on the product direction.

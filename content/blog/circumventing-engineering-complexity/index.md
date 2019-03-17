@@ -3,23 +3,24 @@ title: Circumventing engineering complexity
 date: "2017-09-11"
 description: Examples from building Custom Fields at Asana.
 ---
+
 ## Examples from building Custom Fields at Asana
 
 Having simple code has a big impact on the velocity you can write code and how
-enjoyable it is to do it. At Asana, one of our engineering values is to [strive
-for simplicity](https://blog.asana.com/2016/05/asana-engineering-values/). Most
-of the time, we talk about this in the context of [engineering
-design](https://medium.com/building-asana/designing-simpler-react-components-13a0061afd16).
+enjoyable it is to do it. At Asana, one of our engineering values is to
+[strive for simplicity](https://blog.asana.com/2016/05/asana-engineering-values/).
+Most of the time, we talk about this in the context of
+[engineering design](https://medium.com/building-asana/designing-simpler-react-components-13a0061afd16).
 But simplicity is also a crucial guiding principle when making product
 decisions.
 
 Engineers often try to solve hard problems — and enjoy doing so. But it’s even
-better to avoid the hard problem altogether. Last year, we released [Custom
-Fields](https://blog.asana.com/2016/09/track-anything-with-custom-fields/), a
-powerful feature that integrated across Asana. As a result, it had the potential
-to introduce new or magnify existing complexity. Rather than choosing the least
-complex engineering decision available, we strived to avoid the complexity
-entirely.
+better to avoid the hard problem altogether. Last year, we released
+[Custom Fields](https://blog.asana.com/2016/09/track-anything-with-custom-fields/),
+a powerful feature that integrated across Asana. As a result, it had the
+potential to introduce new or magnify existing complexity. Rather than choosing
+the least complex engineering decision available, we strived to avoid the
+complexity entirely.
 
 In this post, we’ll talk about a few examples from Custom Fields where product
 complexity influenced engineering. For each case, we sought to circumvent
@@ -58,9 +59,10 @@ model itself, but that wasn’t tractable given our launch plan and other ongoin
 projects.
 
 #### Our Solution: Buffer the complexity with a module
-| ![](./3_buffer_complexity.jpeg) |
-|:--:|
-| *Pure functions like calculatePermissions can buffer old data model complexity into a simple enum.* |
+
+|                                   ![](./3_buffer_complexity.jpeg)                                   |
+| :-------------------------------------------------------------------------------------------------: |
+| _Pure functions like calculatePermissions can buffer old data model complexity into a simple enum._ |
 
 We distilled the possible states into an enum, and then built pure helper
 functions to handle the thorns in the data model. This meant that our
@@ -99,9 +101,10 @@ Fields.
 What do we do with the data already on those tasks?
 
 #### Initial Plan: Incorporate Custom Fields in all project actions
-| ![](./4_initial_plan.png) |
-|:--:|
-| *An interstitial dialog to warn the user about custom field ramifications from their action, part of the initial product spec.* |
+
+|                                                    ![](./4_initial_plan.png)                                                    |
+| :-----------------------------------------------------------------------------------------------------------------------------: |
+| _An interstitial dialog to warn the user about custom field ramifications from their action, part of the initial product spec._ |
 
 The initial product spec was to clear values from tasks if they no longer have
 fields bestowed onto them. Since this is a destructive action, we would prompt
@@ -123,9 +126,9 @@ mental model, but it is simpler.
 
 #### Our Solution: Divorce custom field values from project actions
 
-| ![](./5_orphaned_fields.png) |
-|:--:|
-| *“Orphaned” custom fields are disabled in the UI, and no longer conferred to new tasks. Existing data is retained.* |
+|                                            ![](./5_orphaned_fields.png)                                             |
+| :-----------------------------------------------------------------------------------------------------------------: |
+| _“Orphaned” custom fields are disabled in the UI, and no longer conferred to new tasks. Existing data is retained._ |
 
 So we did just that. When you “orphan” a custom field on a task, we disable it
 in the UI. The data is still there and we have a helpful message explaining why
@@ -165,9 +168,9 @@ and pretend the option never existed.
 
 #### Our Solution: Reduce propagation of changes from a single action
 
-| ![](./6_archived_fields.png) |
-|:--:|
-| *Archived dropdown options are annotated in the UI, and existing data is retained. New tasks cannot use archived options.* |
+|                                                ![](./6_archived_fields.png)                                                |
+| :------------------------------------------------------------------------------------------------------------------------: |
+| _Archived dropdown options are annotated in the UI, and existing data is retained. New tasks cannot use archived options._ |
 
 Instead, we went back to the product goals and came up with an alternative
 solution: to strikethrough archived options and not let new values be set to it.
@@ -205,6 +208,8 @@ impact on implementation time and simplicity. Our key takeaway is that when
 you’re working on product features, it’s often best to consider ways to
 circumvent the complexity, rather than adapting to it.
 
-*****
+---
 
-*Originally published at [blog.asana.com](https://blog.asana.com/2017/09/circumventing-engineering-complexity-examples-from-asana/) on September 11, 2017.*
+_Originally published at
+[blog.asana.com](https://blog.asana.com/2017/09/circumventing-engineering-complexity-examples-from-asana/)
+on September 11, 2017._

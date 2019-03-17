@@ -3,6 +3,7 @@ title: How to propel new engineers with code review
 date: "2016-12-17"
 description: Maximizing mentorship, improving code quality, and saving time
 ---
+
 ## Maximizing mentorship, improving code quality, and saving time
 
 Many think of code review as a tool to prevent bugs from hitting production, or
@@ -44,7 +45,7 @@ improvement in code quality, and the net time saving is incredible.
 ### Tips when writing code
 
 When you commit code, think about the code you’re about to commit from the
-context of a code reviewer. All of us *should* want the reviewer to have an easy
+context of a code reviewer. All of us _should_ want the reviewer to have an easy
 time — not only will it save them time, but will also improve the quality of
 feedback you receive. Consider the following tips:
 
@@ -61,12 +62,12 @@ One of my favorite things to do when sending out a code review is to mention
 problems I can anticipate, quirks in my changes, or reasons for certain
 decisions that I made. This is really helpful, for a few reasons:
 
-* Highlights these areas for your reviewer so they can give input on whether they
-agree, or give tips to alleviate risk
-* Saves your reviewer time for code with complexity, as they can understand *why*
-the complexity is there
-* A future engineer who looks at the code can find the review task, and can gain
-insight into your thought process and decision
+- Highlights these areas for your reviewer so they can give input on whether
+  they agree, or give tips to alleviate risk
+- Saves your reviewer time for code with complexity, as they can understand
+  _why_ the complexity is there
+- A future engineer who looks at the code can find the review task, and can gain
+  insight into your thought process and decision
 
 #### Split your commit into digestible chunks
 
@@ -76,8 +77,8 @@ documentation, or other common issues. Additionally, it helps your reviewer by
 reducing the surface area of each commit, thus saving them time to understand
 the context of the change and leads to better feedback.
 
-Note: Git provides some tools to help you do this, like [git add
--i](https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging).
+Note: Git provides some tools to help you do this, like
+[git add -i](https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging).
 
 #### Find you’re receiving similar feedback over and over?
 
@@ -103,30 +104,30 @@ It’s not easy, especially when changes aren’t in an area of the code that yo
 very familiar with. In these cases, I try to break down the code review process
 into a few parts:
 
-1. **Get a high-level sense of the changes**<br>First, read the commit message. If this
-is a UI change, look at a screenshot or GIF of the change.
-1. **Get a sense of the surface area of the changes**<br>Read the list of files that
-were changed. Have you seen these files recently? If not, skim them first (API
-and documentation) to get a sense of them. If there’s way too much context to
-gain, consider cc’ing someone else.<br>By gaining more context of the changed
-files, you can limit the number of times you add comments and later keep reading
-to find out they were all for moot.
+1. **Get a high-level sense of the changes**<br>First, read the commit message.
+   If this is a UI change, look at a screenshot or GIF of the change.
+1. **Get a sense of the surface area of the changes**<br>Read the list of files
+   that were changed. Have you seen these files recently? If not, skim them
+   first (API and documentation) to get a sense of them. If there’s way too much
+   context to gain, consider cc’ing someone else.<br>By gaining more context of
+   the changed files, you can limit the number of times you add comments and
+   later keep reading to find out they were all for moot.
 1. **Skim the changes to see if there were any API, abstraction, or structural
-changes**<br>Don’t look at the actual implementation changes yet. One of the most
-important things to see is how the change fits into the overall system. Is there
-a follow-up change (by someone else) coming which is incompatible with these
-changes? Will the changes lead to an intractable or complex pattern that others
-will want to follow?<br> You may decide that the entire approach should be
-rethought. In these cases, be tactful in how you explain your thoughts (I often
-choose to ask leading questions or relate to other examples). Additionally,
-consider that you may be missing context and could be wrong — the engineer
-probably had good reason to do what they chose.
-1. **Finally, look at the actual implementation changes and tests**<br>Now, once you’re
-happy with the high level changes, go through the code and look for
-surface-level feedback. For example, are their methods simple and easy to
-understand? Do they follow best practices and style guidelines? Have they given
-adequate comments? Do their changes have ample test coverage, or have a good
-reason to miss tests?
+   changes**<br>Don’t look at the actual implementation changes yet. One of the
+   most important things to see is how the change fits into the overall system.
+   Is there a follow-up change (by someone else) coming which is incompatible
+   with these changes? Will the changes lead to an intractable or complex
+   pattern that others will want to follow?<br> You may decide that the entire
+   approach should be rethought. In these cases, be tactful in how you explain
+   your thoughts (I often choose to ask leading questions or relate to other
+   examples). Additionally, consider that you may be missing context and could
+   be wrong — the engineer probably had good reason to do what they chose.
+1. **Finally, look at the actual implementation changes and tests**<br>Now, once
+   you’re happy with the high level changes, go through the code and look for
+   surface-level feedback. For example, are their methods simple and easy to
+   understand? Do they follow best practices and style guidelines? Have they
+   given adequate comments? Do their changes have ample test coverage, or have a
+   good reason to miss tests?
 
 #### Keep giving the same feedback?
 
@@ -180,8 +181,8 @@ doing anyone any good, so reflect on this and be real. It may be best to pass
 the review to someone else who is a better person for the review, or, if it’s
 not time sensitive, to snooze it for a few days.
 
-*****
+---
 
-*Thanks to Greg Slovacek for support and contributions, and to R.J. Aquino, Tim
+_Thanks to Greg Slovacek for support and contributions, and to R.J. Aquino, Tim
 Bavaro, Kevin Der, Bella Kazwell, Vincent Siao, and Isaac Wolkerstorfer for
-reviewing a draft.*
+reviewing a draft._
