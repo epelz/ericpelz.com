@@ -1,24 +1,33 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
-import { renderDateAndReadingTime } from "../utils/render"
-import { FaGithubAlt, FaLinkedin, FaTwitter } from "react-icons/fa"
-import "./index.scss"
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { rhythm } from "../utils/typography";
+import { renderDateAndReadingTime } from "../utils/render";
+import { FaGithubAlt, FaLinkedin, FaTwitter } from "react-icons/fa";
+import "./index.scss";
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const posts = data.allMarkdownRemark.edges;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          keywords={[`blog`, `javascript`, `typescript`, `react`]}
+          keywords={[
+            `blog`,
+            `javascript`,
+            `typescript`,
+            `react`,
+            `simplicity`,
+            `engineering`,
+            `coding`,
+            `product`,
+          ]}
         />
         <Bio />
         <h1
@@ -36,7 +45,7 @@ class BlogIndex extends React.Component {
           {this._renderIcon(<FaTwitter />, "https://twitter.com/PelzEric")}
         </h1>
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+          const title = node.frontmatter.title || node.fields.slug;
           return (
             <div key={node.fields.slug}>
               <h3
@@ -55,10 +64,10 @@ class BlogIndex extends React.Component {
                 }}
               />
             </div>
-          )
+          );
         })}
       </Layout>
-    )
+    );
   }
 
   _renderIcon(icon, url) {
@@ -70,11 +79,11 @@ class BlogIndex extends React.Component {
       >
         {icon}
       </a>
-    )
+    );
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -102,4 +111,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

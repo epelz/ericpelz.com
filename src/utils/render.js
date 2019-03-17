@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export function renderDateAndReadingTime(post) {
   return (
@@ -7,5 +7,5 @@ export function renderDateAndReadingTime(post) {
       &nbsp;▪&nbsp;
       {post.fields.readingTime.text}
     </React.Fragment>
-  )
+  );
 }
