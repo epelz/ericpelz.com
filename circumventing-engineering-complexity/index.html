@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.625 -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}h1{margin-left:0;margin-right:0;margin-top:2.4375rem;padding-bottom:calc(0.40625rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.21875rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;border-bottom:1px solid hsla(0,0%,0%,0.07);}h2{margin-left:0;margin-right:0;margin-top:1.625rem;padding-bottom:calc(0.40625rem - 1px);padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.40625rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;border-bottom:none;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;color:hsla(0,0%,0%,0.53);font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:600;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}ul{margin-left:1.625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.625rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;font-size:0.85rem;line-height:1.625rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;font-size:1rem;line-height:1.625rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:calc(0.8125rem - 1px);padding-right:0;padding-top:0;margin-bottom:0.8125rem;border-left:4px solid hsla(0,0%,0%,0.13);color:hsla(0,0%,0%,0.53);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(0.8125rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:0.8125rem;}b{font-weight:600;}strong{font-weight:600;}dt{font-weight:600;}th{font-weight:600;}li{margin-bottom:calc(0.8125rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.625rem;margin-bottom:calc(0.8125rem / 2);margin-top:calc(0.8125rem / 2);}li > ul{margin-left:1.625rem;margin-bottom:calc(0.8125rem / 2);margin-top:calc(0.8125rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(0.8125rem / 2);}code{font-size:0.85rem;line-height:1.625rem;}kbd{font-size:0.85rem;line-height:1.625rem;}samp{font-size:0.85rem;line-height:1.625rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.08333rem;padding-right:1.08333rem;padding-top:0.8125rem;padding-bottom:calc(0.8125rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}h3,h4,h5,h6{margin-bottom:0.8125rem;margin-top:1.625rem;}ol,ul{margin-left:2.03125rem;}li>ol,li>ul{margin-left:2.03125rem;}a{color:#4078c0;text-decoration:none;}a:hover,a:active{text-decoration:underline;}</style><title data-react-helmet="true">Circumventing engineering complexity | Eric Pelz</title><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="shortcut icon" href="/icons/icon-48x48.png?v=568eb0e32688abc3c67b9959b2d1537c560a2dfd"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=568eb0e32688abc3c67b9959b2d1537c560a2dfd"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=568eb0e32688abc3c67b9959b2d1537c560a2dfd"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=568eb0e32688abc3c67b9959b2d1537c560a2dfd"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=568eb0e32688abc3c67b9959b2d1537c560a2dfd"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=568eb0e32688abc3c67b9959b2d1537c560a2dfd"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=568eb0e32688abc3c67b9959b2d1537c560a2dfd"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=568eb0e32688abc3c67b9959b2d1537c560a2dfd"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=568eb0e32688abc3c67b9959b2d1537c560a2dfd"/><meta name="generator" content="Gatsby 2.1.37"/><meta data-react-helmet="true" name="description" content="Examples from building Custom Fields at Asana."/><meta data-react-helmet="true" property="og:title" content="Circumventing engineering complexity"/><meta data-react-helmet="true" property="og:description" content="Examples from building Custom Fields at Asana."/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Eric Pelz"/><meta data-react-helmet="true" name="twitter:title" content="Circumventing engineering complexity"/><meta data-react-helmet="true" name="twitter:description" content="Examples from building Custom Fields at Asana."/><style data-href="/styles.3080b1617c7dde1f6f2f.css">@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-4124805c0503dbfe42dd67d7f5715964.woff2) format("woff2"),url(/static/montserrat-latin-100-c8fb2f714bbc7bc3e8dfffa916b286dc.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e4bf47bd171a9b2a72dd84c58bf90edf.woff2) format("woff2"),url(/static/montserrat-latin-100italic-d1f3f2d02ee4d7d2d4b1ad865014f189.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-444ae007121264bc1969d49b4031f9b2.woff2) format("woff2"),url(/static/montserrat-latin-200-edbce16a90aa22c297a0307b85789837.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-f316c5d1ec40f3e68654c3f38b3999f3.woff2) format("woff2"),url(/static/montserrat-latin-200italic-d7bbb730d9b5e11720b3eb32326dcca7.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-0a7c6df06e85d978d096d4d18fd8d43d.woff2) format("woff2"),url(/static/montserrat-latin-300-5e86df2cad22d2ef2b03516334afae5e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-c076c4892bc7a4be7b9097e97a35012d.woff2) format("woff2"),url(/static/montserrat-latin-300italic-37c74a8d2d0d36a0a2c6e9a37ee15b0c.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-501ce09c42716a2f6e1503a25eb174c9.woff2) format("woff2"),url(/static/montserrat-latin-400-f29d2b8559699b6beb5b29b25b8bc572.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-882908d9950d9c86ebd380877f293d95.woff2) format("woff2"),url(/static/montserrat-latin-400italic-22e7b04e5f2a901d49d4d342315a715a.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-f0f2716c5fe401d175b88715e7d28685.woff2) format("woff2"),url(/static/montserrat-latin-500-991b453bf90a0980e78966d2af7e3d3a.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-4590ebba421b3288c305305d7fa7b504.woff2) format("woff2"),url(/static/montserrat-latin-500italic-f3d41e4cdcc2314e49ddcea751d6f87f.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-15c24f7109941777774ddd2c636c6a50.woff2) format("woff2"),url(/static/montserrat-latin-600-f6dc6096f48956908c1787d9a722570a.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-6d10b80529d5c36c7c09fca7193af0fc.woff2) format("woff2"),url(/static/montserrat-latin-600italic-02c4833312d94b1b0866f073023a250e.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-79982cd1f74c6fa7451bf9b37ead09ff.woff2) format("woff2"),url(/static/montserrat-latin-700-957e93fbbe131a59791cd820d98b7109.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-283438e9577fe6a684466bb100e105ec.woff2) format("woff2"),url(/static/montserrat-latin-700italic-ca627c5ccc65cf80c2ecaea44b997de9.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-35386154b78d046218fc8f88a44ff515.woff2) format("woff2"),url(/static/montserrat-latin-800-756655905d91b77960888262e7d58d35.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-e1b52a7bd83e2324db6d92bdc206844c.woff2) format("woff2"),url(/static/montserrat-latin-800italic-a69f0add9d86c1a84311d7dd8693ba4a.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-260c2ea3ef57feb82251952e605a36d5.woff2) format("woff2"),url(/static/montserrat-latin-900-186cae8091da578150d81958e217714a.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-d785fb9fc74588ffb7f306799709a97d.woff2) format("woff2"),url(/static/montserrat-latin-900italic-43b527fe77254f97ea36e2b54e845ec4.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-b1158cfcd4aacb9d8fb61625e37af46a.woff2) format("woff2"),url(/static/merriweather-latin-300-cc7de05e166e90320d7d896e0f72a19d.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-8fe52a48089d6ebe46db0b8e7cc66263.woff2) format("woff2"),url(/static/merriweather-latin-300italic-e1331f5397c2a673f9d3765138debdb5.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-8276fdb72ae8f4714d4e6eba704cc39f.woff2) format("woff2"),url(/static/merriweather-latin-400-69f09800f4f6479d06e44eba837df872.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-3a9be9ea9f7aa4af6de7307df21d9fc0.woff2) format("woff2"),url(/static/merriweather-latin-400italic-d76079ed7541a433a54f79316de086e9.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-fa534be7ffa380e39a7f6e03bf9a5e03.woff2) format("woff2"),url(/static/merriweather-latin-700-ba56ea84b8084b7ff9677f50d3cd81bd.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-1ef5edaaa20ae53ea50399884c5e48c6.woff2) format("woff2"),url(/static/merriweather-latin-700italic-534bc9e7ce93c73d73426e46acd78092.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-7528fb70e8a4a82c7305e72ff43ac25f.woff2) format("woff2"),url(/static/merriweather-latin-900-3799b6e2f5ed3fcccf9d7a708d7419fa.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-e1b4d2aaa78e12ad84aaf8a56321e4c2.woff2) format("woff2"),url(/static/merriweather-latin-900italic-2ae22f731b3424e8dbb4b37f7ca6e708.woff) format("woff")}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}.BlogIndex-iconRow{display:-webkit-flex;display:flex;-webkit-flex-direction:row-reverse;flex-direction:row-reverse}.BlogIndex-socialIcon{box-shadow:none;text-shadow:2px 2px 3px #cdcdcd;color:#696969}.BlogIndex-socialIcon:hover{color:#4078c0}</style><link as="script" rel="preload" href="/component---src-templates-blog-post-js-7c9d6e9eabeae30c4a07.js"/><link as="script" rel="preload" href="/0-9cc3d9cc6d2d2c8fd54e.js"/><link as="script" rel="preload" href="/app-fea37e87d27693cf87ce.js"/><link as="script" rel="preload" href="/styles-bf0391b51aede841e687.js"/><link as="script" rel="preload" href="/webpack-runtime-95fb468055472f2d3107.js"/><link as="fetch" rel="preload" href="/static/d/949/path---circumventing-engineering-complexity-d-5-e-c14-f7JdLXqUMy5q1rGii4aggmS3KBA.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;max-width:39rem;padding:2.4375rem 1.21875rem"><header><h2 style="font-size:2.2974rem;line-height:3.25rem;margin-top:0;color:#696969"><a style="box-shadow:none;text-decoration:none;color:inherit" href="/">Eric Pelz</a></h2></header><main><h1>Circumventing engineering complexity</h1><p style="font-size:0.8409rem;line-height:1.625rem;display:block;margin-bottom:1.625rem;margin-top:-1.08333rem">September 11, 2017<!-- --> ▪ <!-- -->8 min read</p><div><h2>Examples from building Custom Fields at Asana</h2>
+<p>Having simple code has a big impact on the velocity you can write code and how
+enjoyable it is to do it. At Asana, one of our engineering values is to
+<a href="https://blog.asana.com/2016/05/asana-engineering-values/">strive for simplicity</a>.
+Most of the time, we talk about this in the context of
+<a href="https://medium.com/building-asana/designing-simpler-react-components-13a0061afd16">engineering design</a>.
+But simplicity is also a crucial guiding principle when making product
+decisions.</p>
+<p>Engineers often try to solve hard problems — and enjoy doing so. But it’s even
+better to avoid the hard problem altogether. Last year, we released
+<a href="https://blog.asana.com/2016/09/track-anything-with-custom-fields/">Custom Fields</a>,
+a powerful feature that integrated across Asana. As a result, it had the
+potential to introduce new or magnify existing complexity. Rather than choosing
+the least complex engineering decision available, we strived to avoid the
+complexity entirely.</p>
+<p>In this post, we’ll talk about a few examples from Custom Fields where product
+complexity influenced engineering. For each case, we sought to circumvent
+complexity, and came up with a few learnings.</p>
+<h3>What are Custom Fields?</h3>
+<p>First, a little background on Custom Fields. One of our first internal use cases
+was group boba tea ordering. We have an Asana project which we use when we order
+Boba as a group, where anyone can create a task for their drink order.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/0897026ab3bc27a4fa6179e330537fb9/947d7/1_manage_custom_fields.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 579px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 57.34024179620035%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABBklEQVQoz6VS7XKDIBDk/V+xzVdnkphEJaLCeYJ0DzIObW3/dAWG4W5vzwUVQjhfquPx4+19X93uh8PpWt3qutntT11nYozLssQt4FxhOkcoUZ4GfDF674kmgJk3+UJuWw2RnCHMEIjIOgHzjAH8lEWakPth0Po5WrsG+n5gwRx/AXJQUYWwjKP9FrDWWZEmVEQUA+1vt31/1DAJ2St5GEYQQLcCh31pyheyMX1nzOpqUrboGU4lw9LKsjLnk8mnWgqzbtrz5TrRVCpL05nKnBZOe6mIkRtRkIM9Wne2MAx9IhFXFf8EDAt4G4+6geGtfhbKhBL4d9xFtu21F/9GcjTPXsV/4BOtT4UCXIv9AAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="1 manage custom fields"
+        title=""
+        src="/static/0897026ab3bc27a4fa6179e330537fb9/947d7/1_manage_custom_fields.png"
+        srcset="/static/0897026ab3bc27a4fa6179e330537fb9/ffce3/1_manage_custom_fields.png 148w,
+/static/0897026ab3bc27a4fa6179e330537fb9/40de9/1_manage_custom_fields.png 295w,
+/static/0897026ab3bc27a4fa6179e330537fb9/947d7/1_manage_custom_fields.png 579w"
+        sizes="(max-width: 579px) 100vw, 579px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>To have this working, first you need to create Custom Fields. In this case,
+we’ve created a bunch of fields around a tea order: flavor, drink temperature,
+sweetness level, and so on.</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/73544f01d3518f324dcd36f642ab77a4/cffcf/2_bobaz_fields.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 78.42261904761905%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsSAAALEgHS3X78AAABHElEQVQoz5VS0U7DMAzs//8Ur0jwyANiIATSEG1Zt8SuU8dLyi2VqiGhtT1VqZXm7N5dquPP9+P9nZPgPaWUwjCgkBBQAFjlUio+jX+BneocI7/ttK1THnNBKsgrUCWL/PJk9dfUD1vjalSnJA/h83n3TsyFPG4gp5zUVAc9X5AgDxrzOlRzm8merjudnFs7eZYaATMiRpdtZABUVd0fXN15mL2NDMM88YHk9WPPLDllWGCGKOMymbnH9TAzLrbPckTkFhknehHuAcEc4v76GrVte4uME7EAWWFO1x2vyU3TTAP+jwovLcBR5CwSNkyeryQK5IS0wLECdKzrpcnQCcNAIyJP5LzHL4A8yVnQ7Bw55/GgC8zDqhoXc/4FtNevaquq6M0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="2 bobaz fields"
+        title=""
+        src="/static/73544f01d3518f324dcd36f642ab77a4/6255c/2_bobaz_fields.png"
+        srcset="/static/73544f01d3518f324dcd36f642ab77a4/375dc/2_bobaz_fields.png 148w,
+/static/73544f01d3518f324dcd36f642ab77a4/6b157/2_bobaz_fields.png 295w,
+/static/73544f01d3518f324dcd36f642ab77a4/6255c/2_bobaz_fields.png 590w,
+/static/73544f01d3518f324dcd36f642ab77a4/cffcf/2_bobaz_fields.png 672w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>With that set up, this project now works like an order form. The project is set
+up with Custom Fields to be compatible with a desired workflow. Projects can
+have multiple Custom Fields and fields can be shared across projects. These
+Custom Fields act like native Asana fields and work throughout the application.</p>
+<h3>Restrain existing product complexity</h3>
+<p>Custom Fields is a premium feature, which means we had to gate the feature
+behind premium checks. We ended up spending about 9 engineer weeks to gate the
+feature to premium in the time leading to our launch.</p>
+<p>The root issue here is that our data model has a lot of variations and Custom
+Fields has a lot of touch points. Due to some historic reasons I won’t dive into
+in this post, we have to check many aspects of the data model to determine if a
+user can use Custom Fields. The ideal outcome would be to simplify the premium
+model itself, but that wasn’t tractable given our launch plan and other ongoing
+projects.</p>
+<h4>Our Solution: Buffer the complexity with a module</h4>
+<table>
+<thead>
+<tr>
+<th align="center">
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/13b76f46ab73b24a5a7f50efaad66fc2/c52ff/3_buffer_complexity.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 26.140567200986435%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAFABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB3ZEoD//EABcQAQEBAQAAAAAAAAAAAAAAAAEAAhH/2gAIAQEAAQUCR5nKRf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/Aaf/xAAYEAADAQEAAAAAAAAAAAAAAAAAETECIf/aAAgBAQAGPwKndMrP/8QAGhABAAEFAAAAAAAAAAAAAAAAAQARITFRgf/aAAgBAQABPyFCCl3M08QIXh//2gAMAwEAAgADAAAAEIfP/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQEQ/9oACAEDAQE/ECLn/8QAFhEBAQEAAAAAAAAAAAAAAAAAAREQ/9oACAECAQE/EBSZ/8QAGBABAQEBAQAAAAAAAAAAAAAAAREAMSH/2gAIAQEAAT8QZEz4AZk1JeCCZ8Or2Tf/2Q=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="3 buffer complexity"
+        title=""
+        src="/static/13b76f46ab73b24a5a7f50efaad66fc2/4b3ab/3_buffer_complexity.jpg"
+        srcset="/static/13b76f46ab73b24a5a7f50efaad66fc2/f8bb1/3_buffer_complexity.jpg 148w,
+/static/13b76f46ab73b24a5a7f50efaad66fc2/900ac/3_buffer_complexity.jpg 295w,
+/static/13b76f46ab73b24a5a7f50efaad66fc2/4b3ab/3_buffer_complexity.jpg 590w,
+/static/13b76f46ab73b24a5a7f50efaad66fc2/c52ff/3_buffer_complexity.jpg 811w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Pure functions like calculatePermissions can buffer old data model complexity into a simple enum.</em></td>
+</tr>
+</tbody>
+</table>
+<p>We distilled the possible states into an enum, and then built pure helper
+functions to handle the thorns in the data model. This meant that our
+application code only needed to know the state of one enum. This buffered the
+complexity resulting from the data model into one module, rather than everywhere
+in the product.</p>
+<h4>Lesson: If complexity exists, constrain it to one place</h4>
+<p>If complexity already exists in the data model or app code, constrain it to one
+place rather than having it extend to all touch points of your new feature. If
+the API buffering this complexity is strong, then usages only need to concern
+themselves with one concept, rather than many.</p>
+<h4>Lesson: Be sure the product is intuitive from the onset</h4>
+<p>Existing product complexity is hard to remove, especially when ingrained in the
+data model. Future changes need to cope with the complexity and create
+workarounds or abstractions around it.</p>
+<p>Be sure the product and data model is intuitive and understandable from the
+onset to avoid complexity. If you’re pushing towards a launch and want to be
+scrappy, step back and think about how the code will end up over the next year.</p>
+<p>Note: Since then, our Monetization Team simplified and standardized premium
+checks moving forward!</p>
+<h3>Reduce surface area</h3>
+<p>What if a task moves to a different project?</p>
+<p>Custom fields must be on a project before any tasks can use them. If a user
+moves a task to a different project, then it no longer inherits those Custom
+Fields.</p>
+<p>What do we do with the data already on those tasks?</p>
+<h4>Initial Plan: Incorporate Custom Fields in all project actions</h4>
+<table>
+<thead>
+<tr>
+<th align="center">
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/468ff9e12b9161f0d12ba36033d5de0d/09100/4_initial_plan.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 461px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 37.31019522776573%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsSAAALEgHS3X78AAAA60lEQVQY041PW07DMBDsSbgV5+IqnAF6AD6Q+EEqysNx3KTxK7G9mzgMNar4QIjRenc10sysD8TUiq6u0WRVt51UvTr3vaob0bTi9FFN2uy/gZkPeMQcYwwxLiF4PxtrwxJSSjEmkGC889Y68BaL85OxtK5rEZ+HsWmE6HpEIRD5OAPhUiooAwxgfR0U486UmfY9fyeXM3LOt5PKfmMwtutieDv5hJKRi5jgOU36Mml0rc0wXoZxxBeKDAi8yjksiR7eurvHF9T98X39mfwHtpxpy+jVnJ6VfVL21YQvsfk3tDHB2W32KPIOzCfMWo6KRLMLtgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="4 initial plan"
+        title=""
+        src="/static/468ff9e12b9161f0d12ba36033d5de0d/09100/4_initial_plan.png"
+        srcset="/static/468ff9e12b9161f0d12ba36033d5de0d/1dcd2/4_initial_plan.png 148w,
+/static/468ff9e12b9161f0d12ba36033d5de0d/1c11a/4_initial_plan.png 295w,
+/static/468ff9e12b9161f0d12ba36033d5de0d/09100/4_initial_plan.png 461w"
+        sizes="(max-width: 461px) 100vw, 461px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>An interstitial dialog to warn the user about custom field ramifications from their action, part of the initial product spec.</em></td>
+</tr>
+</tbody>
+</table>
+<p>The initial product spec was to clear values from tasks if they no longer have
+fields bestowed onto them. Since this is a destructive action, we would prompt
+the user and explain what is happening.</p>
+<p>In the product, there are many ways to trigger this state: moving tasks between
+projects, access control changes, and more. We would need to add this warning
+throughout the entire product for each of these cases, including mobile and the
+API! Additionally, removing custom field values on every task is a
+nearly-unbounded amount of work for database and search indexing.</p>
+<p>So we decided to take a step back and think. With the product manager and
+designer, we went back to the original goals and motivations. The root cause
+here is that the action the user is trying to take — removing projects or
+changing project permissions — isn’t related to Custom Fields. They might not
+even know what a Custom Field is! What if we could divorce the concept of custom
+field values from project actions? Not only does this align with the user’s
+mental model, but it is simpler.</p>
+<h4>Our Solution: Divorce custom field values from project actions</h4>
+<table>
+<thead>
+<tr>
+<th align="center">
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/3230a660ac7c9c75b7c70c540009a159/8b09a/5_orphaned_fields.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 53.76661742983752%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAAA7klEQVQoz2P49+/fj5+/njx59v379/8kAoZ///7/+v3n5cvX37+BNP8FGvbvP5GIAWIG2P6fnz59fvPmLQk2Q6gfP359+/4DqBmISNYMdO2v378/f/ny+fMXkjV//fbt67fvn4C6v3wlQfPfv6Aw+vYdqPPr+w8fXr56/fPXr69fv/3584dYm0FhBg62n79+fvz06d37979+/cKjDagSaDrD8ZNn1m3YsnzlOiBau2HLiZNnYNL4ENC5f/78ZUjPLrJx9PbwDXP3CdUzsYuISYEYDIpugs6ua+rwD4mNScwMi062cfIuKquB20wQAACpM3DGgf9JwQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="5 orphaned fields"
+        title=""
+        src="/static/3230a660ac7c9c75b7c70c540009a159/6255c/5_orphaned_fields.png"
+        srcset="/static/3230a660ac7c9c75b7c70c540009a159/375dc/5_orphaned_fields.png 148w,
+/static/3230a660ac7c9c75b7c70c540009a159/6b157/5_orphaned_fields.png 295w,
+/static/3230a660ac7c9c75b7c70c540009a159/6255c/5_orphaned_fields.png 590w,
+/static/3230a660ac7c9c75b7c70c540009a159/dcf9c/5_orphaned_fields.png 885w,
+/static/3230a660ac7c9c75b7c70c540009a159/43c8a/5_orphaned_fields.png 1180w,
+/static/3230a660ac7c9c75b7c70c540009a159/8b09a/5_orphaned_fields.png 1354w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>“Orphaned” custom fields are disabled in the UI, and no longer conferred to new tasks. Existing data is retained.</em></td>
+</tr>
+</tbody>
+</table>
+<p>So we did just that. When you “orphan” a custom field on a task, we disable it
+in the UI. The data is still there and we have a helpful message explaining why
+the field is disabled, how to restore the old behavior, and how to clear out the
+data.</p>
+<h4>Lesson: Reduce number of concepts code is aware of</h4>
+<p>Why is this better?</p>
+<p>We took the initial scope of this change — throughout the entire application and
+having stability concerns — and moved it to a single component. Other actions,
+like adjusting project permissions, do not need to know about Custom Fields or
+subtleties in its data model.</p>
+<p>This removed the need for complexity, so we didn’t have to think up any clever
+solution or algorithm. Instead, we adjusted render behavior in one place.</p>
+<h4>Lesson: Complexity is a barometer for how risky something will be</h4>
+<p>The incentive structure worked in our favor: our solution was faster and easier
+to build. This is because more “thorns” in the product plan likely mean more
+roadblocks or edge-cases to consider.</p>
+<p>So treat complexity as a barometer for how risky something will be.</p>
+<h3>Protect users from costly changes</h3>
+<p>Let’s talk about one more example from building Custom Fields.</p>
+<p>Custom Fields are shared across projects, and are editable.What happens if you
+edit a custom field dropdown and remove an option after others have used it?</p>
+<p>When we discussed this on our team, we had similar trade-offs as with orphaned
+values. One option was to clear out data on all tasks that used the custom field
+and pretend the option never existed.</p>
+<h4>Our Solution: Reduce propagation of changes from a single action</h4>
+<table>
+<thead>
+<tr>
+<th align="center">
+  <a
+    class="gatsby-resp-image-link"
+    href="/static/608ca67f54be10b7155ed4cbb46adcbe/8b09a/6_archived_fields.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 40.91580502215657%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsSAAALEgHS3X78AAAAhElEQVQY05WQyw7DIAwE+f9/jHpuA20B20B4uKvmkGPA2gNIjGaNGWOknLftQcyqiqvODV4aHVpbCyHmcuBQygF8LsOcqt7hL9579/6smP8DIeJDjMTLcGsdpaFF+tzaV21igfPrPRFNftsFsyTwIFF+ofYJS8oswiy7dda652uvtd7CP4S/2ZCEnPj/AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="6 archived fields"
+        title=""
+        src="/static/608ca67f54be10b7155ed4cbb46adcbe/6255c/6_archived_fields.png"
+        srcset="/static/608ca67f54be10b7155ed4cbb46adcbe/375dc/6_archived_fields.png 148w,
+/static/608ca67f54be10b7155ed4cbb46adcbe/6b157/6_archived_fields.png 295w,
+/static/608ca67f54be10b7155ed4cbb46adcbe/6255c/6_archived_fields.png 590w,
+/static/608ca67f54be10b7155ed4cbb46adcbe/dcf9c/6_archived_fields.png 885w,
+/static/608ca67f54be10b7155ed4cbb46adcbe/43c8a/6_archived_fields.png 1180w,
+/static/608ca67f54be10b7155ed4cbb46adcbe/8b09a/6_archived_fields.png 1354w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Archived dropdown options are annotated in the UI, and existing data is retained. New tasks cannot use archived options.</em></td>
+</tr>
+</tbody>
+</table>
+<p>Instead, we went back to the product goals and came up with an alternative
+solution: to strikethrough archived options and not let new values be set to it.
+In other words, keep the data on existing tasks, and exclude it from new entry
+points. If you re-create an option with the same name, we resurrect the old
+option and its values.</p>
+<h4>Lesson: Protect users from unbounded work</h4>
+<p>The initial solution of iterating on every task would have caused an unbounded
+amount of work, presenting a stability concern.</p>
+<p>Further, this would have been a slow and asynchronous action. On the product
+side, we would need to support an intermediate in-progress state wherever we
+showed Custom Fields. This would have spread the complexity throughout the app
+and added even more work.</p>
+<h4>Lesson: Protect users from sharp edges</h4>
+<p>The initial implementation might also have led to some unhappy users. Since
+Custom Fields are shared across a domain, editing dropdown fields would lead to
+perceived data loss for other users of those fields. If two teams use the same
+custom field, and one makes a change, then the other team would be surprised to
+see their data vanish!</p>
+<p>As a result, we would have needed to build on to this — adding undo support,
+notifications on what happened, or other tweaks. So our solution also led to
+less complexity and surface area down the road.</p>
+<h3>Conclusion</h3>
+<p>These are a few examples of ways we thought about complexity when building
+Custom Fields. A couple of small product considerations and tweaks led to a huge
+impact on implementation time and simplicity. Our key takeaway is that when
+you’re working on product features, it’s often best to consider ways to
+circumvent the complexity, rather than adapting to it.</p>
+<hr>
+<p><em>Originally published at
+<a href="https://blog.asana.com/2017/09/circumventing-engineering-complexity-examples-from-asana/">blog.asana.com</a>
+on September 11, 2017.</em></p></div><hr style="margin-bottom:1.625rem"/><div style="display:flex"><div class=" gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px;margin-right:0.8125rem;margin-bottom:0;min-width:50px;border-radius:100%"><img src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQCAwX/xAAXAQEAAwAAAAAAAAAAAAAAAAADAAEC/9oADAMBAAIQAxAAAAGjjZOSbVqnj4HOwHr/xAAbEAEBAQACAwAAAAAAAAAAAAABAgADERITIv/aAAgBAQABBQKnoPZLuQ+ZBrx1rppwqf/EABcRAAMBAAAAAAAAAAAAAAAAAAABEBH/2gAIAQMBAT8Bd0//xAAXEQEBAQEAAAAAAAAAAAAAAAABAAIR/9oACAECAQE/AclyCQv/xAAaEAEAAgMBAAAAAAAAAAAAAAABADEQESEy/9oACAEBAAY/Aq7NqJPOA5KzbP/EABsQAQEAAwEBAQAAAAAAAAAAAAEAESFBMWGh/9oACAEBAAE/IUoXwJyp1E5uNbvcRspjO/JSc7qOP7X/2gAMAwEAAgADAAAAEA/Xf//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEf/aAAgBAwEBPxBWysLL/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQETH/2gAIAQIBAT8QDGgE1cn/xAAeEAEBAQEAAAcAAAAAAAAAAAABEQAhMVFxkaHB0f/aAAgBAQABPxCjSrhfCutkU4gx5zOT5zIKDp746FHI+XfrV/WsqYpgLkAInXIQvTP/2Q==" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition:opacity 0.5s;transition-delay:0.25s;border-radius:50%"/><noscript><picture><img width="50" height="50" srcset="/static/4374dba29272687f08ad00b7ab820636/7e494/ericpelz.jpg 1x,
+/static/4374dba29272687f08ad00b7ab820636/36cc2/ericpelz.jpg 1.5x,
+/static/4374dba29272687f08ad00b7ab820636/0a3a6/ericpelz.jpg 2x,
+/static/4374dba29272687f08ad00b7ab820636/75d16/ericpelz.jpg 3x" src="/static/4374dba29272687f08ad00b7ab820636/7e494/ericpelz.jpg" alt="" style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><p>I&#x27;m a software engineer at<!-- --> <a href="https://www.asana.com/">Asana</a>. I manage a few engineers and am the program &amp; tech lead on a product team. I spend a lot of time thinking about running effective teams, fostering growth, product+engineering collaboration, and engineering design patterns.</p></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0;margin-top:3.25rem"><li><a rel="prev" href="/propel-new-engineers-code-review/">← <!-- -->How to propel new engineers with code review</a></li><li><a rel="next" href="/how-best-product-engineering-teams-max-value/">How the best product engineering teams maximize value<!-- --> →</a></li></ul></main></div></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-11821661-1', 'auto', {});
+      
+      
+      
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"circumventing-engineering-complexity-d5e","path":"/circumventing-engineering-complexity/"};window.dataPath="949/path---circumventing-engineering-complexity-d-5-e-c14-f7JdLXqUMy5q1rGii4aggmS3KBA";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-fea37e87d27693cf87ce.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-3c6d8da1c5b68ed6b359.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-7c9d6e9eabeae30c4a07.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e6ee9198f8e6699d096c.js"],"component---src-pages-index-js":["/component---src-pages-index-js-7823fe7b2e7b50061f1c.js"],"pages-manifest":["/pages-manifest-8fd1efa8ab6330faa716.js"]};/*]]>*/</script><script src="/webpack-runtime-95fb468055472f2d3107.js" async=""></script><script src="/styles-bf0391b51aede841e687.js" async=""></script><script src="/app-fea37e87d27693cf87ce.js" async=""></script><script src="/0-9cc3d9cc6d2d2c8fd54e.js" async=""></script><script src="/component---src-templates-blog-post-js-7c9d6e9eabeae30c4a07.js" async=""></script></body></html>

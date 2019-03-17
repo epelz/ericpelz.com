@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Eric Pelz]]></title><description><![CDATA[Eric Pelz is a software engineer]]></description><link>https://www.ericpelz.com/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 17 Mar 2019 20:25:08 GMT</lastBuildDate><item><title><![CDATA[How the best product engineering teams maximize value]]></title><description><![CDATA[Reducing risk, eliminating complexity, and sequencing effectively With perfect information, an engineering design process can be pretty…]]></description><link>https://www.ericpelz.com//how-best-product-engineering-teams-max-value/</link><guid isPermaLink="false">https://www.ericpelz.com//how-best-product-engineering-teams-max-value/</guid><pubDate>Mon, 16 Apr 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Reducing risk, eliminating complexity, and sequencing effectively&lt;/h2&gt;
+&lt;p&gt;With perfect information, an engineering design process can be pretty
+straightforward: you can focus on implementing functionality while minimizing
+engineering complexity and risk. But this gets a lot trickier when there are a
+lot of product uncertainties. How do you make an engineering plan when you don’t
+know how it will be used or extended? In these cases, you need to have a strong
+dialogue between product and engineering — healthy teams don’t silo each person,
+but have them work together as one team. Through this, you can plan to maximize
+user value through incremental releases, by minimizing product and engineering
+risk.&lt;/p&gt;
+&lt;h3&gt;The most interesting types of engineering problems&lt;/h3&gt;
+&lt;p&gt;At Asana, I’ve been the tech lead of a few different teams, and have seen
+first-hand that each team has its own joys and challenges in the engineering
+design process. For example, one team involved rewriting an unperformant feature
+to a new framework. This meant that the team had a well-defined product with
+little uncertainty, as the feature was already launched. In this team, we only
+solved engineering problems: e.g. how to write efficient queries, differences
+between our old and new frameworks that could impact the product, and how to
+build abstractions to harness the power of the feature.&lt;/p&gt;
+&lt;p&gt;My favorite kinds of teams involve much more product collaboration. When
+building powerful new features, there are many types&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; of risk at play —
+product and engineering are two of the most common — and you need to think of
+them all when planning a product engineering project. Product risk can be very
+dangerous: if you build the wrong feature, you might need to re-build the right
+feature afterwards. At best, this means wasting some time. At worst, this means
+building and maintaining two separate systems instead of one. This means the
+scope of problem solving changes completely, as an engineer needs to be a
+partner in the product process and think through both engineering and product
+tradeoffs.&lt;/p&gt;
+&lt;p&gt;In other words, be involved in all stages of the product process. Do this from
+the start, even before identifying the problem statement and initial hypotheses.
+You will be better equipped to think through product tradeoffs and be a good
+partner to your product manager. Similarly, a product manager should be a
+partner in the engineering process. They should understand where complexities or
+legacy technologies live, intuit which solutions are simpler, and so on. A
+successful collaboration results in a better product delivered with higher
+velocity.&lt;/p&gt;
+&lt;h3&gt;How to approach these problems&lt;/h3&gt;
+&lt;p&gt;Unfortunately, many engineers focus on an extreme when they see multiple types
+of risk. If there is large product risk, they’ll prototype to deliver value as
+fast as possible, which could harm their future viability. On the other side,
+they might over-abstract and focus too much on the long-term feature-set,
+risking added complexity and delaying when they deliver value. The ideal path
+forward is to be somewhere in the middle, and balance the product and
+engineering concerns.&lt;/p&gt;
+&lt;p&gt;If you’re at a product company, your ultimate goal is likely to deliver user
+value. There’s a lot to consider: what user benefit will you deliver, what risk
+will that have, when will the release occur, what engineering debt will you add,
+and so on. The danger is when these factors aren’t considered when planning a
+project. That likely happens when it’s assumed that someone else will consider
+the factors (i.e. the PM will think about product risk, and you, the engineer,
+only need to care about engineering planning).&lt;/p&gt;
+&lt;h3&gt;Brief interlude: concretely modeling this&lt;/h3&gt;
+&lt;p&gt;Bear with me for a moment, we’ll return in a minute — but it’s helpful to think
+of this from the perspective of economics. Suppose you have a project which you
+are developing an engineering plan for. You can deliver it all at once, or
+through a series of incremental releases. We want to maximize the expected value
+for hypothetical releases. If you squint a bit, we can model this the same way
+as &lt;a href=&quot;https://en.wikipedia.org/wiki/RNPV&quot;&gt;risk-adjusted net present value&lt;/a&gt; in
+economics. We have a series of “releases” at different points of time, each with
+a different risk profile and net value. Since we prefer value as soon as
+possible, we “discount” the value based on when it will occur.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6b0c6eaeb15104ad1cd09520cf79d313/87bc8/equation.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 20.265486725663717%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAdklEQVQY043PwQqCQBSF4VkUKo3KCBqRYk2hCCm46f0frf/CWYRINPBtLtwz5zr3/3ui3cyO6JB8D194Y8IdD4wYEJEix4oMFU4oEHBDg1LcRSFRDaLCLLxXiFm0bEtnXFHrAysw71zw83ktO7UOOtWrlJ1/+AA+CAUtBuNZ3wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;equation&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6b0c6eaeb15104ad1cd09520cf79d313/6255c/equation.png&quot;
+        srcset=&quot;/static/6b0c6eaeb15104ad1cd09520cf79d313/375dc/equation.png 148w,
+/static/6b0c6eaeb15104ad1cd09520cf79d313/6b157/equation.png 295w,
+/static/6b0c6eaeb15104ad1cd09520cf79d313/6255c/equation.png 590w,
+/static/6b0c6eaeb15104ad1cd09520cf79d313/dcf9c/equation.png 885w,
+/static/6b0c6eaeb15104ad1cd09520cf79d313/87bc8/equation.png 1130w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Ui&lt;/em&gt; represents the net value from release i. This combines a few factors:
+&lt;em&gt;Ui=Vi-Di-Ci&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Note: assume these are all the same unit — usually dollars, which is a
+fairly generic unit that we can translate to.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;How much value (&lt;em&gt;Vi&lt;/em&gt;) do users get from a release? For example, they can do
+a new workflow that they previously couldn’t.&lt;/li&gt;
+&lt;li&gt;How much disutility (&lt;em&gt;Di&lt;/em&gt;) do users get from a release? For example, if you
+delivered a half-baked release which degrades user trust.&lt;/li&gt;
+&lt;li&gt;How much cost (&lt;em&gt;Ci&lt;/em&gt;) did your team incur from release? For example, 5
+engineers spent 2 weeks on features.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;ri&lt;/em&gt; represents the probability a release can happen to yield the value &lt;em&gt;Ui&lt;/em&gt;.
+This models the risk of a release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Note: assumes that a release is all or nothing. In practice, a release
+would be delayed or its adoption would be lower than expected. This could be
+modeled with many more “potential releases” at different probabilities.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;For example, this might be: product risk (build the wrong thing),
+engineering risk, and so on.&lt;/li&gt;
+&lt;li&gt;For example, you can de-risk a project by having an early release beta
+program to receive feedback.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;1/(1+d)^Δti&lt;/em&gt; represents the
+“&lt;a href=&quot;https://en.wikipedia.org/wiki/Discounting#Discount_factor&quot;&gt;discount factor&lt;/a&gt;”&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;d&lt;/em&gt; is the discount rate — the value that can be earned per unit of time on
+a different investment of similar risk.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Δti&lt;/em&gt; is how long has occurred between release i and i-1.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With this, we can model expected user value from a series of releases. While
+I’ve never calculated this explicitly, and this model is highly simplified, it
+lets us compare how each factor relates to one another and the overall plan.&lt;/p&gt;
+&lt;h3&gt;Best practices to maximize value, with inspiration from the model&lt;/h3&gt;
+&lt;p&gt;Through the teams and launches I’ve been a part of, I’ve gathered some learnings
+about maximizing value. These also are reflected in the simplistic model above.&lt;/p&gt;
+&lt;h4&gt;On thinking through a release plan&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;You should aggressive split a feature into small releases. If it adds no risk
+or cost, then splitting a feature into multiple releases is a great way to
+increase user value. Earlier and more frequent delivery means parts of the
+feature can get in the hands of users sooner. In our model, this is reflected
+by the discount factor yielding lower net value.&lt;/li&gt;
+&lt;li&gt;There are many considerations to a release plan — feature readiness, market
+conditions, product and engineering risk — and coming up with a plan should be
+a collaboration of all interested parties. After the initial planning for a
+project, consider whether incremental or early releases would be useful.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;On thinking about engineering design&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Adding engineering debt or complexity is dangerous. It can complicate all
+future development or add risk to all future releases. As such, optimizing for
+the short-term through engineering complexity can have dramatic consequences
+to long-term user value. This often manifests by building “partial” features
+that ultimately introduce debt, rather than building the smallest complete
+unit of user value.&lt;/li&gt;
+&lt;li&gt;Balance is important — while you should always think of future engineering
+design, you shouldn’t over-engineer such that you deliver something to users
+much much later. If there is product uncertainty with the future (for example,
+it’s not clear how a feature will be extended or generalized), then you risk
+&lt;a href=&quot;https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction&quot;&gt;building the wrong abstraction&lt;/a&gt;
+which can slow future development.&lt;/li&gt;
+&lt;li&gt;All engineering complexity will result in additional cost or risk, so it is
+almost always better to
+&lt;a href=&quot;/circumventing-engineering-complexity&quot;&gt;circumvent complexity&lt;/a&gt; when possible.
+Being a partner in the product process will give you context to think through
+non-engineering solutions to complexity, thereby increasing expected value.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;On mitigating risk&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;It’s incredibly helpful to sequence work such that you mitigate risk for large
+releases. Suppose you are planning a big release in 6 months and the product
+risk is currently high. You might have the opportunity to halve product risk
+with a small earlier release to validate hypotheses. This will ultimately
+double the final release’s expected user value. You can also apply this
+technique when using a new technology with large technical risk. If you
+de-risk a project early with a small release to validate an engineering plan,
+you will improve the project’s expected value.&lt;/li&gt;
+&lt;li&gt;Different types of risk compound one another, so it’s dangerous to combine
+multiple types of risk in a single release. Consider all types of risk, and
+strive to focus a release to a single type of risk (e.g. couple riskier
+engineering with less risky product work).&lt;/li&gt;
+&lt;li&gt;It’s helpful to think about this from the perspective of “minimizing the worst
+outcome”. In other words, think about what kind of risk is biggest, and what
+contingencies you have in place. For example, is your engineering design
+resilient to portions of your product changing as a result of beta testing? If
+not, consider doing that for areas with high product risk, or deferring
+engineering design until you have higher confidence on the product direction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn-1&quot;&gt;
+&lt;p&gt;  Some of the most common types of risk I’ve seen (see
+&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S1877705814002203&quot;&gt;here&lt;/a&gt;
+for more):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Engineering risk&lt;/em&gt; — are there a lot of unknowns in the technical plan? Does
+this use new technologies that aren’t often used? Does this touch a lot of
+old code or systems that the team doesn’t know or that may need
+updating/refactoring? Will this cause stability fallout?&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Product risk&lt;/em&gt; — are we confident in the product plan? Will we need to
+iterate on the feature for it to be useful? Could it completely flop and
+need to be re-done, after showing to users?&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Team risk&lt;/em&gt; — how engaged are team members? If a milestone slips, will that
+make the team feel demotivated? If added uncertainty or roadblocks come up,
+will team members move as quickly? How confident are team members in the
+team’s leadership?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Circumventing engineering complexity]]></title><description><![CDATA[Examples from building Custom Fields at Asana Having simple code has a big impact on the velocity you can write code and how
+enjoyable it is…]]></description><link>https://www.ericpelz.com//circumventing-engineering-complexity/</link><guid isPermaLink="false">https://www.ericpelz.com//circumventing-engineering-complexity/</guid><pubDate>Mon, 11 Sep 2017 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Examples from building Custom Fields at Asana&lt;/h2&gt;
+&lt;p&gt;Having simple code has a big impact on the velocity you can write code and how
+enjoyable it is to do it. At Asana, one of our engineering values is to
+&lt;a href=&quot;https://blog.asana.com/2016/05/asana-engineering-values/&quot;&gt;strive for simplicity&lt;/a&gt;.
+Most of the time, we talk about this in the context of
+&lt;a href=&quot;https://medium.com/building-asana/designing-simpler-react-components-13a0061afd16&quot;&gt;engineering design&lt;/a&gt;.
+But simplicity is also a crucial guiding principle when making product
+decisions.&lt;/p&gt;
+&lt;p&gt;Engineers often try to solve hard problems — and enjoy doing so. But it’s even
+better to avoid the hard problem altogether. Last year, we released
+&lt;a href=&quot;https://blog.asana.com/2016/09/track-anything-with-custom-fields/&quot;&gt;Custom Fields&lt;/a&gt;,
+a powerful feature that integrated across Asana. As a result, it had the
+potential to introduce new or magnify existing complexity. Rather than choosing
+the least complex engineering decision available, we strived to avoid the
+complexity entirely.&lt;/p&gt;
+&lt;p&gt;In this post, we’ll talk about a few examples from Custom Fields where product
+complexity influenced engineering. For each case, we sought to circumvent
+complexity, and came up with a few learnings.&lt;/p&gt;
+&lt;h3&gt;What are Custom Fields?&lt;/h3&gt;
+&lt;p&gt;First, a little background on Custom Fields. One of our first internal use cases
+was group boba tea ordering. We have an Asana project which we use when we order
+Boba as a group, where anyone can create a task for their drink order.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0897026ab3bc27a4fa6179e330537fb9/947d7/1_manage_custom_fields.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 579px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 57.34024179620035%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABBklEQVQoz6VS7XKDIBDk/V+xzVdnkphEJaLCeYJ0DzIObW3/dAWG4W5vzwUVQjhfquPx4+19X93uh8PpWt3qutntT11nYozLssQt4FxhOkcoUZ4GfDF674kmgJk3+UJuWw2RnCHMEIjIOgHzjAH8lEWakPth0Po5WrsG+n5gwRx/AXJQUYWwjKP9FrDWWZEmVEQUA+1vt31/1DAJ2St5GEYQQLcCh31pyheyMX1nzOpqUrboGU4lw9LKsjLnk8mnWgqzbtrz5TrRVCpL05nKnBZOe6mIkRtRkIM9Wne2MAx9IhFXFf8EDAt4G4+6geGtfhbKhBL4d9xFtu21F/9GcjTPXsV/4BOtT4UCXIv9AAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;1 manage custom fields&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0897026ab3bc27a4fa6179e330537fb9/947d7/1_manage_custom_fields.png&quot;
+        srcset=&quot;/static/0897026ab3bc27a4fa6179e330537fb9/ffce3/1_manage_custom_fields.png 148w,
+/static/0897026ab3bc27a4fa6179e330537fb9/40de9/1_manage_custom_fields.png 295w,
+/static/0897026ab3bc27a4fa6179e330537fb9/947d7/1_manage_custom_fields.png 579w&quot;
+        sizes=&quot;(max-width: 579px) 100vw, 579px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;To have this working, first you need to create Custom Fields. In this case,
+we’ve created a bunch of fields around a tea order: flavor, drink temperature,
+sweetness level, and so on.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/73544f01d3518f324dcd36f642ab77a4/cffcf/2_bobaz_fields.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 78.42261904761905%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsSAAALEgHS3X78AAABHElEQVQoz5VS0U7DMAzs//8Ur0jwyANiIATSEG1Zt8SuU8dLyi2VqiGhtT1VqZXm7N5dquPP9+P9nZPgPaWUwjCgkBBQAFjlUio+jX+BneocI7/ttK1THnNBKsgrUCWL/PJk9dfUD1vjalSnJA/h83n3TsyFPG4gp5zUVAc9X5AgDxrzOlRzm8merjudnFs7eZYaATMiRpdtZABUVd0fXN15mL2NDMM88YHk9WPPLDllWGCGKOMymbnH9TAzLrbPckTkFhknehHuAcEc4v76GrVte4uME7EAWWFO1x2vyU3TTAP+jwovLcBR5CwSNkyeryQK5IS0wLECdKzrpcnQCcNAIyJP5LzHL4A8yVnQ7Bw55/GgC8zDqhoXc/4FtNevaquq6M0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;2 bobaz fields&quot;
+        title=&quot;&quot;
+        src=&quot;/static/73544f01d3518f324dcd36f642ab77a4/6255c/2_bobaz_fields.png&quot;
+        srcset=&quot;/static/73544f01d3518f324dcd36f642ab77a4/375dc/2_bobaz_fields.png 148w,
+/static/73544f01d3518f324dcd36f642ab77a4/6b157/2_bobaz_fields.png 295w,
+/static/73544f01d3518f324dcd36f642ab77a4/6255c/2_bobaz_fields.png 590w,
+/static/73544f01d3518f324dcd36f642ab77a4/cffcf/2_bobaz_fields.png 672w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;With that set up, this project now works like an order form. The project is set
+up with Custom Fields to be compatible with a desired workflow. Projects can
+have multiple Custom Fields and fields can be shared across projects. These
+Custom Fields act like native Asana fields and work throughout the application.&lt;/p&gt;
+&lt;h3&gt;Restrain existing product complexity&lt;/h3&gt;
+&lt;p&gt;Custom Fields is a premium feature, which means we had to gate the feature
+behind premium checks. We ended up spending about 9 engineer weeks to gate the
+feature to premium in the time leading to our launch.&lt;/p&gt;
+&lt;p&gt;The root issue here is that our data model has a lot of variations and Custom
+Fields has a lot of touch points. Due to some historic reasons I won’t dive into
+in this post, we have to check many aspects of the data model to determine if a
+user can use Custom Fields. The ideal outcome would be to simplify the premium
+model itself, but that wasn’t tractable given our launch plan and other ongoing
+projects.&lt;/p&gt;
+&lt;h4&gt;Our Solution: Buffer the complexity with a module&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/13b76f46ab73b24a5a7f50efaad66fc2/c52ff/3_buffer_complexity.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 26.140567200986435%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAFABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB3ZEoD//EABcQAQEBAQAAAAAAAAAAAAAAAAEAAhH/2gAIAQEAAQUCR5nKRf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/Aaf/xAAYEAADAQEAAAAAAAAAAAAAAAAAETECIf/aAAgBAQAGPwKndMrP/8QAGhABAAEFAAAAAAAAAAAAAAAAAQARITFRgf/aAAgBAQABPyFCCl3M08QIXh//2gAMAwEAAgADAAAAEIfP/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQEQ/9oACAEDAQE/ECLn/8QAFhEBAQEAAAAAAAAAAAAAAAAAAREQ/9oACAECAQE/EBSZ/8QAGBABAQEBAQAAAAAAAAAAAAAAAREAMSH/2gAIAQEAAT8QZEz4AZk1JeCCZ8Or2Tf/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;3 buffer complexity&quot;
+        title=&quot;&quot;
+        src=&quot;/static/13b76f46ab73b24a5a7f50efaad66fc2/4b3ab/3_buffer_complexity.jpg&quot;
+        srcset=&quot;/static/13b76f46ab73b24a5a7f50efaad66fc2/f8bb1/3_buffer_complexity.jpg 148w,
+/static/13b76f46ab73b24a5a7f50efaad66fc2/900ac/3_buffer_complexity.jpg 295w,
+/static/13b76f46ab73b24a5a7f50efaad66fc2/4b3ab/3_buffer_complexity.jpg 590w,
+/static/13b76f46ab73b24a5a7f50efaad66fc2/c52ff/3_buffer_complexity.jpg 811w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;em&gt;Pure functions like calculatePermissions can buffer old data model complexity into a simple enum.&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;We distilled the possible states into an enum, and then built pure helper
+functions to handle the thorns in the data model. This meant that our
+application code only needed to know the state of one enum. This buffered the
+complexity resulting from the data model into one module, rather than everywhere
+in the product.&lt;/p&gt;
+&lt;h4&gt;Lesson: If complexity exists, constrain it to one place&lt;/h4&gt;
+&lt;p&gt;If complexity already exists in the data model or app code, constrain it to one
+place rather than having it extend to all touch points of your new feature. If
+the API buffering this complexity is strong, then usages only need to concern
+themselves with one concept, rather than many.&lt;/p&gt;
+&lt;h4&gt;Lesson: Be sure the product is intuitive from the onset&lt;/h4&gt;
+&lt;p&gt;Existing product complexity is hard to remove, especially when ingrained in the
+data model. Future changes need to cope with the complexity and create
+workarounds or abstractions around it.&lt;/p&gt;
+&lt;p&gt;Be sure the product and data model is intuitive and understandable from the
+onset to avoid complexity. If you’re pushing towards a launch and want to be
+scrappy, step back and think about how the code will end up over the next year.&lt;/p&gt;
+&lt;p&gt;Note: Since then, our Monetization Team simplified and standardized premium
+checks moving forward!&lt;/p&gt;
+&lt;h3&gt;Reduce surface area&lt;/h3&gt;
+&lt;p&gt;What if a task moves to a different project?&lt;/p&gt;
+&lt;p&gt;Custom fields must be on a project before any tasks can use them. If a user
+moves a task to a different project, then it no longer inherits those Custom
+Fields.&lt;/p&gt;
+&lt;p&gt;What do we do with the data already on those tasks?&lt;/p&gt;
+&lt;h4&gt;Initial Plan: Incorporate Custom Fields in all project actions&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/468ff9e12b9161f0d12ba36033d5de0d/09100/4_initial_plan.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 461px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 37.31019522776573%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsSAAALEgHS3X78AAAA60lEQVQY041PW07DMBDsSbgV5+IqnAF6AD6Q+EEqysNx3KTxK7G9mzgMNar4QIjRenc10sysD8TUiq6u0WRVt51UvTr3vaob0bTi9FFN2uy/gZkPeMQcYwwxLiF4PxtrwxJSSjEmkGC889Y68BaL85OxtK5rEZ+HsWmE6HpEIRD5OAPhUiooAwxgfR0U486UmfY9fyeXM3LOt5PKfmMwtutieDv5hJKRi5jgOU36Mml0rc0wXoZxxBeKDAi8yjksiR7eurvHF9T98X39mfwHtpxpy+jVnJ6VfVL21YQvsfk3tDHB2W32KPIOzCfMWo6KRLMLtgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;4 initial plan&quot;
+        title=&quot;&quot;
+        src=&quot;/static/468ff9e12b9161f0d12ba36033d5de0d/09100/4_initial_plan.png&quot;
+        srcset=&quot;/static/468ff9e12b9161f0d12ba36033d5de0d/1dcd2/4_initial_plan.png 148w,
+/static/468ff9e12b9161f0d12ba36033d5de0d/1c11a/4_initial_plan.png 295w,
+/static/468ff9e12b9161f0d12ba36033d5de0d/09100/4_initial_plan.png 461w&quot;
+        sizes=&quot;(max-width: 461px) 100vw, 461px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;em&gt;An interstitial dialog to warn the user about custom field ramifications from their action, part of the initial product spec.&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The initial product spec was to clear values from tasks if they no longer have
+fields bestowed onto them. Since this is a destructive action, we would prompt
+the user and explain what is happening.&lt;/p&gt;
+&lt;p&gt;In the product, there are many ways to trigger this state: moving tasks between
+projects, access control changes, and more. We would need to add this warning
+throughout the entire product for each of these cases, including mobile and the
+API! Additionally, removing custom field values on every task is a
+nearly-unbounded amount of work for database and search indexing.&lt;/p&gt;
+&lt;p&gt;So we decided to take a step back and think. With the product manager and
+designer, we went back to the original goals and motivations. The root cause
+here is that the action the user is trying to take — removing projects or
+changing project permissions — isn’t related to Custom Fields. They might not
+even know what a Custom Field is! What if we could divorce the concept of custom
+field values from project actions? Not only does this align with the user’s
+mental model, but it is simpler.&lt;/p&gt;
+&lt;h4&gt;Our Solution: Divorce custom field values from project actions&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3230a660ac7c9c75b7c70c540009a159/8b09a/5_orphaned_fields.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 53.76661742983752%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAAA7klEQVQoz2P49+/fj5+/njx59v379/8kAoZ///7/+v3n5cvX37+BNP8FGvbvP5GIAWIG2P6fnz59fvPmLQk2Q6gfP359+/4DqBmISNYMdO2v378/f/ny+fMXkjV//fbt67fvn4C6v3wlQfPfv6Aw+vYdqPPr+w8fXr56/fPXr69fv/3584dYm0FhBg62n79+fvz06d37979+/cKjDagSaDrD8ZNn1m3YsnzlOiBau2HLiZNnYNL4ENC5f/78ZUjPLrJx9PbwDXP3CdUzsYuISYEYDIpugs6ua+rwD4mNScwMi062cfIuKquB20wQAACpM3DGgf9JwQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;5 orphaned fields&quot;
+        title=&quot;&quot;
+        src=&quot;/static/3230a660ac7c9c75b7c70c540009a159/6255c/5_orphaned_fields.png&quot;
+        srcset=&quot;/static/3230a660ac7c9c75b7c70c540009a159/375dc/5_orphaned_fields.png 148w,
+/static/3230a660ac7c9c75b7c70c540009a159/6b157/5_orphaned_fields.png 295w,
+/static/3230a660ac7c9c75b7c70c540009a159/6255c/5_orphaned_fields.png 590w,
+/static/3230a660ac7c9c75b7c70c540009a159/dcf9c/5_orphaned_fields.png 885w,
+/static/3230a660ac7c9c75b7c70c540009a159/43c8a/5_orphaned_fields.png 1180w,
+/static/3230a660ac7c9c75b7c70c540009a159/8b09a/5_orphaned_fields.png 1354w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;em&gt;“Orphaned” custom fields are disabled in the UI, and no longer conferred to new tasks. Existing data is retained.&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;So we did just that. When you “orphan” a custom field on a task, we disable it
+in the UI. The data is still there and we have a helpful message explaining why
+the field is disabled, how to restore the old behavior, and how to clear out the
+data.&lt;/p&gt;
+&lt;h4&gt;Lesson: Reduce number of concepts code is aware of&lt;/h4&gt;
+&lt;p&gt;Why is this better?&lt;/p&gt;
+&lt;p&gt;We took the initial scope of this change — throughout the entire application and
+having stability concerns — and moved it to a single component. Other actions,
+like adjusting project permissions, do not need to know about Custom Fields or
+subtleties in its data model.&lt;/p&gt;
+&lt;p&gt;This removed the need for complexity, so we didn’t have to think up any clever
+solution or algorithm. Instead, we adjusted render behavior in one place.&lt;/p&gt;
+&lt;h4&gt;Lesson: Complexity is a barometer for how risky something will be&lt;/h4&gt;
+&lt;p&gt;The incentive structure worked in our favor: our solution was faster and easier
+to build. This is because more “thorns” in the product plan likely mean more
+roadblocks or edge-cases to consider.&lt;/p&gt;
+&lt;p&gt;So treat complexity as a barometer for how risky something will be.&lt;/p&gt;
+&lt;h3&gt;Protect users from costly changes&lt;/h3&gt;
+&lt;p&gt;Let’s talk about one more example from building Custom Fields.&lt;/p&gt;
+&lt;p&gt;Custom Fields are shared across projects, and are editable.What happens if you
+edit a custom field dropdown and remove an option after others have used it?&lt;/p&gt;
+&lt;p&gt;When we discussed this on our team, we had similar trade-offs as with orphaned
+values. One option was to clear out data on all tasks that used the custom field
+and pretend the option never existed.&lt;/p&gt;
+&lt;h4&gt;Our Solution: Reduce propagation of changes from a single action&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/608ca67f54be10b7155ed4cbb46adcbe/8b09a/6_archived_fields.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 40.91580502215657%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsSAAALEgHS3X78AAAAhElEQVQY05WQyw7DIAwE+f9/jHpuA20B20B4uKvmkGPA2gNIjGaNGWOknLftQcyqiqvODV4aHVpbCyHmcuBQygF8LsOcqt7hL9579/6smP8DIeJDjMTLcGsdpaFF+tzaV21igfPrPRFNftsFsyTwIFF+ofYJS8oswiy7dda652uvtd7CP4S/2ZCEnPj/AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;6 archived fields&quot;
+        title=&quot;&quot;
+        src=&quot;/static/608ca67f54be10b7155ed4cbb46adcbe/6255c/6_archived_fields.png&quot;
+        srcset=&quot;/static/608ca67f54be10b7155ed4cbb46adcbe/375dc/6_archived_fields.png 148w,
+/static/608ca67f54be10b7155ed4cbb46adcbe/6b157/6_archived_fields.png 295w,
+/static/608ca67f54be10b7155ed4cbb46adcbe/6255c/6_archived_fields.png 590w,
+/static/608ca67f54be10b7155ed4cbb46adcbe/dcf9c/6_archived_fields.png 885w,
+/static/608ca67f54be10b7155ed4cbb46adcbe/43c8a/6_archived_fields.png 1180w,
+/static/608ca67f54be10b7155ed4cbb46adcbe/8b09a/6_archived_fields.png 1354w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;em&gt;Archived dropdown options are annotated in the UI, and existing data is retained. New tasks cannot use archived options.&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Instead, we went back to the product goals and came up with an alternative
+solution: to strikethrough archived options and not let new values be set to it.
+In other words, keep the data on existing tasks, and exclude it from new entry
+points. If you re-create an option with the same name, we resurrect the old
+option and its values.&lt;/p&gt;
+&lt;h4&gt;Lesson: Protect users from unbounded work&lt;/h4&gt;
+&lt;p&gt;The initial solution of iterating on every task would have caused an unbounded
+amount of work, presenting a stability concern.&lt;/p&gt;
+&lt;p&gt;Further, this would have been a slow and asynchronous action. On the product
+side, we would need to support an intermediate in-progress state wherever we
+showed Custom Fields. This would have spread the complexity throughout the app
+and added even more work.&lt;/p&gt;
+&lt;h4&gt;Lesson: Protect users from sharp edges&lt;/h4&gt;
+&lt;p&gt;The initial implementation might also have led to some unhappy users. Since
+Custom Fields are shared across a domain, editing dropdown fields would lead to
+perceived data loss for other users of those fields. If two teams use the same
+custom field, and one makes a change, then the other team would be surprised to
+see their data vanish!&lt;/p&gt;
+&lt;p&gt;As a result, we would have needed to build on to this — adding undo support,
+notifications on what happened, or other tweaks. So our solution also led to
+less complexity and surface area down the road.&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;These are a few examples of ways we thought about complexity when building
+Custom Fields. A couple of small product considerations and tweaks led to a huge
+impact on implementation time and simplicity. Our key takeaway is that when
+you’re working on product features, it’s often best to consider ways to
+circumvent the complexity, rather than adapting to it.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Originally published at
+&lt;a href=&quot;https://blog.asana.com/2017/09/circumventing-engineering-complexity-examples-from-asana/&quot;&gt;blog.asana.com&lt;/a&gt;
+on September 11, 2017.&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to propel new engineers with code review]]></title><description><![CDATA[Maximizing mentorship, improving code quality, and saving time Many think of code review as a tool to prevent bugs from hitting production…]]></description><link>https://www.ericpelz.com//propel-new-engineers-code-review/</link><guid isPermaLink="false">https://www.ericpelz.com//propel-new-engineers-code-review/</guid><pubDate>Sat, 17 Dec 2016 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Maximizing mentorship, improving code quality, and saving time&lt;/h2&gt;
+&lt;p&gt;Many think of code review as a tool to prevent bugs from hitting production, or
+to ensure that code meets a certain quality bar. While it’s often those things,
+it’s also an incredible tool for mentorship. Since there’s already a second
+person reading over the code, why not do it in a way that will teach and
+inspire?&lt;/p&gt;
+&lt;p&gt;During my time at Asana, I’ve had the pleasure of being on a few different teams
+and onboarding a bunch of new engineers (some new graduates and some seasoned
+engineers), and have seen first hand the benefit of code review for mentorship.
+But I’ve also seen code reviews gone wrong — for example, a diff that suffers
+from large issues, but the reviewer just responding with a simple “LGTM” or lots
+of surface-level nits. Though good code reviewing does take some time, I’ve
+found some tips and tricks to best leverage that time, with the goals of
+mentoring new engineers, keeping team velocity high, and maintaining high
+quality code.&lt;/p&gt;
+&lt;h3&gt;Code review is not the right tool for everything&lt;/h3&gt;
+&lt;p&gt;While code review is awesome, it’s certainly not appropriate for all kinds of
+feedback. By the time code reaches review, it’s already been written: an
+engineer has already thought through a design, implemented it, tested it, and
+polished everything up. Imagine going through these steps, and then hearing your
+reviewer say “this is a bad way to do this, you could’ve avoided X by doing Y.”
+That’s extremely demotivating and necessitates large revisions and more
+follow-up reviews. Instead, you should discuss changes before implementation —
+either through a design doc or even a simple conversation — to get buy-in for
+the overall approach.&lt;/p&gt;
+&lt;p&gt;For tasks that involve large design changes, write up a short outline of what
+you plan to implement (which files, any changes to abstractions, how pieces will
+fit together) and share it with a teammate before you start coding. This will
+reveal so many great nuggets of learning: ways to structure your thinking and
+engineering design, implementation risks and alternative approaches, and ways to
+split up your changes into smaller chunks. I’ve found this leads to a noticeable
+improvement in code quality, and the net time saving is incredible.&lt;/p&gt;
+&lt;h3&gt;Tips when writing code&lt;/h3&gt;
+&lt;p&gt;When you commit code, think about the code you’re about to commit from the
+context of a code reviewer. All of us &lt;em&gt;should&lt;/em&gt; want the reviewer to have an easy
+time — not only will it save them time, but will also improve the quality of
+feedback you receive. Consider the following tips:&lt;/p&gt;
+&lt;h4&gt;Give a detailed description and test plan in the commit message&lt;/h4&gt;
+&lt;p&gt;It sounds silly, but the commit message is there for a reason! For UI changes,
+it’s extremely helpful to include a screenshot or animated GIF to show the
+interactions. This will put your reviewer in the correct mindset to read your
+changes, which will save them time in context switching and help them focus.&lt;/p&gt;
+&lt;h4&gt;Point out any problems you’re aware of&lt;/h4&gt;
+&lt;p&gt;One of my favorite things to do when sending out a code review is to mention
+problems I can anticipate, quirks in my changes, or reasons for certain
+decisions that I made. This is really helpful, for a few reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Highlights these areas for your reviewer so they can give input on whether
+they agree, or give tips to alleviate risk&lt;/li&gt;
+&lt;li&gt;Saves your reviewer time for code with complexity, as they can understand
+&lt;em&gt;why&lt;/em&gt; the complexity is there&lt;/li&gt;
+&lt;li&gt;A future engineer who looks at the code can find the review task, and can gain
+insight into your thought process and decision&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Split your commit into digestible chunks&lt;/h4&gt;
+&lt;p&gt;This is a huge time-saver, and I believe also leads to better code. Splitting
+commits into small chunks helps you be cognizant of bad test coverage, bad
+documentation, or other common issues. Additionally, it helps your reviewer by
+reducing the surface area of each commit, thus saving them time to understand
+the context of the change and leads to better feedback.&lt;/p&gt;
+&lt;p&gt;Note: Git provides some tools to help you do this, like
+&lt;a href=&quot;https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging&quot;&gt;git add -i&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;Find you’re receiving similar feedback over and over?&lt;/h4&gt;
+&lt;p&gt;Often when you’re new to an organization or codebase, it’s inevitable that
+you’re going to hit a lot of small issues while you’re still getting used to the
+environment. For new engineers on my team, I’ve found it helpful to create a
+task in our &lt;a href=&quot;https://wavelength.asana.com/workstyle-what-is-a-1-1/&quot;&gt;1:1 project&lt;/a&gt;
+called “Common Code Review Feedback”. Whenever one of us noticed a new common
+theme in code review, we add it to this task. This serves two purposes: to
+provide an avenue to discuss these items (e.g. why does this matter? how can I
+identify this before code review?), as well as track progress towards better
+quality code. I’ve seen this in action a few times, and it’s served as an
+amazing motivator and positive reinforcement — both for the committer, and the
+reviewer to see their feedback being heard.&lt;/p&gt;
+&lt;h3&gt;Tips when reviewing code&lt;/h3&gt;
+&lt;h4&gt;Strategies for efficient reviewing&lt;/h4&gt;
+&lt;p&gt;It’s sometimes difficult to strike a good balance between a quick “LGTM”, only
+finding surface-level issues in code, and spending hours reviewing a change.
+It’s not easy, especially when changes aren’t in an area of the code that you’re
+very familiar with. In these cases, I try to break down the code review process
+into a few parts:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Get a high-level sense of the changes&lt;/strong&gt;&lt;br&gt;First, read the commit message.
+If this is a UI change, look at a screenshot or GIF of the change.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Get a sense of the surface area of the changes&lt;/strong&gt;&lt;br&gt;Read the list of files
+that were changed. Have you seen these files recently? If not, skim them
+first (API and documentation) to get a sense of them. If there’s way too much
+context to gain, consider cc’ing someone else.&lt;br&gt;By gaining more context of
+the changed files, you can limit the number of times you add comments and
+later keep reading to find out they were all for moot.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Skim the changes to see if there were any API, abstraction, or structural
+changes&lt;/strong&gt;&lt;br&gt;Don’t look at the actual implementation changes yet. One of the
+most important things to see is how the change fits into the overall system.
+Is there a follow-up change (by someone else) coming which is incompatible
+with these changes? Will the changes lead to an intractable or complex
+pattern that others will want to follow?&lt;br&gt; You may decide that the entire
+approach should be rethought. In these cases, be tactful in how you explain
+your thoughts (I often choose to ask leading questions or relate to other
+examples). Additionally, consider that you may be missing context and could
+be wrong — the engineer probably had good reason to do what they chose.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Finally, look at the actual implementation changes and tests&lt;/strong&gt;&lt;br&gt;Now, once
+you’re happy with the high level changes, go through the code and look for
+surface-level feedback. For example, are their methods simple and easy to
+understand? Do they follow best practices and style guidelines? Have they
+given adequate comments? Do their changes have ample test coverage, or have a
+good reason to miss tests?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Keep giving the same feedback?&lt;/h4&gt;
+&lt;p&gt;This can be frustrating, especially if it’s to multiple people. Consider writing
+a canonical example or documentation of the best practices and link to it in
+future code reviews. Not only will this save you typing, but will also mean that
+others can read this reference, expand upon it, or ask you questions about the
+underlying motivations or philosophy.&lt;/p&gt;
+&lt;p&gt;One of my favorite ways to do this is as part of an “example component” and
+“example test”: actual code that lives and breathes like all other code, but
+with the single purpose of educating on best practices and underlying
+motivations.&lt;/p&gt;
+&lt;h4&gt;Spending a lot of time on code review?&lt;/h4&gt;
+&lt;p&gt;Is it with a specific person? Consider spending some time to reflect on the past
+few code reviews. Do you notice any themes? There might be an underlying reason
+they’re not improving, like a lack of clarity in the company’s engineering
+values, or a misalignment in some engineering philosophy. I’ve often found it
+helpful to send articles or videos on certain areas in engineering, and to talk
+to the engineer in person.&lt;/p&gt;
+&lt;p&gt;Do you frequently receive code that is hard to review? Tell the engineer! No one
+intentionally makes life difficult for their reviewer. Explain to them why the
+code is difficult to review (e.g. the commits are too large, commit messages are
+confusing, or the code is just too complex). It may also help to review the code
+with them in person, which will help them see why it’s difficult to review.
+Additionally, don’t be afraid to reject the change and ask them to address the
+issues with the commit structure or messages; the only way to improve this is to
+surface the issue.&lt;/p&gt;
+&lt;h4&gt;Giving way too many small nit comments?&lt;/h4&gt;
+&lt;p&gt;Sometimes, especially for new engineers, there are many small but important
+things to mention. It would be ideal for these to be handled by a compiler or
+linter, but sometimes that isn’t possible. Be mindful of your feedback — it
+might be best to only mention a subset at a time, or explain the high-level
+philosophy of the style guidelines in person. Otherwise, you risk decision
+fatigue for yourself as the reviewer, and the engineer is likely to feel
+overwhelmed when seeing the never-ending stream of comments. You can always
+continue to teach the engineer, and they’ll absorb more information if you
+incrementally introduce them to new concepts and learnings.&lt;/p&gt;
+&lt;h4&gt;Feeling overwhelmed by a review in your inbox?&lt;/h4&gt;
+&lt;p&gt;Every so often, I’ll get a code review for something that I’m not super excited
+to look at. Whether it’s old code that I haven’t worked in months, or an area of
+the codebase that’s notoriously complex. This is totally normal, but it’s not
+doing anyone any good, so reflect on this and be real. It may be best to pass
+the review to someone else who is a better person for the review, or, if it’s
+not time sensitive, to snooze it for a few days.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Thanks to Greg Slovacek for support and contributions, and to R.J. Aquino, Tim
+Bavaro, Kevin Der, Bella Kazwell, Vincent Siao, and Isaac Wolkerstorfer for
+reviewing a draft.&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Designing Simpler React Components]]></title><description><![CDATA[Patterns learned from porting the Asana application to React When using React to build large-scale applications, a number of frameworks have…]]></description><link>https://www.ericpelz.com//designing-simpler-react-components/</link><guid isPermaLink="false">https://www.ericpelz.com//designing-simpler-react-components/</guid><pubDate>Tue, 22 Mar 2016 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Patterns learned from porting the Asana application to React&lt;/h2&gt;
+&lt;p&gt;When using React to build large-scale applications, a number of frameworks have
+flourished to easily manage state, data-fetching, routing, and other
+application-level concerns. We’re not going to talk about that — instead, we’ll
+focus on another essential piece: how do you design React components for use in
+a large application and have it scale?&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;A goal to strive for when using any framework or language is
+&lt;a href=&quot;https://www.youtube.com/watch?v=rI8tNMsozo0&quot;&gt;simplicity&lt;/a&gt;. Over time, it is the
+simpler application that is more maintainable, readable, testable, and
+performant. React is no exception, and we found that one of the best ways to
+manifest simplicity is by striving for
+&lt;a href=&quot;https://wiki.haskell.org/Functional_programming#Purity&quot;&gt;functional purity&lt;/a&gt; in
+components, and by developing patterns that achieve this purity by default.
+Purity leads to more isolated and inherently simpler components, thereby
+bringing about a less braided and simpler system.&lt;/p&gt;
+&lt;p&gt;This is something we’ve thought a lot about at Asana — before we started using
+React, we had been building our in-house functionally reactive framework, Luna,
+since 2008. In iterating on this framework and building our web application,
+we’ve learned what worked and what caused long-term problems
+(&lt;a href=&quot;https://blog.asana.com/2015/05/the-evolution-of-asanas-luna-framework/&quot;&gt;read more&lt;/a&gt;).
+Through that, we’ve developed a series of overarching design principles that can
+be applied everywhere, but particularly in React.&lt;/p&gt;
+&lt;h3&gt;Immutable data representation&lt;/h3&gt;
+&lt;p&gt;When your data representation is mutable, then you’ll find it very difficult to
+maintain simple components. Individual components will become more complex by
+detecting and handling the transition states when data changes, rather than
+handling this at a higher-level component
+&lt;a href=&quot;https://medium.com/@learnreact/container-components-c0e67432e005#&quot;&gt;dedicated&lt;/a&gt;
+to re-fetching the data. Additionally, in React, immutable structures often lead
+to better performance: when data changes in a mutable representation, you’ll
+likely need to rely on React’s virtual DOM to determine whether components
+should update; alternatively, in an immutable representation, you can use a
+basic strict equality check to determine whether an update should occur.&lt;/p&gt;
+&lt;p&gt;Any time we have deviated from this and used a mutable object in props, it has
+resulted in regret and refactoring.&lt;/p&gt;
+&lt;p&gt;See &lt;a href=&quot;http://jlongster.com/Using-Immutable-Data-Structures-in-JavaScript&quot;&gt;here&lt;/a&gt;
+for more general benefits of using immutable data structures.&lt;/p&gt;
+&lt;h3&gt;Make liberal use of pure functions&lt;/h3&gt;
+&lt;p&gt;A &lt;a href=&quot;https://en.wikipedia.org/wiki/Pure_function&quot;&gt;pure function&lt;/a&gt; is a function
+whose return value is solely determined by its input values, without dependence
+on global state or causing any side effects. In components, we often have
+complicated behavior that aids but is not directly tied to our rendering. Use
+pure helper functions to movethis logic outside of the component, so that the
+component has fewer responsibilities and lower complexity. Additionally, this
+logic can be tested in an isolated way, and is re-usable in other components. If
+you notice common sets of these helper functions, then denote them as such by
+organizing them into sets of modules.&lt;/p&gt;
+&lt;p&gt;We’ve encountered two main classes of these which occur in almost all of our
+components:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Data model helpers to derive a result from one or more objects&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Mutation helpers to perform client- and server-side mutations in response to
+user actions&lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;!-- prettier-ignore-start --&gt;
+&lt;!-- prettier-ignore-end--&gt;
+&lt;h3&gt;Use pure components, avoiding impure pitfalls&lt;/h3&gt;
+&lt;p&gt;A pure component is a React component whose render function is pure (solely
+determined by props and state). The default behavior in React is to always
+re-render the entire component tree, even if props/state do not change. This is
+incredibly inefficient, and React
+&lt;a href=&quot;https://facebook.github.io/react/docs/pure-render-mixin.html&quot;&gt;suggests&lt;/a&gt;
+overriding shouldComponentUpdate to take advantage of pure render functions in
+the component’s lifecycle. This offers an enormous performance boost and
+increased simplicity, so you should consider doing this early-on.&lt;/p&gt;
+&lt;p&gt;When using pure components (overriding shouldComponentUpdate), there is no
+verification that you actually implement your components to be pure. So, it’s
+possible to accidentally write a component that is not pure, which will cause
+reactivity problems and show stale data to the user. We’ll discuss two of these
+“impure pitfalls.”&lt;/p&gt;
+&lt;h4&gt;Globals&lt;/h4&gt;
+&lt;p&gt;Using globals in a component means that the component is no longer pure, as it
+depends on data outside of props and state. If you rely on a global for
+rendering or in any of the component’s lifecycle methods, then you won’t achieve
+correctness and reactivity. We’ve found it immensely helpful to avoid using
+globals like the Document or Window, and instead pass these as props to the
+components which use them. We do this by creating a Services object, and by
+having each component declare in an interface which services it relies on.
+Through this, components can maintain purity and be independent of the global
+namespace.&lt;/p&gt;
+&lt;h4&gt;Render Callbacks&lt;/h4&gt;
+&lt;p&gt;A now-antipattern that used to be quite prevalent for us is a &lt;em&gt;render callback:&lt;/em&gt;
+a function passed as a prop to a component, which allows that component to
+render something. A common use-case of a render callback was to allow a child to
+render something using data it did not receive in props. For example, if we
+wanted to have a generalized component that could render many types of child
+components, we would pass the component a callback to render the child.&lt;/p&gt;
+&lt;p&gt;Unfortunately, render callbacks are inherently impure because they can use
+whatever variables its function has closed on. So, because of our assumption of
+pure components, if any of the outside environment changes then our component
+would &lt;em&gt;not&lt;/em&gt; re-render.&lt;/p&gt;
+&lt;p&gt;Let’s see this in a code snippet.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Render callback anti-pattern&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ParentProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  someObject&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; SomeObject&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ParentComponent&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;PureComponent&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ParentProps&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ChildComponent&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      renderSomething&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;_renderSomethingForIdx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;_renderSomethingForIdx&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;SomeOtherComponent&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      object&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;someObject&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      idx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ChildProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  renderSomething&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ReactElement&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ChildComponent&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;PureComponent&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ChildProps&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// ... some other behavior ...&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;renderSomething&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In this snippet, ParentComponent passes a render callback to ChildComponent, and
+that render callback uses someObject from props. Since ChildComponent uses this
+function for its rendering behavior, then it will &lt;em&gt;not&lt;/em&gt; re-render if someObject
+changes.&lt;/p&gt;
+&lt;p&gt;Luckily, you can avoid using a render callback in one of three ways, depending
+on your constraints, and each allows us to keep our pure component assumption.&lt;/p&gt;
+&lt;h5&gt;Alternative 1&lt;/h5&gt;
+&lt;p&gt;Pass all information needed for rendering to the child component, and have that
+child render the component directly.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ParentProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  someObject&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; SomeObject&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ParentComponent&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;PureComponent&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ParentProps&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ChildComponent&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      someObject&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;someObject&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ChildProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  idx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  someObject&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; SomeObject&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ChildComponent&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;PureComponent&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ChildProps&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// ... some other behavior ...&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;SomeOtherComponent&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      object&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;someObject&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      idx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; idx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We achieve the same rendered output by having ChildComponent render
+SomeOtherComponent itself. This works well if the additional props do not cause
+excess re-rendering, and do not break any contextual abstraction boundary in the
+component.&lt;/p&gt;
+&lt;h5&gt;Alternative 2&lt;/h5&gt;
+&lt;p&gt;Render the component in its entirety and pass that to the child component&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ParentProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  someObject&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; SomeObject&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ParentComponent&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;PureComponent&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ParentProps&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ChildComponent&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      somethingElement&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;_renderSomethingElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;_renderSomethingElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;SomeOtherComponent&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      object&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;someObject&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      idx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Suppose this had access to the idx&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ChildProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  somethingElement&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ReactElement&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ChildComponent&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;PureComponent&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ChildProps&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// ... some other behavior ...&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;somethingElement&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In cases that ParentComponent has all of the information needed to render
+SomeOtherComponent, we can just pass it down as a prop to the ChildComponent.&lt;/p&gt;
+&lt;h5&gt;Alternative 3&lt;/h5&gt;
+&lt;p&gt;Render the component partially, pass the ReactElement to the child component,
+and use React’s cloneElement to inject the remaining props.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ParentProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  someObject&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; SomeObject&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ParentComponent&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;PureComponent&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ParentProps&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ChildComponent&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      somethingElement&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;_renderSomethingElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;_renderSomethingElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;SomeOtherComponent&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      object&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;someObject&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      idx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// injected by ChildComponent&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ChildProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  somethingElement&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ReactElement&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;ChildComponent&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;PureComponent&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ChildProps&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// ... some other behavior ...&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// Clone the passed-in element, and add in the remaining prop.&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cloneElement&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;somethingElement&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      idx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This alternative is great for cases where neither ParentComponent nor
+ChildComponent have the full information needed to render SomeOtherComponent, so
+it shares the responsibility. While this may seem more complicated than the
+above two alternatives, it has a lot of desirable properties. In the next
+section, we’ll dig into a real world example to make it more concrete.&lt;/p&gt;
+&lt;h3&gt;Divide components and use the injector pattern to maintain separation of concerns&lt;/h3&gt;
+&lt;p&gt;Composition is an immensely useful pattern in React for achieving separation of
+concerns. Many great philosophies around this have developed, such as dividing
+components between
+&lt;a href=&quot;https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.yzeg1rmzv&quot;&gt;presentational and container components&lt;/a&gt;.
+However, for some high-level components, such as a general component for
+drag-and-drop, composition necessitated either use of a *render callback *or
+added complexity. In such cases, we found the aforementioned &lt;strong&gt;injector
+pattern&lt;/strong&gt; helpful.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Example from Asana:&lt;/strong&gt; Simplifying the Task List row&lt;/p&gt;
+&lt;p&gt;A core component in Asana is the Task List, which allows a user to see all of
+the tasks in a project. The component for a single row in this list has many
+responsibilities: it displays information (such as the task assignee), it can be
+a section or a task, and it can be dragged and dropped to re-order. Following
+the principle of composition, we divided the task row to achieve smaller and
+simpler components, and composed them together.&lt;/p&gt;
+&lt;p&gt;As part of this, we wanted to create a general component that handled all of the
+drag-and-drop logic, which could be composed with a task row. This would mean
+that a task row could be completely agnostic to drag-and-drop, and all of that
+logic would be contained within a new component that could be agnostic to its
+rendered child.&lt;/p&gt;
+&lt;p&gt;With such a design, we would be able to compose a DraggableRowContainer and
+TaskRow to make a draggable task row. Each of these two components would not
+need to know about the other, and a TaskList component could utilize them to
+render its task list. For example:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;TaskList&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;PureComponent&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Props&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tasks&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;task&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; DraggableRowContainer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        child&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; TaskRow&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          task&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; task
+          &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;However, we found this difficult to accomplish without introducing a *render
+callback *or complicating the DOM hierarchy, because the DraggableRowContainer
+needed to add to DOM nodes (in this case, adding class names). A solution could
+have been to use a &lt;em&gt;render callback&lt;/em&gt;, but that broke our purity assumption.&lt;/p&gt;
+&lt;p&gt;Instead, we were able to use the injector pattern. DraggableRowContainer would
+clone its child (a TaskRow), and “inject” props to the child to enable
+drag-and-drop. This did not introduce complexity to TaskRow: it could still
+render purely based on props, and did not need to be conscious of drag
+functionality. The TaskRow props would just need to adhere to a certain
+interface (in this case, expecting a class name to add styling on drag hover).
+Therefore, our task row has fewer responsibilities, we have a re-usable
+DraggableRowContainer component, and our DOM hierarchy is unchanged.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;The injection pattern has proved useful in our application, particularly when
+used to create general abstraction components (drag-and-drop, loading data, and
+so on). TypeScript gives us compile-time assurance that the passed-in element
+can indeed be injected with a given property, and the cloned element can execute
+its React lifecycle methods without worry.&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;While this is just a short list of patterns to consider, and they will certainly
+not guarantee a simple and scalable application, we have found them immensely
+helpful in approaching component design. Incorporating functional purity in
+every component — through use of immutable data representations, pure functions,
+pure components, and eliminating impure pitfalls—has allowed us to develop large
+parts of our application in React while maintaining simplicity and performance.
+In all, though, the best principle is to continue to take time to reflect along
+the way and uncover new opportunities to simplify.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Thanks to Kevin Der, Josh Smith, and Phips Peter for their great work in
+contributing to these patterns.&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn-1&quot;&gt;
+&lt;p&gt;  Example of a data model helper: determine whether a user is currently on
+vacation.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;isOnVacation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;attr&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// We pass in the current time, because otherwise this function would rely&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// on the Date global. Instead, the calling component will use a chronometer&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// service which is declaratively passed-in to it.&lt;/span&gt;
+  nowTime&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// We take advantage of TypeScript&apos;s structural typing, so this method can&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// take any compatible User model. This is preferable to relying on a specific&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// User interface: each calling component has a subset of the User object graph&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// that it depends on, so this makes isOnVacation usable in many components.&lt;/span&gt;
+  user&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;vacationStartTime&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;vacationEndTime&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; startTime &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; attr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;vacationStartTime&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; endTime &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; attr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;vacationEndTime&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; wasOnVacation &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; startTime &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; startTime &lt;span class=&quot;token operator&quot;&gt;&amp;lt;=&lt;/span&gt; attr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nowTime&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; stillOnVacation &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; endTime &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; endTime &lt;span class=&quot;token operator&quot;&gt;&gt;=&lt;/span&gt; attr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nowTime&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; wasOnVacation &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; stillOnVacation&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn-2&quot;&gt;
+&lt;p&gt;Example of a mutation helper: to “heart” a task&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;typescript&quot;&gt;&lt;pre class=&quot;language-typescript&quot;&gt;&lt;code class=&quot;language-typescript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;heartTask&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;attr&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  datastore&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; DatastoreService&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// Thin interfaces for the User/Task model which utilize TypeScript&apos;s&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// structural typing, but the type aliases are omitted for brevity.&lt;/span&gt;
+  user&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; UserBase&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  task&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; TaskBase&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  attr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;datastore&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;runInBatch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// 1. Optimistically create the object representing the heart.&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; heartRequest &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;HeartCreateRequest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      target&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; attr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;task&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;dbObjectId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      user&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; attr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;dbObjectId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; heartId &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; attr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;datastore&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createDbObject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;heartRequest&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// 2. Send server request to update the database.&lt;/span&gt;
+    attr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;services&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;datastore&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;requestServerChange&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      “post”&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; “&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;task_heart”&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;// server will create an identical object with the same ID.&lt;/span&gt;
+        global_id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; heartId&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        task&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; task&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;dbObjectId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        user&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; attr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;dbObjectId&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a href=&quot;#fnref-2&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content:encoded></item></channel></rss>
