@@ -4,7 +4,7 @@ export function renderDateAndReadingTime(post) {
   return (
     <React.Fragment>
       {post.frontmatter.date}
-      &nbsp;&#9679;&nbsp;
+      &nbsp;▪&nbsp;
       {post.fields.readingTime.text}
     </React.Fragment>
   )

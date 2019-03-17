@@ -32,10 +32,11 @@ class Layout extends React.Component {
       )
     } else {
       header = (
-        <h3
+        <h2
           style={{
-            fontFamily: `Montserrat, sans-serif`,
+            ...scale(1.2),
             marginTop: 0,
+            color: `#696969`
           }}
         >
           <Link
@@ -48,7 +49,7 @@ class Layout extends React.Component {
           >
             {title}
           </Link>
-        </h3>
+        </h2>
       )
     }
     return (
