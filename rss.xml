@@ -1,4 +1,219 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Eric Pelz]]></title><description><![CDATA[Eric Pelz is a software engineer]]></description><link>https://www.ericpelz.com/</link><generator>RSS for Node</generator><lastBuildDate>Sun, 17 Mar 2019 20:25:08 GMT</lastBuildDate><item><title><![CDATA[How the best product engineering teams maximize value]]></title><description><![CDATA[Reducing risk, eliminating complexity, and sequencing effectively With perfect information, an engineering design process can be pretty…]]></description><link>https://www.ericpelz.com//how-best-product-engineering-teams-max-value/</link><guid isPermaLink="false">https://www.ericpelz.com//how-best-product-engineering-teams-max-value/</guid><pubDate>Mon, 16 Apr 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Reducing risk, eliminating complexity, and sequencing effectively&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Eric Pelz]]></title><description><![CDATA[Eric Pelz is a software engineer]]></description><link>https://www.ericpelz.com/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 25 Mar 2019 06:09:46 GMT</lastBuildDate><item><title><![CDATA[Preventing JavaScript bugs with static type checking]]></title><description><![CDATA[It’s extremely common for engineering teams to debate the value of static versus
+dynamic typing systems. The last few years has seen a big…]]></description><link>https://www.ericpelz.com//static-type-checking-js/</link><guid isPermaLink="false">https://www.ericpelz.com//static-type-checking-js/</guid><pubDate>Sun, 24 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;It’s extremely common for engineering teams to debate the value of static versus
+dynamic typing systems. The last few years has seen a big rise in TypeScript and
+Flow usage, which add static type checking to JavaScript.&lt;/p&gt;
+&lt;p&gt;Within an individual engineering team, it’s fairly difficult to determine the
+actual value that one attains from switching from a dynamic to static typing
+system.&lt;/p&gt;
+&lt;p&gt;A group of researchers created a study to look into just this: do static type
+systems improve software quality, and if so, by how much?&lt;/p&gt;
+&lt;p&gt;This post summarizes the research published in
+&lt;a href=&quot;http://ttendency.cs.ucl.ac.uk/projects/type_study/documents/type_study.pdf&quot;&gt;To Type or Not to Type: Quantifying Detectable Bugs in JavaScript&lt;/a&gt;,
+by Gao et. al. IEEE 2017, with particular attention on aspects of the paper
+applicable to software engineering teams using JavaScript or its typed variants.&lt;/p&gt;
+&lt;p&gt;Result: 15% of sampled JavaScript bugs were detectable by Flow 0.30 and
+TypeScript 2.0.&lt;/p&gt;
+&lt;h2&gt;Definition and methodology&lt;/h2&gt;
+&lt;p&gt;The research team classified a bug as &lt;code class=&quot;language-text&quot;&gt;ts-detectable&lt;/code&gt;&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; if using type
+annotations would cause an error on a line changed by a bug fix, and when the
+new type annotations are consistent with the fixed program.&lt;/p&gt;
+&lt;p&gt;At the time of analysis (08/19/2015), there were 3,910,969 closed bug reports on
+open-source JavaScript projects on GitHub. The authors wanted a 95% confidence
+level, and so sampled 400 bugs at random for the experiment.&lt;/p&gt;
+&lt;p&gt;The researchers classified each bug as &lt;code class=&quot;language-text&quot;&gt;ts-detectable&lt;/code&gt; in each of TypeScript 2.0
+and Flow 0.30. First, they checked if the bug report was absolutely not
+type-related (for example, if the bug was due to a misunderstanding of the
+product specification), and if so they labeled it as undetectable. Next, they
+looked at the intended behavior of the bug fix and attempted to add type
+annotations to cause the type system to error at the area of code patched by the
+bug fix. If they could do this, the sample was deemed &lt;code class=&quot;language-text&quot;&gt;ts-detectable&lt;/code&gt;; otherwise
+it was not. The researchers also set a time-bound for each bug investigation to
+10 minutes, after which the bug was deemed unknown.&lt;/p&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b9d2543172f4e4a8451901a241a9228f/68866/histo_tc_detectable.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 47.63888888888889%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVQoz42Syy/EUBTG5z+1mSDBH2DFBksLsSSMIPFYkLARIiHEMxKhHSbz6PSpipnWPLS9n3NPa0wmk9DkpF/vPfd3v9NzMnEc4+eJol8t14UQpAS/hYg7mvco4p6Qexl5+E7z8ex8MqjoNnBbqfPhkC6oN0OSAq2vCPNHOp7sJC9KAb3BwMmdIhZPDE5cv7Awvl1gnbcCjK7m0WyHFBGySwouix+8Jy+L+7hk4Mx+GSvnFiduXTuY3C2yVgiYXVbQJHftMMbYWh435frfDqf3SsidmZy4eeVgYicFmgGGcioa5E6WPEJur8u1vx1OdQE3eoCDOYWA4S+w9A/gzF7/klUqeXhF5f8ngUnJ3cCfrouO7tMUu9OUB8PHwMIDlyz/IzcldZiMWzpCXSOVkWKNIAePb5x4rHpYOk3g1bcWZg807vJXJDB3qEM1fd67NwIU0lHTKE+OnmSxw5cXB7WPZByCwCf9ziUYhgHLNOC6LodtmfA8D45jo1SpQjdtvNJ6RdPpW6d1B98ZyupZWoWDSAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;histo tc detectable&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b9d2543172f4e4a8451901a241a9228f/6255c/histo_tc_detectable.png&quot;
+        srcset=&quot;/static/b9d2543172f4e4a8451901a241a9228f/375dc/histo_tc_detectable.png 148w,
+/static/b9d2543172f4e4a8451901a241a9228f/6b157/histo_tc_detectable.png 295w,
+/static/b9d2543172f4e4a8451901a241a9228f/6255c/histo_tc_detectable.png 590w,
+/static/b9d2543172f4e4a8451901a241a9228f/68866/histo_tc_detectable.png 720w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;The team was able to label all 400 bug samples: Each of Flow and TypeScript
+detected 60 of the bugs. This means at the confidence level of 95%, the
+percentage of detectable bugs for each falls into [11.5%, 18.5%] with mean 15%.&lt;/p&gt;
+&lt;p&gt;Most of the bugs were easy to determine: only 18 of the 400 hit the time-box
+period of 10 minutes, mostly due to external modules and interfaces making it
+harder to isolate the source of the bug with type annotations. The team spent
+more time on these bugs, utilizing published type definitions and documentation
+when necessary, and were able to classify them all.&lt;/p&gt;
+&lt;h3&gt;Caveats&lt;/h3&gt;
+&lt;p&gt;The authors think this greatly understates the impact of static typing, because:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They only surveyed publicly visible bugs, which means any bug caught during
+development was not included. They also think public bugs are more often cause
+by misunderstanding of the specification, which type systems cannot detect.&lt;/li&gt;
+&lt;li&gt;These results do not include any other strengths of static type systems, like
+developer efficiency or app performance.&lt;/li&gt;
+&lt;li&gt;This experiment uses the relatively weak type systems of TypeScript and Flow.&lt;/li&gt;
+&lt;li&gt;The authors have limited expertise in Flow and TypeScript, which means they
+could have incorrectly deemed bug as undetectable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;What about the undetectable bugs?&lt;/h3&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3779949d69c3eaadc128e1e353d1b495/68866/histo_undetectability.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 45.27777777777778%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMklEQVQoz6WS3VLDIBCF8/5vYa98Emf0AdSO1mQ6NoGENISfACHlCERre+OF3ZmdsyzwsSwUZVnCuBmtcAinE043elHu3kD5hM1Dg0jEstwI3L48gwwad2fg8m/PwH1VZuDmAui/F3i/xkmXC/0T2Hf0F4iQk0kRome71hDWudTvEK6vm+aK5vCJQy9x/0RRdRMedxwf7YTXWqJiExpusCUaXDu8tzo+oIeyPvc6VZ8gP7BcobUG2jgcjhqDcqij0lgxkw77TuIYcyUVkMZnnSKw7hXs7CEnBz/PGWStzdcuErlpGgg+RK2hpEBL13HPWoiRY+gZKCFQgoOQJufSnpFz1HUNztdxssIYA6UUxnGElDJuIJjjqUKI9QvFA6VUYIzltqb1KdZao+sYnHPn6pJ9AVyLuQAs5Ua5AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;histo undetectability&quot;
+        title=&quot;&quot;
+        src=&quot;/static/3779949d69c3eaadc128e1e353d1b495/6255c/histo_undetectability.png&quot;
+        srcset=&quot;/static/3779949d69c3eaadc128e1e353d1b495/375dc/histo_undetectability.png 148w,
+/static/3779949d69c3eaadc128e1e353d1b495/6b157/histo_undetectability.png 295w,
+/static/3779949d69c3eaadc128e1e353d1b495/6255c/histo_undetectability.png 590w,
+/static/3779949d69c3eaadc128e1e353d1b495/68866/histo_undetectability.png 720w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;The vast majority of bugs that were undetectable were due to “specification
+errors”, which constituted 78% of total bugs. This is covered by &lt;code class=&quot;language-text&quot;&gt;BranchError&lt;/code&gt;,
+&lt;code class=&quot;language-text&quot;&gt;PredError&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;UIError&lt;/code&gt;, and the catch-all &lt;code class=&quot;language-text&quot;&gt;SpecError&lt;/code&gt; in the above histogram.
+This demonstrates the importance of careful specification before development
+begins.&lt;/p&gt;
+&lt;p&gt;The second most common error type was &lt;code class=&quot;language-text&quot;&gt;StringError&lt;/code&gt;, often due to a wrong URL.&lt;/p&gt;
+&lt;h3&gt;Comparing TypeScript and Flow&lt;/h3&gt;
+&lt;p&gt;While TypeScript and Flow had the same number of &lt;code class=&quot;language-text&quot;&gt;ts-detectable&lt;/code&gt; bugs, they
+don’t have complete overlap. There were 3 bugs that were only detectable on
+Flow, and 3 only on TypeScript.&lt;/p&gt;
+&lt;p&gt;In all of the three bugs detectable in Flow but not TypeScript, the bug was a
+result of concatening a possible undefined or null value with another string.
+For example:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This highlights a TypeScript weakness, at least as of version 2.0, in its null
+handling.&lt;/p&gt;
+&lt;p&gt;Two of the three bugs detectable in TypeScript but not Flow were due to Flow’s
+incomplete support for using string literals as an index.&lt;/p&gt;
+&lt;p&gt;Also of note: of the 60 ts-detectable bugs, 22 of them needed null checks. This
+is a feature added in TypeScript 2.0, and needs &lt;code class=&quot;language-text&quot;&gt;--strictNullChecks&lt;/code&gt; enabled.&lt;/p&gt;
+&lt;h2&gt;Approximating the cost of using static typings&lt;/h2&gt;
+&lt;p&gt;While it’s incredibly difficult to directly measure the effort for programmers
+to use a static type system, the authors tried to approximate this.&lt;/p&gt;
+&lt;p&gt;They defined:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;code class=&quot;language-text&quot;&gt;token tax&lt;/code&gt;, which was the number of tokens in an annotation needed to
+trigger a type error for the bug in question. The goal for this was to proxy
+the number of decisions a programmer would take when adding type annotations.&lt;/li&gt;
+&lt;li&gt;A &lt;code class=&quot;language-text&quot;&gt;time tax&lt;/code&gt;, which was the time spent adding annotations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note that these measures are an underestimate of the real-world cost, because
+they are calculated for a single bug in which the authors only used type
+annotation to target the bug in question (and not the entire module).&lt;/p&gt;
+&lt;p&gt;These metrics are only intended to track the incremental cost for each change a
+developer makes. If we assume an entire project is already using a static type
+checker, then the cost to a developer is only the time and tokens needed as part
+of their code change.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c7a4a9afe910c9d017d2ae8a816ca0f5/db618/annotation_tax.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 32.18085106382979%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABKUlEQVQY001R246CQAzl/79ldX9ANwFXQB58WEkQiFFQkhXkptxvZ6fdsNkmTTud9pzTGamqKsRxjDRN2ZMk+YthGCLPc85np7vHI/qd+Vejc13XkMZxRN/36LqOfc4HEVVVxVb41+EAwzBAvWSed4Gy2cCyLGiazpHIyaRhGBhgNgKsheqNGFivP7hR0zS8LZZQtyrKssSnuFut1qyK+hbLd+i6LnB6SAwgpNq2jdstABEQIK16Pp/xfD7xer2QZRmu1yvXT6cTfN/nvCgKJqX5um4gTdOEIAggyzJkRcH3/Q6qkVGdCGcjgGka4bourOMRbdtyvSwLXpueRGqaBvv9XrzRDqZpCuk7pEINfdbF8xiEctoiiiJWRMqPApDU03wY3uE4DhP8ANgevib9/ErvAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;annotation tax&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c7a4a9afe910c9d017d2ae8a816ca0f5/6255c/annotation_tax.png&quot;
+        srcset=&quot;/static/c7a4a9afe910c9d017d2ae8a816ca0f5/375dc/annotation_tax.png 148w,
+/static/c7a4a9afe910c9d017d2ae8a816ca0f5/6b157/annotation_tax.png 295w,
+/static/c7a4a9afe910c9d017d2ae8a816ca0f5/6255c/annotation_tax.png 590w,
+/static/c7a4a9afe910c9d017d2ae8a816ca0f5/db618/annotation_tax.png 752w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Using these measures, the authors find that the mean annotation tax for each bug
+is: 1.7 tokens and 231 seconds for Flow, and 2.4 tokens and 306 seconds for
+TypeScript.&lt;/p&gt;
+&lt;p&gt;The authors note this discrepency is largely due to Flow’s paradigm of strong
+type inference, and a more compact syntax for nullable types, which made it
+faster for them to annotate.&lt;/p&gt;
+&lt;p&gt;However, the authors also noted that the most time-consuming aspect of this
+project was handling external modules and their typings. For many projects, Flow
+didn’t have built-in support, and the team leaned on the TypeScript community’s
+&lt;a href=&quot;https://github.com/DefinitelyTyped/DefinitelyTyped&quot;&gt;set of type definitions&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn-1&quot;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Definition for &lt;code class=&quot;language-text&quot;&gt;ts-detectable&lt;/code&gt;: Given a static type system &lt;code class=&quot;language-text&quot;&gt;ts&lt;/code&gt;, a bug &lt;code class=&quot;language-text&quot;&gt;b&lt;/code&gt;
+is &lt;code class=&quot;language-text&quot;&gt;ts-detectable&lt;/code&gt; when adding or changing type annotations causes the
+program &lt;code class=&quot;language-text&quot;&gt;p&lt;/code&gt; containing &lt;code class=&quot;language-text&quot;&gt;b&lt;/code&gt; to error on a line changed by a fix and the new
+annotations are consistent with &lt;code class=&quot;language-text&quot;&gt;f&lt;/code&gt;, a fixed version of &lt;code class=&quot;language-text&quot;&gt;p&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot;&gt;↩&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content:encoded></item><item><title><![CDATA[How the best product engineering teams maximize value]]></title><description><![CDATA[Reducing risk, eliminating complexity, and sequencing effectively With perfect information, an engineering design process can be pretty…]]></description><link>https://www.ericpelz.com//how-best-product-engineering-teams-max-value/</link><guid isPermaLink="false">https://www.ericpelz.com//how-best-product-engineering-teams-max-value/</guid><pubDate>Mon, 16 Apr 2018 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Reducing risk, eliminating complexity, and sequencing effectively&lt;/h2&gt;
 &lt;p&gt;With perfect information, an engineering design process can be pretty
 straightforward: you can focus on implementing functionality while minimizing
 engineering complexity and risk. But this gets a lot trickier when there are a
