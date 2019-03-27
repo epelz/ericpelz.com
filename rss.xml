@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Eric Pelz]]></title><description><![CDATA[Eric Pelz is a software engineer]]></description><link>https://www.ericpelz.com/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 25 Mar 2019 06:09:46 GMT</lastBuildDate><item><title><![CDATA[Preventing JavaScript bugs with static type checking]]></title><description><![CDATA[It’s extremely common for engineering teams to debate the value of static versus
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Eric Pelz]]></title><description><![CDATA[Eric Pelz is a software engineer]]></description><link>https://www.ericpelz.com/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 27 Mar 2019 06:58:16 GMT</lastBuildDate><item><title><![CDATA[Preventing JavaScript bugs with static type checking]]></title><description><![CDATA[It’s extremely common for engineering teams to debate the value of static versus
 dynamic typing systems. The last few years has seen a big…]]></description><link>https://www.ericpelz.com//static-type-checking-js/</link><guid isPermaLink="false">https://www.ericpelz.com//static-type-checking-js/</guid><pubDate>Sun, 24 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;It’s extremely common for engineering teams to debate the value of static versus
 dynamic typing systems. The last few years has seen a big rise in TypeScript and
 Flow usage, which add static type checking to JavaScript.&lt;/p&gt;
@@ -200,6 +200,25 @@ faster for them to annotate.&lt;/p&gt;
 project was handling external modules and their typings. For many projects, Flow
 didn’t have built-in support, and the team leaned on the TypeScript community’s
 &lt;a href=&quot;https://github.com/DefinitelyTyped/DefinitelyTyped&quot;&gt;set of type definitions&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Takeaways&lt;/h2&gt;
+&lt;p&gt;The research is pretty clear that static typing &lt;em&gt;does&lt;/em&gt; indeed help prevent a
+significant percentage of bugs, even for engineers not familiar with the
+language or codebase.&lt;/p&gt;
+&lt;p&gt;While it’s possible those bugs could have been caught through other means —
+such as testing or linting — there’s a huge benefit in preventing this class of
+issues as part of your development cycle (as opposed to your testing process).
+There are also many other adjacent benefits of static typing that were not
+explored in this research, such as improved code editor integration and faster
+new engineer onboarding to a codebase.&lt;/p&gt;
+&lt;p&gt;One takeaway from this research is that there is value in an incremental
+conversion of your codebase to static typing. The researchers did not convert
+entire projects and were still able to prevent bugs. Rather than hold off
+conversion until your team has bandwidth to fully migrate, start incrementally
+with the most commonly edited files or those most susceptible to bugs.&lt;/p&gt;
+&lt;p&gt;TypeScript and Flow performed similarly in the goal of preventing bugs, but may
+have more significant differences in adoption in a company or toolkit. Use the
+software that most fits your team’s needs and goals: the differences highlighted
+here are negligable enough.&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
