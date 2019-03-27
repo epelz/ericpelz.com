@@ -1,8 +1,7 @@
 ---
 title: Preventing JavaScript bugs with static type checking
 date: "2019-03-24"
-description:
-  Summarizing research on catching bugs with TypeScript and Flow
+description: Summarizing research on catching bugs with TypeScript and Flow
 ---
 
 It's extremely common for engineering teams to debate the value of static versus
@@ -148,3 +147,27 @@ However, the authors also noted that the most time-consuming aspect of this
 project was handling external modules and their typings. For many projects, Flow
 didn't have built-in support, and the team leaned on the TypeScript community's
 [set of type definitions](https://github.com/DefinitelyTyped/DefinitelyTyped).
+
+## Takeaways
+
+The research is pretty clear that static typing _does_ indeed help prevent a
+significant percentage of bugs, even for engineers not familiar with the
+language or codebase.
+
+While it's possible those bugs could have been caught through other means --
+such as testing or linting -- there's a huge benefit in preventing this class of
+issues as part of your development cycle (as opposed to your testing process).
+There are also many other adjacent benefits of static typing that were not
+explored in this research, such as improved code editor integration and faster
+new engineer onboarding to a codebase.
+
+One takeaway from this research is that there is value in an incremental
+conversion of your codebase to static typing. The researchers did not convert
+entire projects and were still able to prevent bugs. Rather than hold off
+conversion until your team has bandwidth to fully migrate, start incrementally
+with the most commonly edited files or those most susceptible to bugs.
+
+TypeScript and Flow performed similarly in the goal of preventing bugs, but may
+have more significant differences in adoption in a company or toolkit. Use the
+software that most fits your team's needs and goals: the differences highlighted
+here are negligable enough.
