@@ -29,10 +29,12 @@ function Bio() {
             />
             <p>
               I'm a software engineer at{" "}
-              <a href="https://www.asana.com/">Asana</a>. I manage a few
-              engineers and am the program & tech lead on a product team. I
-              spend a lot of time thinking about running effective teams,
-              fostering growth, product+engineering collaboration, and
+              <a href="https://www.asana.com/">Asana</a>. I'm the tech lead of
+              the Workflow Pillar, which includes the Automation,
+              Communications, App Experience, Integrations, and API product
+              teams. I used to be a people manager, and might manage again in
+              the future. I spend a lot of time thinking about running effective
+              teams, fostering growth, product+engineering collaboration, and
               engineering design patterns.
             </p>
           </div>
