@@ -27,42 +27,41 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-76b89f1992938d61a07f.js"
+    "url": "webpack-runtime-b3055406b05a1b1dc889.js"
   },
   {
-    "url": "styles.ed261b6a788d4cabc306.css"
+    "url": "styles.3d0c5a1816b90d84609d.css"
   },
   {
-    "url": "styles-c41920853eed0685ae46.js"
+    "url": "framework-aa628d13add4b7264db0.js"
   },
   {
-    "url": "framework-e43bc979b16dd68f6b5c.js"
-  },
-  {
-    "url": "app-95d86b794031746fa85b.js"
+    "url": "app-57ee2e4709563ec1e55d.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "a41faa18edc28dbaa5b7a950b11bb52f"
+    "revision": "ab18bbeed833eb9edfe9a1d9c4a415a2"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-ab12cfe2f77aa8ed5f67.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-7a4b0ab385bd7f980dc7.js"
+  },
+  {
+    "url": "polyfill-6f08a764053358e88a06.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "3510573fa64881e4a04a47ebf9909531"
+    "revision": "bcbac9e3d0d8257639fd4bdee5a07c01"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, new workbox.strategies.CacheFirst(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\page-data\/.*\/page-data\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\/page-data\/.*\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|avif|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 
 /* global importScripts, workbox, idbKeyval */
-
-importScripts(`idb-keyval-iife.min.js`)
+importScripts(`idb-keyval-3.2.0-iife.min.js`)
 
 const { NavigationRoute } = workbox.routing
 
@@ -143,7 +142,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-95d86b794031746fa85b.js`))) {
+  if (!resources || !(await caches.match(`/app-57ee2e4709563ec1e55d.js`))) {
     return await fetch(event.request)
   }
 
