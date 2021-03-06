@@ -2,6 +2,7 @@
 title: Circumventing engineering complexity
 date: "2017-09-11"
 description: Examples from building Custom Fields at Asana.
+categories: ["engineering"]
 ---
 
 ## Examples from building Custom Fields at Asana

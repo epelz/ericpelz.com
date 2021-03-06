@@ -2,6 +2,7 @@
 title: Preventing JavaScript bugs with static type checking
 date: "2019-03-24"
 description: Summarizing research on catching bugs with TypeScript and Flow
+categories: ["engineering"]
 ---
 
 It's extremely common for engineering teams to debate the value of static versus

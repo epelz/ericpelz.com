@@ -2,6 +2,7 @@
 title: Designing Simpler React Components
 date: "2016-03-22"
 description: Patterns learned from porting the Asana application to React
+categories: ["engineering"]
 ---
 
 ## Patterns learned from porting the Asana application to React

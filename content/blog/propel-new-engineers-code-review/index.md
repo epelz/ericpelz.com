@@ -2,6 +2,7 @@
 title: How to propel new engineers with code review
 date: "2016-12-17"
 description: Maximizing mentorship, improving code quality, and saving time
+categories: ["engineering"]
 ---
 
 ## Maximizing mentorship, improving code quality, and saving time

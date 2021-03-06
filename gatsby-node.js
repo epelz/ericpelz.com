@@ -4,11 +4,12 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const postTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const categoryTemplate = path.resolve(`./src/templates/category.js`)
   return graphql(
     `
       {
-        allMarkdownRemark(
+	postsGroup: allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -23,6 +24,11 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+	categoriesGroup: allMarkdownRemark (limit: 1000) {
+	  group(field: frontmatter___categories) {
+	    fieldValue
+	  }
+	}
       }
     `
   ).then(result => {
@@ -31,15 +37,14 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
-
+    const posts = result.data.postsGroup.edges
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
 
       createPage({
         path: post.node.fields.slug,
-        component: blogPost,
+        component: postTemplate,
         context: {
           slug: post.node.fields.slug,
           previous,
@@ -47,6 +52,18 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
     })
+
+    // Create category pages
+    const categories = result.data.categoriesGroup.group
+    categories.forEach(category => {
+      createPage({
+        path: `/categories/${category.fieldValue}`,
+        component: categoryTemplate,
+        context: {
+          category: category.fieldValue
+        },
+      })
+    });
 
     return null
   })
