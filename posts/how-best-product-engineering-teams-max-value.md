@@ -49,22 +49,21 @@ successful collaboration results in a better product delivered with higher
 velocity.
 
 [^1]:
+    Some of the most common types of risk I’ve seen (see
+    [here](https://www.sciencedirect.com/science/article/pii/S1877705814002203)
+    for more):
 
-  Some of the most common types of risk I’ve seen (see
-  [here](https://www.sciencedirect.com/science/article/pii/S1877705814002203)
-  for more):
-
-  - _Engineering risk_ — are there a lot of unknowns in the technical plan? Does
-    this use new technologies that aren’t often used? Does this touch a lot of
-    old code or systems that the team doesn’t know or that may need
-    updating/refactoring? Will this cause stability fallout?
-  - _Product risk_ — are we confident in the product plan? Will we need to
-    iterate on the feature for it to be useful? Could it completely flop and
-    need to be re-done, after showing to users?
-  - _Team risk_ — how engaged are team members? If a milestone slips, will that
-    make the team feel demotivated? If added uncertainty or roadblocks come up,
-    will team members move as quickly? How confident are team members in the
-    team’s leadership?
+    - _Engineering risk_ — are there a lot of unknowns in the technical plan? Does
+      this use new technologies that aren’t often used? Does this touch a lot of
+      old code or systems that the team doesn’t know or that may need
+      updating/refactoring? Will this cause stability fallout?
+    - _Product risk_ — are we confident in the product plan? Will we need to
+      iterate on the feature for it to be useful? Could it completely flop and
+      need to be re-done, after showing to users?
+    - _Team risk_ — how engaged are team members? If a milestone slips, will that
+      make the team feel demotivated? If added uncertainty or roadblocks come up,
+      will team members move as quickly? How confident are team members in the
+      team’s leadership?
 
 ### How to approach these problems
 
@@ -96,7 +95,7 @@ economics. We have a series of “releases” at different points of time, each 
 a different risk profile and net value. Since we prefer value as soon as
 possible, we “discount” the value based on when it will occur.
 
-![](./equation.png)
+![](/images/posts/how-best-product-engineering-teams-max-value/equation.png)
 
 Where:
 

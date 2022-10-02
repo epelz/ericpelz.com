@@ -31,11 +31,10 @@ annotations would cause an error on a line changed by a bug fix, and when the
 new type annotations are consistent with the fixed program.
 
 [^1]:
-
-  > Definition for `ts-detectable`: Given a static type system `ts`, a bug `b`
-  > is `ts-detectable` when adding or changing type annotations causes the
-  > program `p` containing `b` to error on a line changed by a fix and the new
-  > annotations are consistent with `f`, a fixed version of `p`.
+    > Definition for `ts-detectable`: Given a static type system `ts`, a bug `b`
+    > is `ts-detectable` when adding or changing type annotations causes the
+    > program `p` containing `b` to error on a line changed by a fix and the new
+    > annotations are consistent with `f`, a fixed version of `p`.
 
 At the time of analysis (08/19/2015), there were 3,910,969 closed bug reports on
 open-source JavaScript projects on GitHub. The authors wanted a 95% confidence
@@ -53,7 +52,7 @@ it was not. The researchers also set a time-bound for each bug investigation to
 
 ## Results
 
-![](./histo_tc_detectable.png)
+![](/images/posts/static-type-checking-js/histo_tc_detectable.png)
 
 The team was able to label all 400 bug samples: Each of Flow and TypeScript
 detected 60 of the bugs. This means at the confidence level of 95%, the
@@ -80,7 +79,7 @@ The authors think this greatly understates the impact of static typing, because:
 
 ### What about the undetectable bugs?
 
-![](./histo_undetectability.png)
+![](/images/posts/static-type-checking-js/histo_undetectability.png)
 
 The vast majority of bugs that were undetectable were due to "specification
 errors", which constituted 78% of total bugs. This is covered by `BranchError`,
@@ -134,7 +133,7 @@ developer makes. If we assume an entire project is already using a static type
 checker, then the cost to a developer is only the time and tokens needed as part
 of their code change.
 
-![](./annotation_tax.png)
+![](/images/posts/static-type-checking-js/annotation_tax.png)
 
 Using these measures, the authors find that the mean annotation tax for each bug
 is: 1.7 tokens and 231 seconds for Flow, and 2.4 tokens and 306 seconds for

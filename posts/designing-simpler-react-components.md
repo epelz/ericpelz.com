@@ -72,65 +72,63 @@ components:
     user actions[^2]
 
 <!-- prettier-ignore-start -->
-[^1]:
+[^1]: Example of a data model helper: determine whether a user is currently on
+    vacation.
 
-  Example of a data model helper: determine whether a user is currently on
-  vacation.
+    ```typescript
+        export function isOnVacation(attr: {
+          // We pass in the current time, because otherwise this function would rely
+          // on the Date global. Instead, the calling component will use a chronometer
+          // service which is declaratively passed-in to it.
+          nowTime: number;
+          // We take advantage of TypeScript's structural typing, so this method can
+          // take any compatible User model. This is preferable to relying on a specific
+          // User interface: each calling component has a subset of the User object graph
+          // that it depends on, so this makes isOnVacation usable in many components.
+          user: {
+            vacationStartTime(): number;
+            vacationEndTime(): number;
+          };
+        }): boolean {
+          var startTime = attr.user.vacationStartTime();
+          var endTime = attr.user.vacationEndTime();
 
-  ```typescript
-      export function isOnVacation(attr: {
-        // We pass in the current time, because otherwise this function would rely
-        // on the Date global. Instead, the calling component will use a chronometer
-        // service which is declaratively passed-in to it.
-        nowTime: number;
-        // We take advantage of TypeScript's structural typing, so this method can
-        // take any compatible User model. This is preferable to relying on a specific
-        // User interface: each calling component has a subset of the User object graph
-        // that it depends on, so this makes isOnVacation usable in many components.
-        user: {
-          vacationStartTime(): number;
-          vacationEndTime(): number;
-        };
-      }): boolean {
-        var startTime = attr.user.vacationStartTime();
-        var endTime = attr.user.vacationEndTime();
+          var wasOnVacation = startTime !== 0 && startTime <= attr.nowTime;
+          var stillOnVacation = endTime === 0 || endTime >= attr.nowTime;
 
-        var wasOnVacation = startTime !== 0 && startTime <= attr.nowTime;
-        var stillOnVacation = endTime === 0 || endTime >= attr.nowTime;
-
-        return wasOnVacation && stillOnVacation;
-      }
-  ```
+          return wasOnVacation && stillOnVacation;
+        }
+    ```
 [^2]: Example of a mutation helper: to "heart" a task
 
-  ```typescript
-      export function heartTask(attr: {
-        datastore: DatastoreService;
-        // Thin interfaces for the User/Task model which utilize TypeScript's
-        // structural typing, but the type aliases are omitted for brevity.
-        user: UserBase;
-        task: TaskBase;
-      }) {
-        attr.datastore.runInBatch(() => {
-          // 1. Optimistically create the object representing the heart.
-          var heartRequest = new HeartCreateRequest({
-            target: attr.task.dbObjectId(),
-            user: attr.user.dbObjectId()
-          });
-          var heartId = attr.datastore.createDbObject(heartRequest);
-
-          // 2. Send server request to update the database.
-          attr.services.datastore.requestServerChange(
-            “post”, “/task_heart”, {
-              // server will create an identical object with the same ID.
-              global_id: heartId,
-              task: task.dbObjectId(),
+    ```typescript
+        export function heartTask(attr: {
+          datastore: DatastoreService;
+          // Thin interfaces for the User/Task model which utilize TypeScript's
+          // structural typing, but the type aliases are omitted for brevity.
+          user: UserBase;
+          task: TaskBase;
+        }) {
+          attr.datastore.runInBatch(() => {
+            // 1. Optimistically create the object representing the heart.
+            var heartRequest = new HeartCreateRequest({
+              target: attr.task.dbObjectId(),
               user: attr.user.dbObjectId()
-            }
-          );
+            });
+            var heartId = attr.datastore.createDbObject(heartRequest);
+
+            // 2. Send server request to update the database.
+            attr.services.datastore.requestServerChange(
+              “post”, “/task_heart”, {
+                // server will create an identical object with the same ID.
+                global_id: heartId,
+                task: task.dbObjectId(),
+                user: attr.user.dbObjectId()
+              }
+            );
+          });
         });
-      });
-  ```
+    ```
 
 <!-- prettier-ignore-end-->
 
