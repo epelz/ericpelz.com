@@ -4,7 +4,7 @@ import Image from 'next/image';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-export default function Bio() {
+export default function Bio({ children }) {
     return (
         <section className={utilStyles.headingMd}>
         <p>
@@ -15,6 +15,7 @@ export default function Bio() {
         with their favorite tools, and expand Asana by building on top of the
         Asana developer platform.
         </p>
+        { children }
         </section>
     );
 };
