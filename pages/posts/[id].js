@@ -25,7 +25,7 @@ export async function getStaticPaths() {
 
 export default function Post({ postData }) {
     return (
-      <Layout>
+      <Layout bioOnFooter>
         <Head>
           <title>{postData.title} | Eric Pelz</title>
         </Head>

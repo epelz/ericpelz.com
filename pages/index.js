@@ -43,13 +43,14 @@ export default function Home({ postsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Bio>
+      <Bio />
+      <section>
         <h1 className={styles.iconRow}>
         <a className={styles.socialIcon} href="https://www.github.com/epelz/"><FaGithubAlt /></a>
         <a className={styles.socialIcon} href="https://www.linkedin.com/in/epelz/"><FaLinkedin /></a>
         <a className={styles.socialIcon} href="https://twitter.com/PelzEric"><FaTwitter /></a>
         </h1>
-      </Bio>
+      </section>
 
       <PostSection sectionTitle="Blog posts" postsData={postsData}>
         <small>

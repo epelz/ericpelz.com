@@ -1,15 +1,22 @@
 .container {
     max-width: 36rem;
     padding: 0 1rem;
-    margin: 3rem auto 6rem;
+    margin: 1rem auto 3rem;
   }
 
   .header {
     display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .backToHome {
     margin: 3rem 0 0;
+  }
+
+  .titleNotHome {
+    font-size: 2.2974rem;
+    line-height: 3.25rem;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color: rgb(105, 105, 105);
+    font-weight: 600;
   }

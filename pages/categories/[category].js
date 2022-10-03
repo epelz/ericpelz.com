@@ -25,15 +25,6 @@ export async function getStaticPaths() {
 }
 
 export default function Category({ sectionTitle, postsData }) {
-  // TODO: Link to all engineering posts and food posts.
-  // i.e.: https://github.com/epelz/ericpelz.com/blob/develop/src/pages/index.js#L70
-  // TODO: Style code blocks with css
-  // TODO: Switch to TS: https://nextjs.org/docs/basic-features/typescript
-  // TODO: Consider where to deploy:
-  //   GH pages https://lukaszwozniak.dev/blog/deploy-nextjs-app-to-github-pages-using-github-actions
-  //   Or Vercel directly
-  // TODO: Add redirects for old URL formats: https://nextjs.org/docs/api-reference/next.config.js/redirects
-  // TODO: Check other things https://nextjs.org/docs/migrating/from-gatsby
   return (
     <Layout>
       <Head>
