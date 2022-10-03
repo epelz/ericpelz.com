@@ -4,9 +4,12 @@ import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
+import Bio from '../components/bio';
+import PostSection from '../components/post_section';
 
 export async function getStaticProps() {
-  const postsData = getSortedPostsData({ category: "engineering" });
+  // Only show the most recent 3 highlighted posts
+  const postsData = getSortedPostsData({ category: "highlight", limit: 3 });
   return {
     props: {
       postsData,
@@ -15,8 +18,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ postsData }) {
-  // TODO: Limit num of posts, and link to all engineering posts and food posts.
-  // i.e.: https://github.com/epelz/ericpelz.com/blob/develop/src/pages/index.js#L70
   // TODO: Style code blocks with css
   // TODO: Switch to TS: https://nextjs.org/docs/basic-features/typescript
   // TODO: Consider where to deploy:
@@ -29,30 +30,14 @@ export default function Home({ postsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
+      <Bio />
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {postsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <PostSection sectionTitle="Blog posts" postsData={postsData}>
+        <small>
+          See all <Link href="/categories/engineering">engineering posts</Link>.
+          I also like to cook, and <Link href="/categories/food">occasionally</Link> post recipes.
+        </small>
+      </PostSection>
     </Layout>
   );
 }

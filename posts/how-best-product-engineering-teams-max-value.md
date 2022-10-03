@@ -2,7 +2,7 @@
 title: How the best product engineering teams maximize value
 date: "2018-04-16"
 description: Reducing risk, eliminating complexity, and sequencing effectively
-categories: ["engineering"]
+categories: ["engineering", "highlight"]
 ---
 
 ## Reducing risk, eliminating complexity, and sequencing effectively

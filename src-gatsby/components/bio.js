@@ -30,9 +30,10 @@ function Bio() {
             <p>
               I'm a software engineer at{" "}
               <a href="https://www.asana.com/">Asana</a>. I'm the tech lead of
-              the Workflow Pillar, which includes the Automation,
-              Communications, App Experience, Integrations, and API product
-              teams. I used to be a people manager, and might manage again in
+              the Workflow Pillar, which has three main areas of focus: enabling
+              Asana customers to orchestrate end-to-end workflows, connect & automate
+              with their favorite tools, and expand Asana by building on top of the
+              Asana developer platform. I used to be a people manager, and might manage again in
               the future. I spend a lot of time thinking about running effective
               teams, fostering growth, product+engineering collaboration, and
               engineering design patterns.
