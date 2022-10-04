@@ -21,24 +21,8 @@ export async function getStaticProps() {
 export default function Home({ postsData }) {
   // TODO: Style code blocks with css
   // TODO: Switch to TS: https://nextjs.org/docs/basic-features/typescript
-  // TODO: Check other things https://nextjs.org/docs/migrating/from-gatsby
-//   <SEO
-//   keywords={[
-//     `blog`,
-//     `javascript`,
-//     `typescript`,
-//     `react`,
-//     `simplicity`,
-//     `engineering`,
-//     `coding`,
-//     `product`,
-//   ]}
-// />
   return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+    <Layout home title={siteTitle}>
       <Bio />
       <section>
         <h1 className={styles.iconRow}>

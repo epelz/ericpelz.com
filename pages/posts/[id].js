@@ -25,10 +25,7 @@ export async function getStaticPaths() {
 
 export default function Post({ postData }) {
     return (
-      <Layout bioOnFooter>
-        <Head>
-          <title>{postData.title} | Eric Pelz</title>
-        </Head>
+      <Layout bioOnFooter title={postData.title || "Eric Pelz"}>
         <article>
           <h1 className={utilStyles.headingXl}>{postData.title}</h1>
           <div className={utilStyles.lightText}>

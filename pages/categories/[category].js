@@ -26,10 +26,7 @@ export async function getStaticPaths() {
 
 export default function Category({ sectionTitle, postsData }) {
   return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+    <Layout title={siteTitle}>
       <Bio />
 
       <PostSection sectionTitle={sectionTitle} postsData={postsData} />

@@ -4,21 +4,18 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Bio from './bio';
+import SEO from './seo';
 
 const name = 'Eric Pelz';
 export const siteTitle = 'Eric Pelz';
 
-export default function Layout({ children, home, bioOnFooter }) {
+export default function Layout({ children, home, bioOnFooter, title}) {
   return (
     <div className={styles.container}>
+      <SEO pageTitle={title} />
       <Head>
+        <title>{title || siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
         {home ? (
