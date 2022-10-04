@@ -20,11 +20,8 @@ export async function getStaticProps() {
 
 export default function Home({ postsData }) {
   // TODO: Style code blocks with css
+  // TODO: Copy CSS from old site - don't worry about a css framework yet
   // TODO: Switch to TS: https://nextjs.org/docs/basic-features/typescript
-  // TODO: Consider where to deploy:
-  //   GH pages https://lukaszwozniak.dev/blog/deploy-nextjs-app-to-github-pages-using-github-actions
-  //   Or Vercel directly
-  // TODO: Add redirects for old URL formats: https://nextjs.org/docs/api-reference/next.config.js/redirects
   // TODO: Check other things https://nextjs.org/docs/migrating/from-gatsby
 //   <SEO
 //   keywords={[
