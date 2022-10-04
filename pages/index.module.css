@@ -1,7 +1,6 @@
 .iconRow {
     display: flex;
     flex-direction: row-reverse;
-    /* hard-coded from old layout */
     margin-bottom: 0;
     margin-top: 12px;
 }
@@ -10,7 +9,6 @@
     box-shadow: none;
     text-shadow: 2px 2px 3px #CDCDCD;
     color: #696969;
-    /* hard-coded from old layout */
     padding-right: 6.5px;
 }
 .socialIcon:hover {

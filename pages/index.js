@@ -20,7 +20,6 @@ export async function getStaticProps() {
 
 export default function Home({ postsData }) {
   // TODO: Style code blocks with css
-  // TODO: Copy CSS from old site - don't worry about a css framework yet
   // TODO: Switch to TS: https://nextjs.org/docs/basic-features/typescript
   // TODO: Check other things https://nextjs.org/docs/migrating/from-gatsby
 //   <SEO
