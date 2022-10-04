@@ -15,6 +15,9 @@ delete GithubTheme.googleFonts;
 const typography = new Typography(GithubTheme);
 typography.injectStyles();
 
+// Syntax highlighting theme, for posts with code blocks
+import 'highlight.js/styles/mono-blue.css'
+
 export default function App({ Component, pageProps }) {
     return <Component {...pageProps} />;
 }

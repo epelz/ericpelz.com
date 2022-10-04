@@ -19,7 +19,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ postsData }) {
-  // TODO: Style code blocks with css
   // TODO: Switch to TS: https://nextjs.org/docs/basic-features/typescript
   return (
     <Layout home title={siteTitle}>
