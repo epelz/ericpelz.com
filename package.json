@@ -13,12 +13,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "date-fns": "^2.29.3",
+    "eslint-config-prettier": "^8.5.0",
     "gray-matter": "^4.0.3",
     "next": "latest",
+    "prettier": "^2.7.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.4.0",
@@ -30,5 +34,9 @@
     "remark-rehype": "^10.1.0",
     "typography": "^0.16.21",
     "typography-theme-github": "^0.16.19"
+  },
+  "devDependencies": {
+    "eslint": "8.24.0",
+    "eslint-config-next": "12.3.1"
   }
 }
