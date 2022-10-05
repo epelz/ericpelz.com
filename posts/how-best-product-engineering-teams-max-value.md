@@ -4,10 +4,10 @@ date: "2018-04-16"
 description: Reducing risk, eliminating complexity, and sequencing effectively
 categories: ["engineering", "highlight"]
 ---
+
 _Also published at
 [HackerNoon](https://medium.com/hackernoon/how-the-best-product-engineering-teams-maximize-value-89170c501e4c)
 on April 16, 2018._
-
 
 ## Reducing risk, eliminating complexity, and sequencing effectively
 

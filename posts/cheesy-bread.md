@@ -22,14 +22,14 @@ After reading pizza-making forums and Reddit, and watching YouTube videos, I thi
 
     If you're making your own dough, here's my go-to recipe for pizza dough. This is inspired by recipes from [The Elements of Pizza](https://kensartisan.com/elements-of-pizza/) and [baking steel](https://bakingsteel.com/blogs/news/72-hour-pizza-dough-a-cold-version). This makes 3 balls of dough.
 
-      - A few days before you need it:
-          - Mix 500g bread flour, 350g water, 13g salt, 1.5g yeast (3/4 of 1/2 tsp), 10g sugar, until just combined
-          - Knead (with wet hands) for 2 minutes, to remove clumps. Form a loose ball, and cover the container
-          - Put in fridge 24-48 hours, but can go longer
-      - 2 hours before before baking:
-         - Split to three portions of dough (~280g each)
-          - Dust both sides of dough with flour, and form a dough ball. I use this [technique](https://bakingsteel.com/blogs/news/how-to-make-simple-pizza-dough-balls-1)
-          - Place each dough ball in a oiled bowl, cover, and let sit for ~2 hours before use
+    - A few days before you need it:
+      - Mix 500g bread flour, 350g water, 13g salt, 1.5g yeast (3/4 of 1/2 tsp), 10g sugar, until just combined
+      - Knead (with wet hands) for 2 minutes, to remove clumps. Form a loose ball, and cover the container
+      - Put in fridge 24-48 hours, but can go longer
+    - 2 hours before before baking:
+      - Split to three portions of dough (~280g each)
+      - Dust both sides of dough with flour, and form a dough ball. I use this [technique](https://bakingsteel.com/blogs/news/how-to-make-simple-pizza-dough-balls-1)
+      - Place each dough ball in a oiled bowl, cover, and let sit for ~2 hours before use
 
 ## Steps
 
@@ -38,6 +38,7 @@ Prepare your dough ball like you would make a pizza - probably taking it out of 
 Preheat your oven to 450 F.
 
 First, make the cheesy bread:
+
 - Lightly flour your counter
 - Stretch the dough ball to a rectangle (twice the size of the target cheesy bread)
 - Place on parchment paper.

@@ -65,7 +65,7 @@ projects.
 
 #### Our Solution: Buffer the complexity with a module
 
-|                                   ![](/images/posts/circumventing-engineering-complexity/3_buffer_complexity.jpeg)                                   |
+|          ![](/images/posts/circumventing-engineering-complexity/3_buffer_complexity.jpeg)           |
 | :-------------------------------------------------------------------------------------------------: |
 | _Pure functions like calculatePermissions can buffer old data model complexity into a simple enum._ |
 
@@ -107,7 +107,7 @@ What do we do with the data already on those tasks?
 
 #### Initial Plan: Incorporate Custom Fields in all project actions
 
-|                                                    ![](/images/posts/circumventing-engineering-complexity/4_initial_plan.png)                                                    |
+|                           ![](/images/posts/circumventing-engineering-complexity/4_initial_plan.png)                            |
 | :-----------------------------------------------------------------------------------------------------------------------------: |
 | _An interstitial dialog to warn the user about custom field ramifications from their action, part of the initial product spec._ |
 
@@ -131,7 +131,7 @@ mental model, but it is simpler.
 
 #### Our Solution: Divorce custom field values from project actions
 
-|                                            ![](/images/posts/circumventing-engineering-complexity/5_orphaned_fields.png)                                             |
+|                    ![](/images/posts/circumventing-engineering-complexity/5_orphaned_fields.png)                    |
 | :-----------------------------------------------------------------------------------------------------------------: |
 | _“Orphaned” custom fields are disabled in the UI, and no longer conferred to new tasks. Existing data is retained._ |
 
@@ -173,7 +173,7 @@ and pretend the option never existed.
 
 #### Our Solution: Reduce propagation of changes from a single action
 
-|                                                ![](/images/posts/circumventing-engineering-complexity/6_archived_fields.png)                                                |
+|                       ![](/images/posts/circumventing-engineering-complexity/6_archived_fields.png)                        |
 | :------------------------------------------------------------------------------------------------------------------------: |
 | _Archived dropdown options are annotated in the UI, and existing data is retained. New tasks cannot use archived options._ |
 

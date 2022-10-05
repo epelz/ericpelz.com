@@ -4,6 +4,7 @@ date: "2016-12-17"
 description: Maximizing mentorship, improving code quality, and saving time
 categories: ["engineering", "highlight"]
 ---
+
 _Also published at
 [HackerNoon](https://medium.com/hackernoon/maximizing-mentorship-in-code-review-f479ae74fe3f)
 on December 17, 2016._

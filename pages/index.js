@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import styles from './index.module.css';
-import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date';
-import Bio from '../components/bio';
-import PostSection from '../components/post_section';
+import Head from "next/head";
+import Layout, { siteTitle } from "../components/layout";
+import styles from "./index.module.css";
+import { getSortedPostsData } from "../lib/posts";
+import Link from "next/link";
+import Date from "../components/date";
+import Bio from "../components/bio";
+import PostSection from "../components/post_section";
 import { FaGithubAlt, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export async function getStaticProps() {
@@ -25,16 +25,26 @@ export default function Home({ postsData }) {
       <Bio />
       <section>
         <h1 className={styles.iconRow}>
-        <a className={styles.socialIcon} href="https://www.github.com/epelz/"><FaGithubAlt /></a>
-        <a className={styles.socialIcon} href="https://www.linkedin.com/in/epelz/"><FaLinkedin /></a>
-        <a className={styles.socialIcon} href="https://twitter.com/PelzEric"><FaTwitter /></a>
+          <a className={styles.socialIcon} href="https://www.github.com/epelz/">
+            <FaGithubAlt />
+          </a>
+          <a
+            className={styles.socialIcon}
+            href="https://www.linkedin.com/in/epelz/"
+          >
+            <FaLinkedin />
+          </a>
+          <a className={styles.socialIcon} href="https://twitter.com/PelzEric">
+            <FaTwitter />
+          </a>
         </h1>
       </section>
 
       <PostSection sectionTitle="Blog posts" postsData={postsData}>
         <small>
           See all <Link href="/categories/engineering">engineering posts</Link>.
-          I also like to cook, and <Link href="/categories/food">occasionally</Link> post recipes.
+          I also like to cook, and{" "}
+          <Link href="/categories/food">occasionally</Link> post recipes.
         </small>
       </PostSection>
     </Layout>

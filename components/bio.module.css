@@ -1,10 +1,10 @@
 .bio {
-    display: flex;
+  display: flex;
 }
 
 .avatar {
-    margin-right: 0.8125rem;
-    margin-bottom: 0;
-    min-width: 50px;
-    border-radius: 100%;
+  margin-right: 0.8125rem;
+  margin-bottom: 0;
+  min-width: 50px;
+  border-radius: 100%;
 }
