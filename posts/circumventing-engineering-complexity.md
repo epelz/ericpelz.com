@@ -5,6 +5,10 @@ description: Examples from building Custom Fields at Asana.
 categories: ["engineering"]
 ---
 
+_Originally published at [Medium](https://medium.com/building-asana/circumventing-engineering-complexity-e1375a49c09a) and
+[blog.asana.com](https://blog.asana.com/2017/09/circumventing-engineering-complexity-examples-from-asana/)
+on September 11, 2017._
+
 ## Examples from building Custom Fields at Asana
 
 Having simple code has a big impact on the velocity you can write code and how
@@ -208,9 +212,3 @@ Custom Fields. A couple of small product considerations and tweaks led to a huge
 impact on implementation time and simplicity. Our key takeaway is that when
 you’re working on product features, it’s often best to consider ways to
 circumvent the complexity, rather than adapting to it.
-
----
-
-_Originally published at
-[blog.asana.com](https://blog.asana.com/2017/09/circumventing-engineering-complexity-examples-from-asana/)
-on September 11, 2017._

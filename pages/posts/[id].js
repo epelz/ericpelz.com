@@ -25,10 +25,12 @@ export async function getStaticPaths() {
 
 export default function Post({ postData }) {
     return (
-      <Layout bioOnFooter title={postData.title || "Eric Pelz"}>
+      <Layout bioOnFooter title={postData.title || "Eric Pelz"} otherAuthors>
         <article>
           <h1 className={utilStyles.headingXl}>{postData.title}</h1>
           <div className={utilStyles.lightText}>
+            { /* If this was co-authored, add the full set of authors to the top. */ }
+            {((postData.otherAuthors || []).length > 0) ? (["Eric Pelz", ...postData.otherAuthors].join(", ") + " - ") : ("")}
             <Date dateString={postData.date} />
           </div>
           <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />

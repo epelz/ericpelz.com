@@ -4,6 +4,10 @@ date: "2016-03-22"
 description: Patterns learned from porting the Asana application to React
 categories: ["engineering"]
 ---
+_Originally published on [Medium](https://medium.com/building-asana/designing-simpler-react-components-13a0061afd16) and
+[blog.asana.com](https://blog.asana.com/2016/03/react-js/)
+in March, 2016._
+
 
 ## Patterns learned from porting the Asana application to React
 
