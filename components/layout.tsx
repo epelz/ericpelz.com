@@ -5,11 +5,22 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Bio from "./bio";
 import SEO from "./seo";
+import React from "react";
 
 const name = "Eric Pelz";
 export const siteTitle = "Eric Pelz";
 
-export default function Layout({ children, home, bioOnFooter, title }) {
+export default function Layout({
+  children,
+  home,
+  bioOnFooter,
+  title,
+}: {
+  children: typeof React.Children;
+  home: boolean;
+  bioOnFooter: boolean;
+  title: string;
+}) {
   return (
     <div className={styles.container}>
       <SEO pageTitle={title} />
@@ -28,7 +39,9 @@ export default function Layout({ children, home, bioOnFooter, title }) {
           </h2>
         )}
       </header>
-      <main>{children}</main>
+      <main>
+        <>{children}</>
+      </main>
       <>
         {bioOnFooter && (
           <>
