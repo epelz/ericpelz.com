@@ -68,7 +68,13 @@ export function getSortedPostsData({
   return sortedPostsData.slice(0, limit);
 }
 
-export type DetailedPost = { id: string; contentHtml: string };
+export type DetailedPost = {
+  id: string;
+  contentHtml: string;
+  title: string;
+  otherAuthors: string[];
+  date: string;
+};
 export async function getPostData(id: string): Promise<DetailedPost> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -92,7 +98,8 @@ export async function getPostData(id: string): Promise<DetailedPost> {
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    // TODO: Fix this at some point
+    ...(<any>matterResult.data),
   };
 }
 

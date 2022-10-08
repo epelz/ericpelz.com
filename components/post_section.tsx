@@ -11,7 +11,7 @@ export default function PostSection({
 }: {
   sectionTitle: string;
   postsData: Post[];
-  children: typeof React.Children;
+  children?: React.ReactNode;
 }) {
   return (
     <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

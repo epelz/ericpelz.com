@@ -1,14 +1,16 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import styles from "./index.module.css";
-import { getSortedPostsData } from "../lib/posts";
+import { Post, getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import Bio from "../components/bio";
 import PostSection from "../components/post_section";
 import { FaGithubAlt, FaLinkedin, FaTwitter } from "react-icons/fa";
 
-export async function getStaticProps() {
+export async function getStaticProps(): Promise<{
+  props: { postsData: Post[] };
+}> {
   // Only show the most recent 3 highlighted posts
   const postsData = getSortedPostsData({ category: "highlight", limit: 3 });
   return {
@@ -18,8 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ postsData }) {
-  // TODO: Switch to TS: https://nextjs.org/docs/basic-features/typescript
+export default function Home({ postsData }: { postsData: Post[] }) {
   return (
     <Layout home title={siteTitle}>
       <Bio />

@@ -12,13 +12,13 @@ export const siteTitle = "Eric Pelz";
 
 export default function Layout({
   children,
-  home,
-  bioOnFooter,
+  home = false,
+  bioOnFooter = false,
   title,
 }: {
-  children: typeof React.Children;
-  home: boolean;
-  bioOnFooter: boolean;
+  children?: React.ReactNode;
+  home?: boolean;
+  bioOnFooter?: boolean;
   title: string;
 }) {
   return (
@@ -39,9 +39,7 @@ export default function Layout({
           </h2>
         )}
       </header>
-      <main>
-        <>{children}</>
-      </main>
+      <main>{children}</main>
       <>
         {bioOnFooter && (
           <>
