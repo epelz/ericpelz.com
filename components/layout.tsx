@@ -5,11 +5,22 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Bio from "./bio";
 import SEO from "./seo";
+import React from "react";
 
 const name = "Eric Pelz";
 export const siteTitle = "Eric Pelz";
 
-export default function Layout({ children, home, bioOnFooter, title }) {
+export default function Layout({
+  children,
+  home = false,
+  bioOnFooter = false,
+  title,
+}: {
+  children?: React.ReactNode;
+  home?: boolean;
+  bioOnFooter?: boolean;
+  title: string;
+}) {
   return (
     <div className={styles.container}>
       <SEO pageTitle={title} />

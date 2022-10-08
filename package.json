@@ -36,6 +36,9 @@
     "typography-theme-github": "^0.16.19"
   },
   "devDependencies": {
+    "@types/node": "18.8.2",
+    "@types/react": "18.0.21",
+    "@types/typography": "^0.16.4",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1"
   }

@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function SEO({ pageTitle }) {
+export default function SEO({ pageTitle }: { pageTitle: string }) {
   const title = pageTitle || "Eric Pelz";
   const description = "Eric Pelz is a software engineer";
   const author = "Eric Pelz";

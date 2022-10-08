@@ -11,15 +11,22 @@ import rehypeSlug from "rehype-slug";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-function getFileNames() {
+function getFileNames(): string[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames.filter((fileName) => fileName !== ".DS_Store");
 }
 
-export function getSortedPostsData(
-  { category, limit } = { category: null, limit: undefined }
-) {
+export type Post = {
+  id: string;
+  date: string;
+  title: string;
+  categories: string[];
+};
+export function getSortedPostsData({
+  category = null,
+  limit = undefined,
+}: { category?: string | null; limit?: number } = {}): Post[] {
   const allPostsData = getFileNames().map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
@@ -29,12 +36,14 @@ export function getSortedPostsData(
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
+    const matterData: { categories: string[]; date: string; title: string } = <
+      any
+    >matter(fileContents).data;
 
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      ...matterData,
     };
   });
 
@@ -59,7 +68,14 @@ export function getSortedPostsData(
   return sortedPostsData.slice(0, limit);
 }
 
-export async function getPostData(id) {
+export type DetailedPost = {
+  id: string;
+  contentHtml: string;
+  title: string;
+  otherAuthors: string[];
+  date: string;
+};
+export async function getPostData(id: string): Promise<DetailedPost> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -82,24 +98,12 @@ export async function getPostData(id) {
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    // TODO: Fix this at some point
+    ...(<any>matterResult.data),
   };
 }
 
-export function getAllPostIds() {
-  // Returns an array that looks like this:
-  // [
-  //   {
-  //     params: {
-  //       id: 'ssg-ssr'
-  //     }
-  //   },
-  //   {
-  //     params: {
-  //       id: 'pre-rendering'
-  //     }
-  //   }
-  // ]
+export function getAllPostIds(): { params: { id: string } }[] {
   return getFileNames().map((fileName) => {
     return {
       params: {
@@ -109,24 +113,11 @@ export function getAllPostIds() {
   });
 }
 
-export function getAllCategoryIds() {
-  // Returns an array that looks like this:
-  // [
-  //   {
-  //     params: {
-  //       id: 'ssg-ssr'
-  //     }
-  //   },
-  //   {
-  //     params: {
-  //       id: 'pre-rendering'
-  //     }
-  //   }
-  // ]
+export function getAllCategoryIds(): { params: { category: string } }[] {
   // NB: Not the most efficient, since we're parsing all markdown here, but I don't post that often.
-  return [
-    ...new Set(getSortedPostsData().flatMap((post) => post.categories)),
-  ].map((category) => {
+  return Array.from(
+    new Set(getSortedPostsData().flatMap((post) => post.categories))
+  ).map((category) => {
     return {
       params: {
         category,
