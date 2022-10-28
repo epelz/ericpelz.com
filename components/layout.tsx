@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
@@ -33,8 +32,8 @@ export default function Layout({
           <h1 className={utilStyles.heading2Xl}>{name}</h1>
         ) : (
           <h2 className={styles.titleNotHome}>
-            <Link href="/">
-              <a className={utilStyles.colorInherit}>{name}</a>
+            <Link href="/" className={utilStyles.colorInherit}>
+              {name}
             </Link>
           </h2>
         )}
@@ -50,7 +49,7 @@ export default function Layout({
         {!home && (
           <div className={styles.backToHome}>
             <Link href="/">
-              <a>← Back to home</a>
+              ← Back to home
             </Link>
           </div>
         )}
