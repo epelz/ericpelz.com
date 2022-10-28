@@ -21,10 +21,10 @@
     "date-fns": "^2.29.3",
     "eslint-config-prettier": "^8.5.0",
     "gray-matter": "^4.0.3",
-    "next": "latest",
+    "next": "^13.0.0",
     "prettier": "^2.7.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "rehype-highlight": "^5.0.2",
     "rehype-slug": "^5.0.1",
@@ -40,6 +40,6 @@
     "@types/react": "18.0.21",
     "@types/typography": "^0.16.4",
     "eslint": "8.24.0",
-    "eslint-config-next": "12.3.1"
+    "eslint-config-next": "^12.3.1"
   }
 }
