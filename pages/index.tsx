@@ -35,9 +35,6 @@ export default function Home({ postsData }: { postsData: Post[] }) {
           >
             <FaLinkedin />
           </a>
-          <a className={styles.socialIcon} href="https://twitter.com/PelzEric">
-            <FaTwitter />
-          </a>
         </h1>
       </section>
 
