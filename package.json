@@ -18,16 +18,16 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
-    "@vercel/analytics": "^0.1.2",
+    "@vercel/analytics": "^1.0.2",
     "date-fns": "^2.29.3",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-prettier": "^9.0.0",
     "gray-matter": "^4.0.3",
     "next": "^13.0.0",
-    "prettier": "^2.7.1",
+    "prettier": "^3.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "rehype-highlight": "^5.0.2",
+    "rehype-highlight": "^6.0.0",
     "rehype-slug": "^5.0.1",
     "rehype-stringify": "^9.0.3",
     "remark": "^14.0.2",
@@ -37,10 +37,10 @@
     "typography-theme-github": "^0.16.19"
   },
   "devDependencies": {
-    "@types/node": "18.8.2",
-    "@types/react": "18.0.21",
+    "@types/node": "^20.5.6",
+    "@types/react": "^18.2.21",
     "@types/typography": "^0.16.4",
-    "eslint": "8.24.0",
-    "eslint-config-next": "^12.3.1"
+    "eslint": "^8.47.0",
+    "eslint-config-next": "^13.4.19"
   }
 }

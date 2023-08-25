@@ -16,8 +16,8 @@ export default function Bio() {
         />
       </span>
       <small>
-        Hello! I work at <a href="https://www.asana.com/">Asana</a>, where I&apos;m
-        the tech lead across our AI initiatives.
+        Hello! I work at <a href="https://www.asana.com/">Asana</a>, where
+        I&apos;m the tech lead across our AI initiatives.
       </small>
     </section>
   );
