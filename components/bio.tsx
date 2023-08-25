@@ -16,12 +16,8 @@ export default function Bio() {
         />
       </span>
       <small>
-        Hello! I&apos;m a software engineer at{" "}
-        <a href="https://www.asana.com/">Asana</a>. I&apos;m the tech lead of
-        the Workflow Pillar, which has three main areas of focus: enabling Asana
-        customers to orchestrate end-to-end workflows, connect & automate with
-        their favorite tools, and expand Asana by building on top of the Asana
-        developer platform.
+        Hello! I work at <a href="https://www.asana.com/">Asana</a>, where
+        I&apos;m the tech lead across our AI initiatives.
       </small>
     </section>
   );
