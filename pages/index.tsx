@@ -38,7 +38,7 @@ export default function Home({ postsData }: { postsData: Post[] }) {
         </h1>
       </section>
 
-      <PostSection sectionTitle="Blog posts" postsData={postsData}>
+      <PostSection sectionTitle="Posts" postsData={postsData}>
         <small>
           See all <Link href="/categories/engineering">engineering posts</Link>.
           I also like to cook, and{" "}
