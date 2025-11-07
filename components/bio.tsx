@@ -14,13 +14,13 @@ export default function Bio() {
         />
       </span>
       <small>
-        Hello! I&apos;m Eric. I spent a decade at{" "}
-        <a href="https://www.asana.com/">Asana</a>, most recently as a
-        Distinguished Engineer leading their AI organization. Before that, I led
-        their Workflow & Platform organization. Now I&apos;m building{" "}
+        Hello! I&apos;m Eric. I&apos;m building{" "}
         <a href="https://www.usemalleable.com/">Malleable</a>—software that
         adapts to how you work, rather than forcing you to work around your
-        tools.
+        tools. I spent a decade at{" "}
+        <a href="https://www.asana.com/">Asana</a>, most recently as a
+        Distinguished Engineer leading their AI organization. Before that, I led
+        their Workflow & Platform organization.
       </small>
     </section>
   );
