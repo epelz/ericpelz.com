@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Next inferred these; the CLI needs them spelled out. */
+@source "../components";
+@source "./";
+
 @layer base {
   a {
     @apply text-blue-800;

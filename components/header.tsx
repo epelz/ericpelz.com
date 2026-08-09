@@ -1,7 +1,3 @@
-import Link from "next/link";
-import Bio from "@/components/bio";
-import React from "react";
-
 export const siteTitle = "Eric Pelz";
 
 export default function Header({ home = false }: { home?: boolean }) {
@@ -11,9 +7,9 @@ export default function Header({ home = false }: { home?: boolean }) {
         {home ? (
           siteTitle
         ) : (
-          <Link className="text-inherit" href="/">
+          <a className="text-inherit" href="/">
             {siteTitle}
-          </Link>
+          </a>
         )}
       </h1>
     </header>
