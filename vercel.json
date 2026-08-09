@@ -3,5 +3,9 @@
   "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "cleanUrls": true
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/([^.]+)", "dest": "/$1.html", "check": true },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+  ]
 }
