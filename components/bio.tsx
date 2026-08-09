@@ -1,11 +1,8 @@
-import Image from "next/image";
-
 export default function Bio() {
   return (
     <section className="flex text-xl">
       <span className="mr-3">
-        <Image
-          priority
+        <img
           src="/images/profile.jpg"
           className="rounded-full"
           height={50}

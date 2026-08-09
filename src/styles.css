@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Files Tailwind scans for class names. */
+@source "../components";
+@source "./";
+
 @layer base {
   a {
     @apply text-blue-800;
