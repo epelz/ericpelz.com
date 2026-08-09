@@ -10,12 +10,12 @@
   },
   "homepage": "https://www.ericpelz.com/",
   "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "dev": "tsx watch src/dev.ts",
     "build": "tsx src/build.ts && npm run build:css",
     "build:css": "tailwindcss -i src/styles.css -o dist/styles.css --minify",
     "typecheck": "tsc --noEmit",
+    "knip": "knip",
     "prettier": "prettier --write ."
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "rehype-stringify": "^10.0.0",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
     "remark-rehype": "^11.0.0"
   },
   "devDependencies": {
@@ -33,6 +34,7 @@
     "@tailwindcss/cli": "^4.0.3",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.13.0",
+    "knip": "^6.32.0",
     "prettier": "^3.0.2",
     "tailwindcss": "^4.0.3",
     "tsx": "^4.19.2",
