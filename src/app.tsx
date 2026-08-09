@@ -6,7 +6,8 @@ import classNames from "classnames";
 
 import Document from "../components/document";
 import BlogLayout from "../components/blog_layout";
-import Header, { siteTitle } from "../components/header";
+import Header from "../components/header";
+import { SITE_AUTHOR } from "../lib/site";
 import Bio from "../components/bio";
 import DateWidget from "../components/date";
 import PostSection from "../components/post_section";
@@ -58,7 +59,7 @@ app.get("/", (c) => {
   const postsData = getSortedPostsData({ category: "highlight", limit: 3 });
   return c.html(
     page(
-      <Document>
+      <Document path="/">
         <Header home />
         <main>
           <Bio />
@@ -83,7 +84,14 @@ app.get(
     const postData = await getPostData(c.req.param("id"));
     return c.html(
       page(
-        <Document title={`${postData.title} - ${siteTitle}`}>
+        <Document
+          title={postData.title}
+          description={postData.description}
+          path={`/posts/${postData.id}`}
+          image={postData.image}
+          type="article"
+          publishedTime={postData.date}
+        >
           <BlogLayout>
             <article
               className={classNames(
@@ -132,7 +140,11 @@ app.get(
 
     return c.html(
       page(
-        <Document>
+        <Document
+          title={sectionTitle}
+          description={`${sectionTitle} by ${SITE_AUTHOR}.`}
+          path={`/categories/${category}`}
+        >
           <BlogLayout>
             <PostSection sectionTitle={sectionTitle} postsData={postsData} />
           </BlogLayout>
@@ -145,7 +157,11 @@ app.get(
 app.get("/404", (c) =>
   c.html(
     page(
-      <Document title={`404 - ${siteTitle}`}>
+      <Document
+        title="404"
+        description="This page could not be found."
+        path="/404"
+      >
         <BlogLayout>
           <h2 className="text-2xl font-semibold my-4">
             404 – This page could not be found.
