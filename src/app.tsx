@@ -67,8 +67,8 @@ app.get("/", (c) => {
           <PostSection sectionTitle="Posts" postsData={postsData}>
             <span>
               See all <a href="/categories/engineering">engineering posts</a>. I
-              also like to cook, and{" "}
-              <a href="/categories/food">occasionally</a> post recipes.
+              also like to cook, and <a href="/categories/food">occasionally</a>{" "}
+              post recipes.
             </span>
           </PostSection>
         </main>

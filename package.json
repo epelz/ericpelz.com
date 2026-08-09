@@ -21,23 +21,23 @@
   "dependencies": {
     "classnames": "^2.5.1",
     "gray-matter": "^4.0.3",
-    "hono": "^4.6.14",
+    "hono": "^4.13.1",
     "rehype-slug": "^6.0.0",
-    "rehype-stringify": "^10.0.0",
+    "rehype-stringify": "^10.0.1",
     "remark": "^15.0.1",
-    "remark-gfm": "^4.0.0",
+    "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
-    "remark-rehype": "^11.0.0"
+    "remark-rehype": "^11.1.2"
   },
   "devDependencies": {
-    "@hono/node-server": "^1.13.7",
-    "@tailwindcss/cli": "^4.0.3",
-    "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^22.13.0",
+    "@hono/node-server": "^2.1.0",
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^26.2.0",
     "knip": "^6.32.0",
-    "prettier": "^3.0.2",
-    "tailwindcss": "^4.0.3",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "prettier": "^3.9.6",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.11",
+    "typescript": "^7.0.2"
   }
 }

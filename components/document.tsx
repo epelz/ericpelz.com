@@ -62,8 +62,14 @@ export default function Document({
         <meta property="og:image:alt" content={SITE_AUTHOR} />
         {isDefaultImage ? (
           <>
-            <meta property="og:image:width" content={String(DEFAULT_IMAGE_WIDTH)} />
-            <meta property="og:image:height" content={String(DEFAULT_IMAGE_HEIGHT)} />
+            <meta
+              property="og:image:width"
+              content={String(DEFAULT_IMAGE_WIDTH)}
+            />
+            <meta
+              property="og:image:height"
+              content={String(DEFAULT_IMAGE_HEIGHT)}
+            />
           </>
         ) : null}
         {type === "article" && publishedTime ? (
