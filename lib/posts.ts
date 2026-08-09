@@ -73,6 +73,9 @@ export type DetailedPost = {
   title: string;
   otherAuthors: string[];
   date: string;
+  description: string;
+  /** Optional site-relative og:image override, set per post in frontmatter. */
+  image?: string;
 };
 export async function getPostData(id: string): Promise<DetailedPost> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
