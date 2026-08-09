@@ -142,7 +142,6 @@ app.get(
   }
 );
 
-// Next generated this automatically; here it's just another route.
 app.get("/404", (c) =>
   c.html(
     page(

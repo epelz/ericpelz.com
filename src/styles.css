@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Next inferred these; the CLI needs them spelled out. */
+/* Files Tailwind scans for class names. */
 @source "../components";
 @source "./";
 

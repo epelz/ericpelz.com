@@ -1,8 +1,7 @@
 import type { Child } from "hono/jsx";
 import { siteTitle } from "./header";
 
-// Replaces Next's Metadata API. Defaults match what app/layout.tsx exported;
-// pages override `title` only.
+// Site-wide document shell; pages override `title` only.
 export default function Document({
   title = siteTitle,
   children,
@@ -27,7 +26,6 @@ export default function Document({
       </head>
       <body>
         <div className="max-w-2xl px-1 py-0 mx-auto mt-6 mb-12">{children}</div>
-        {/* Was <Analytics /> from @vercel/analytics/react. */}
         <script defer src="/_vercel/insights/script.js"></script>
       </body>
     </html>

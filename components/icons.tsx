@@ -1,5 +1,3 @@
-// Inlined from react-icons/fa (FaGithubAlt, FaLinkedin) so we don't pull React
-// in just for two SVGs.
 const base = {
   stroke: "currentColor",
   fill: "currentColor",
